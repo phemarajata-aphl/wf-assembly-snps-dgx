@@ -1,0 +1,104 @@
+<!--
+  ~ Copyright 2013-2024, Seqera Labs
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+<pre class="mermaid" style="text-align: center;">
+flowchart TB
+    subgraph " "
+    v4["Channel.from"]
+    end
+    subgraph " "
+    v11[" "]
+    v14[" "]
+    v26[" "]
+    v33[" "]
+    v40[" "]
+    v45[" "]
+    v56[" "]
+    v59[" "]
+    v64[" "]
+    v70["ch_final_tree"]
+    v75["ch_output_summary_files"]
+    v78[" "]
+    end
+    subgraph ASSEMBLY_SNPS
+    v13([INFILE_HANDLING_UNIX])
+    v25([CORE_GENOME_ALIGNMENT_PARSNP])
+    v32([CONVERT_GINGR_TO_FASTA_HARVESTTOOLS])
+    v39([CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS])
+    v44([CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS])
+    v55([MASK_RECOMBINANT_POSITIONS_BIOPYTHON])
+    v58([CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS])
+    v63([BUILD_PHYLOGENETIC_TREE_PARSNP])
+    v5(( ))
+    v12(( ))
+    v16(( ))
+    v17(( ))
+    v29(( ))
+    v36(( ))
+    v67(( ))
+    end
+    v4 --> v5
+    v5 --> v11
+    v5 --> v13
+    v13 --> v14
+    v13 --> v12
+    v13 --> v16
+    v13 --> v17
+    v17 --> v25
+    v25 --> v26
+    v25 --> v12
+    v25 --> v16
+    v25 --> v29
+    v29 --> v32
+    v32 --> v33
+    v32 --> v12
+    v32 --> v16
+    v32 --> v36
+    v29 --> v39
+    v39 --> v40
+    v39 --> v12
+    v39 --> v16
+    v29 --> v44
+    v44 --> v45
+    v44 --> v12
+    v44 --> v16
+    v36 --> v55
+    v55 --> v58
+    v55 --> v56
+    v55 --> v63
+    v55 --> v12
+    v58 --> v59
+    v58 --> v12
+    v58 --> v16
+    v63 --> v64
+    v63 --> v12
+    v63 --> v16
+    v63 --> v67
+    v67 --> v70
+    v16 --> v75
+    v12 --> v78
+
+</pre>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+</body>
+</html>

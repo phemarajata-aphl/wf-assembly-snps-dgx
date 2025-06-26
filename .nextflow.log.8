@@ -1,0 +1,780 @@
+Jun-26 10:09:03.583 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile docker --input /home/cdcadmin/Downloads/bp_contextual_samples --outdir /home/cdcadmin/Downloads/bp_contextual_samples/results --snp_package parsnp --recombination gubbins
+Jun-26 10:09:03.658 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.04.3
+Jun-26 10:09:03.677 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/cdcadmin/.nextflow/plugins; core-plugins: nf-amazon@2.5.2,nf-azure@1.6.0,nf-cloudcache@0.4.1,nf-codecommit@0.2.0,nf-console@1.1.3,nf-ga4gh@1.3.0,nf-google@1.13.2-patch1,nf-tower@1.9.1,nf-wave@1.4.2
+Jun-26 10:09:03.686 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jun-26 10:09:03.687 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jun-26 10:09:03.689 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.10.0 in 'deployment' mode
+Jun-26 10:09:03.701 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jun-26 10:09:03.721 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/cdcadmin/wf-assembly-snps/nextflow.config
+Jun-26 10:09:03.723 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/cdcadmin/wf-assembly-snps/nextflow.config
+Jun-26 10:09:03.746 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/cdcadmin/.nextflow/secrets/store.json
+Jun-26 10:09:03.748 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@4a183d02] - activable => nextflow.secret.LocalSecretsProvider@4a183d02
+Jun-26 10:09:03.760 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Jun-26 10:09:04.958 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [aspen_hpc, slurm, debug, shifter, test, conda, singularity, rosalind_hpc, dgx_a100, test_full, docker]
+Jun-26 10:09:05.000 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Jun-26 10:09:05.014 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [backstabbing_pasteur] DSL2 - revision: 5117d6d157
+Jun-26 10:09:05.015 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jun-26 10:09:05.015 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jun-26 10:09:05.062 [main] DEBUG nextflow.Session - Session UUID: adba15ec-4e58-4a5f-9f23-1aff8ee2b5aa
+Jun-26 10:09:05.063 [main] DEBUG nextflow.Session - Run name: backstabbing_pasteur
+Jun-26 10:09:05.063 [main] DEBUG nextflow.Session - Executor pool size: 128
+Jun-26 10:09:05.069 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jun-26 10:09:05.074 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jun-26 10:09:05.091 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.04.3 build 5916
+  Created: 09-07-2024 19:35 UTC (10-07-2024 02:35 ICST)
+  System: Linux 5.4.0-169-generic
+  Runtime: Groovy 4.0.21 on OpenJDK 64-Bit Server VM 17.0.10+7
+  Encoding: UTF-8 (UTF-8)
+  Process: 578353@dgx-a100 [192.168.1.11]
+  CPUs: 128 - Mem: 503.7 GB (400 GB) - Swap: 0 (0)
+Jun-26 10:09:05.109 [main] DEBUG nextflow.Session - Work-dir: /home/cdcadmin/wf-assembly-snps/work [ext2/ext3]
+Jun-26 10:09:05.141 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jun-26 10:09:05.149 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jun-26 10:09:05.208 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jun-26 10:09:05.217 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 129; maxThreads: 1000
+Jun-26 10:09:05.268 [main] DEBUG nextflow.Session - Session start
+Jun-26 10:09:05.271 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/cdcadmin/Downloads/bp_contextual_samples/results/pipeline_info/execution_trace_2025-06-26_10-09-04.txt
+Jun-26 10:09:05.277 [main] DEBUG nextflow.Session - Using default localLib path: /home/cdcadmin/wf-assembly-snps/lib
+Jun-26 10:09:05.280 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib
+Jun-26 10:09:05.280 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib/nfcore_external_java_deps.jar
+Jun-26 10:09:06.016 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-26 10:09:06.066 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+[0;34m     __         __ __ __     __            __     __  __    [0m
+[0;34m|  ||_  __  /\ (_ (_ |_ |\/||__)|  \_/ __ (_ |\ ||__)(_ [0m
+[0;34m|/\||      /--\__)__)|__|  ||__)|__ |     __)| \||   __) [0m
+
+[0;32m       Identify SNPs from genome assemblies.               [0m
+
+
+[0;35m     bacterial-genomics/wf-assembly-snps v1.0.2[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrunName             : [0;32mbackstabbing_pasteur[0m
+  [0;34mcontainerEngine     : [0;32mdocker[0m
+  [0;34mlaunchDir           : [0;32m/home/cdcadmin/wf-assembly-snps[0m
+  [0;34mworkDir             : [0;32m/home/cdcadmin/wf-assembly-snps/work[0m
+  [0;34mprojectDir          : [0;32m/home/cdcadmin/wf-assembly-snps[0m
+  [0;34muserName            : [0;32mcdcadmin[0m
+  [0;34mprofile             : [0;32mdocker[0m
+  [0;34mconfigFiles         : [0;32m/home/cdcadmin/wf-assembly-snps/nextflow.config[0m
+
+[1mInput/output options[0m
+  [0;34minput               : [0;32m/home/cdcadmin/Downloads/bp_contextual_samples[0m
+  [0;34moutdir              : [0;32m/home/cdcadmin/Downloads/bp_contextual_samples/results[0m
+
+[1mAnalysis options[0m
+  [0;34mrecombination       : [0;32mgubbins[0m
+
+[1mProfile options[0m
+  [0;34mprofile_cache_dir   : [0;32m/home/cdcadmin/wf-assembly-snps/assets/.cache[0m
+
+[1mGeneric options[0m
+  [0;34mtracedir            : [0;32m/home/cdcadmin/Downloads/bp_contextual_samples/results/pipeline_info[0m
+  [0;34mprocess_log_dir     : [0;32m/home/cdcadmin/Downloads/bp_contextual_samples/results/pipeline_info/process_logs[0m
+  [0;34mqc_filecheck_log_dir: [0;32m/home/cdcadmin/Downloads/bp_contextual_samples/results/pipeline_info/qc_file_checks[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use bacterial-genomics/wf-assembly-snps for your analysis please cite:
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/bacterial-genomics/wf-assembly-snps/blob/main/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+Jun-26 10:09:07.403 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-26 10:09:07.403 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-26 10:09:07.408 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jun-26 10:09:07.414 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=128; memory=503.7 GB; capacity=128; pollInterval=100ms; dumpInterval=5m
+Jun-26 10:09:07.416 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jun-26 10:09:07.501 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP
+Jun-26 10:09:07.502 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CORE_GENOME_ALIGNMENT_PARSNP` matches process ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP
+Jun-26 10:09:07.505 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-26 10:09:07.505 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-26 10:09:07.520 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_low` matches labels `process_low` for process with name ASSEMBLY_SNPS:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
+Jun-26 10:09:07.521 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS` matches process ASSEMBLY_SNPS:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
+Jun-26 10:09:07.523 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-26 10:09:07.523 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-26 10:09:07.536 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS
+Jun-26 10:09:07.537 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS` matches process ASSEMBLY_SNPS:CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS
+Jun-26 10:09:07.538 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-26 10:09:07.538 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-26 10:09:07.552 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_low` matches labels `process_low` for process with name ASSEMBLY_SNPS:CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS
+Jun-26 10:09:07.553 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS` matches process ASSEMBLY_SNPS:CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS
+Jun-26 10:09:07.555 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-26 10:09:07.555 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-26 10:09:07.572 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS
+Jun-26 10:09:07.573 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:RECOMBINATION_GUBBINS` matches process ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS
+Jun-26 10:09:07.579 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-26 10:09:07.579 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-26 10:09:07.597 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
+Jun-26 10:09:07.598 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MASK_RECOMBINANT_POSITIONS_BIOPYTHON` matches process ASSEMBLY_SNPS:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
+Jun-26 10:09:07.600 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-26 10:09:07.600 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-26 10:09:07.613 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
+Jun-26 10:09:07.615 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS` matches process ASSEMBLY_SNPS:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
+Jun-26 10:09:07.619 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-26 10:09:07.619 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-26 10:09:07.632 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_high` matches labels `process_high` for process with name ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP
+Jun-26 10:09:07.632 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:BUILD_PHYLOGENETIC_TREE_PARSNP` matches process ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP
+Jun-26 10:09:07.634 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-26 10:09:07.634 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-26 10:09:07.667 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: ASSEMBLY_SNPS:MASK_RECOMBINANT_POSITIONS_BIOPYTHON, REF_INFILE_HANDLING_UNIX, INFILE_HANDLING_UNIX, CONVERT_TSV_TO_EXCEL_PYTHON, ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP, ASSEMBLY_SNPS:CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS, ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS, CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS, ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP, CONVERT_SAMPLESHEET_PYTHON, RECOMBINATION_GUBBINS, CREATE_EXCEL_RUN_SUMMARY_PYTHON, CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS, ASSEMBLY_SNPS:INFILE_HANDLING_UNIX, ASSEMBLY_SNPS:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS, CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS, ASSEMBLY_SNPS:CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS, CONVERT_GINGR_TO_FASTA_HARVESTTOOLS, ASSEMBLY_SNPS:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS, MASK_RECOMBINANT_POSITIONS_BIOPYTHON, CORE_GENOME_ALIGNMENT_PARSNP, BUILD_PHYLOGENETIC_TREE_PARSNP, RECOMBINATION_CLONALFRAMEML
+Jun-26 10:09:07.671 [main] DEBUG nextflow.Session - Igniting dataflow network (17)
+Jun-26 10:09:07.677 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/cdcadmin/Downloads/bp_contextual_samples/; pattern: **.{fasta,fas,fna,fsa,fa}{,.gz}; options: [checkIfExists:true]
+Jun-26 10:09:07.678 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX
+Jun-26 10:09:07.678 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP
+Jun-26 10:09:07.679 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
+Jun-26 10:09:07.679 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS
+Jun-26 10:09:07.679 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS
+Jun-26 10:09:07.680 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS
+Jun-26 10:09:07.680 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
+Jun-26 10:09:07.680 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
+Jun-26 10:09:07.680 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP
+Jun-26 10:09:07.681 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_b9a8232e0fa11be0: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/create_masked_snp_distance_matrix_snp_dists/main.nf
+  Script_daab3931d6dbebc6: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/convert_tsv_to_excel_python/main.nf
+  Script_dcf838433c2ae4c2: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/convert_gingr_to_fasta_harvesttools/main.nf
+  Script_de42343b4a60b37d: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/create_snp_distance_matrix_snp_dists/main.nf
+  Script_92a8fd2e65506f13: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/create_excel_run_summary_python/main.nf
+  Script_bdfe511ac4c90ab8: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/recombination.nf
+  Script_06e5d24f60b5d34e: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/calculate_pairwise_distances_snp_dists/main.nf
+  Script_d07a09c54728bf6d: /home/cdcadmin/wf-assembly-snps/main.nf
+  Script_deecfb13783fd705: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/../../modules/local/recombination_gubbins/main.nf
+  Script_53b40eb3093c3510: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/input_check.nf
+  Script_30224b4410519b3a: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/mask_recombinant_positions_biopython/main.nf
+  Script_6ef5bdac66e9e392: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/build_phylogenetic_tree_parsnp/main.nf
+  Script_095ac330d7162a4b: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/core_genome_alignment_parsnp/main.nf
+  Script_cf1907f7a901597f: /home/cdcadmin/wf-assembly-snps/./workflows/assembly_snps.nf
+  Script_40fb9d8af3f8dec5: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/../../modules/local/recombination_clonalframeml/main.nf
+  Script_cf92b0cfd5970f35: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/../../modules/local/convert_samplesheet_python/main.nf
+  Script_b712480f57627fb6: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/infile_handling_unix/main.nf
+Jun-26 10:09:07.681 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jun-26 10:09:07.682 [main] DEBUG nextflow.Session - Session await
+Jun-26 10:09:08.157 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.160 [Task submitter] INFO  nextflow.Session - [41/39aa8a] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571495_1)
+Jun-26 10:09:08.170 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.171 [Task submitter] INFO  nextflow.Session - [10/5a33ef] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008816)
+Jun-26 10:09:08.178 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.179 [Task submitter] INFO  nextflow.Session - [3a/230a35] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_406e_GCF_000410895_1_Thailand)
+Jun-26 10:09:08.186 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.186 [Task submitter] INFO  nextflow.Session - [94/e46ed8] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0048-9_S8_L001-SPAdes)
+Jun-26 10:09:08.191 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.192 [Task submitter] INFO  nextflow.Session - [a3/d25c49] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566495_1)
+Jun-26 10:09:08.197 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.197 [Task submitter] INFO  nextflow.Session - [78/5b40d9] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563525_1)
+Jun-26 10:09:08.203 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.204 [Task submitter] INFO  nextflow.Session - [95/ce36b2] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0164-4_S3-SPAdes)
+Jun-26 10:09:08.210 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.210 [Task submitter] INFO  nextflow.Session - [ec/d1df7b] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963562615_1)
+Jun-26 10:09:08.217 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.218 [Task submitter] INFO  nextflow.Session - [03/c2f1a9] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012380)
+Jun-26 10:09:08.224 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.225 [Task submitter] INFO  nextflow.Session - [f8/d77aac] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566855_1)
+Jun-26 10:09:08.231 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.232 [Task submitter] INFO  nextflow.Session - [71/3682f6] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008822)
+Jun-26 10:09:08.239 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.240 [Task submitter] INFO  nextflow.Session - [5a/b0132a] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012308)
+Jun-26 10:09:08.246 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.246 [Task submitter] INFO  nextflow.Session - [5a/492ace] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0004_S9_L001-SPAdes)
+Jun-26 10:09:08.252 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.252 [Task submitter] INFO  nextflow.Session - [ee/e99763] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0139-6_S9_L001-SPAdes)
+Jun-26 10:09:08.258 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.258 [Task submitter] INFO  nextflow.Session - [bf/04abf4] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013348)
+Jun-26 10:09:08.268 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.269 [Task submitter] INFO  nextflow.Session - [e5/78f738] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0179-2_S4-SPAdes)
+Jun-26 10:09:08.276 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.276 [Task submitter] INFO  nextflow.Session - [f8/f8ab6a] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012334)
+Jun-26 10:09:08.282 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.282 [Task submitter] INFO  nextflow.Session - [18/eda969] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0051-3_S1_L001-SPAdes)
+Jun-26 10:09:08.287 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.288 [Task submitter] INFO  nextflow.Session - [45/f4e393] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963572755_1)
+Jun-26 10:09:08.294 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.295 [Task submitter] INFO  nextflow.Session - [70/9457d5] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008841)
+Jun-26 10:09:08.301 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.301 [Task submitter] INFO  nextflow.Session - [02/10e0b6] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008829)
+Jun-26 10:09:08.307 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.308 [Task submitter] INFO  nextflow.Session - [6b/81ba46] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_619s008_GCF_001326955_2_Malaysia)
+Jun-26 10:09:08.315 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.316 [Task submitter] INFO  nextflow.Session - [a7/5da207] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0175-0_S10-SPAdes)
+Jun-26 10:09:08.322 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.323 [Task submitter] INFO  nextflow.Session - [cc/7eed1d] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963568705_1)
+Jun-26 10:09:08.328 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.328 [Task submitter] INFO  nextflow.Session - [c9/7f9429] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_402a_GCF_001980775_1_Thailand)
+Jun-26 10:09:08.335 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.336 [Task submitter] INFO  nextflow.Session - [d2/828337] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561075_1)
+Jun-26 10:09:08.342 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.342 [Task submitter] INFO  nextflow.Session - [79/77d243] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0113-1_S4_L001-SPAdes)
+Jun-26 10:09:08.347 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.347 [Task submitter] INFO  nextflow.Session - [c0/b80a47] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563065_1)
+Jun-26 10:09:08.352 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.352 [Task submitter] INFO  nextflow.Session - [f0/ded554] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963560585_1)
+Jun-26 10:09:08.358 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.359 [Task submitter] INFO  nextflow.Session - [7f/3252de] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0109-9_S9_L001-SPAdes)
+Jun-26 10:09:08.365 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.366 [Task submitter] INFO  nextflow.Session - [09/193a1e] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963569325_1)
+Jun-26 10:09:08.376 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.376 [Task submitter] INFO  nextflow.Session - [3f/be0365] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963569785_1)
+Jun-26 10:09:08.382 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.383 [Task submitter] INFO  nextflow.Session - [e2/4faa97] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561435_1)
+Jun-26 10:09:08.390 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.390 [Task submitter] INFO  nextflow.Session - [2a/58c17b] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0058-8_S3_L001-SPAdes)
+Jun-26 10:09:08.397 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.398 [Task submitter] INFO  nextflow.Session - [3c/f443f9] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012330)
+Jun-26 10:09:08.412 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.412 [Task submitter] INFO  nextflow.Session - [1e/90dea8] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0198-2_S3-SPAdes)
+Jun-26 10:09:08.417 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.418 [Task submitter] INFO  nextflow.Session - [0c/e8eb9f] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561565_1)
+Jun-26 10:09:08.423 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.423 [Task submitter] INFO  nextflow.Session - [7f/df6908] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0131-3_S1_L001-SPAdes)
+Jun-26 10:09:08.427 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.428 [Task submitter] INFO  nextflow.Session - [c4/959dcc] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565675_1)
+Jun-26 10:09:08.433 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.434 [Task submitter] INFO  nextflow.Session - [d0/51c4bf] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0031-5_S1_L001-SPAdes)
+Jun-26 10:09:08.442 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.445 [Task submitter] INFO  nextflow.Session - [a4/c83216] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012314)
+Jun-26 10:09:08.455 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.455 [Task submitter] INFO  nextflow.Session - [59/8db328] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963568005_1)
+Jun-26 10:09:08.464 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.478 [Task submitter] INFO  nextflow.Session - [6f/ed6475] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_8400_GCF_025847635_1_Viet_Nam)
+Jun-26 10:09:08.485 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.486 [Task submitter] INFO  nextflow.Session - [22/549f11] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571005_1)
+Jun-26 10:09:08.494 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.494 [Task submitter] INFO  nextflow.Session - [b9/8006ff] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963567115_1)
+Jun-26 10:09:08.501 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.502 [Task submitter] INFO  nextflow.Session - [3c/af37b4] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963569685_1)
+Jun-26 10:09:08.508 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.509 [Task submitter] INFO  nextflow.Session - [9c/a6cb6c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0124-8_S4_L001-SPAdes)
+Jun-26 10:09:08.516 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.517 [Task submitter] INFO  nextflow.Session - [bc/3df578] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008803)
+Jun-26 10:09:08.524 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.524 [Task submitter] INFO  nextflow.Session - [59/d3efdf] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012351)
+Jun-26 10:09:08.530 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.530 [Task submitter] INFO  nextflow.Session - [3c/53e534] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0125-5_S5_L001-SPAdes)
+Jun-26 10:09:08.536 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.537 [Task submitter] INFO  nextflow.Session - [55/6f2374] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565485_1)
+Jun-26 10:09:08.542 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.542 [Task submitter] INFO  nextflow.Session - [aa/ee950c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008786)
+Jun-26 10:09:08.546 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.547 [Task submitter] INFO  nextflow.Session - [4b/4c67e7] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0076-0_S10_L001-SPAdes)
+Jun-26 10:09:08.551 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.551 [Task submitter] INFO  nextflow.Session - [04/f74317] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013345)
+Jun-26 10:09:08.556 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.556 [Task submitter] INFO  nextflow.Session - [a9/b36c82] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_ABCPW_30_GCF_000774495_1_Australia)
+Jun-26 10:09:08.561 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.562 [Task submitter] INFO  nextflow.Session - [1b/7861e0] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0025_S11-SPAdes)
+Jun-26 10:09:08.566 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.567 [Task submitter] INFO  nextflow.Session - [f2/09c0f7] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0145-3_S5_L001-SPAdes)
+Jun-26 10:09:08.571 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.572 [Task submitter] INFO  nextflow.Session - [0a/28e7e3] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012347)
+Jun-26 10:09:08.577 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.577 [Task submitter] INFO  nextflow.Session - [f2/d30db8] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0104-0_S4_L001-SPAdes)
+Jun-26 10:09:08.582 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.583 [Task submitter] INFO  nextflow.Session - [ec/58ba64] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0046-3_S6_L001-SPAdes)
+Jun-26 10:09:08.588 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.589 [Task submitter] INFO  nextflow.Session - [ba/745691] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0194-1_S9-SPAdes)
+Jun-26 10:09:08.594 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.595 [Task submitter] INFO  nextflow.Session - [d2/ed6acc] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008837)
+Jun-26 10:09:08.600 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.600 [Task submitter] INFO  nextflow.Session - [a3/1e8e78] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0080-2_S3_L001-SPAdes)
+Jun-26 10:09:08.608 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.608 [Task submitter] INFO  nextflow.Session - [6b/3927f8] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008819)
+Jun-26 10:09:08.613 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.614 [Task submitter] INFO  nextflow.Session - [99/cd9105] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0122-2_S2_L001-SPAdes)
+Jun-26 10:09:08.619 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.619 [Task submitter] INFO  nextflow.Session - [1e/4d444b] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0072-9_S6_L001-SPAdes)
+Jun-26 10:09:08.623 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.624 [Task submitter] INFO  nextflow.Session - [b8/28f1d7] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0184-2_S9-SPAdes)
+Jun-26 10:09:08.629 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.629 [Task submitter] INFO  nextflow.Session - [52/0f3534] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0036-4_S6_L001-SPAdes)
+Jun-26 10:09:08.634 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.635 [Task submitter] INFO  nextflow.Session - [8b/ab346d] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_900595585_2)
+Jun-26 10:09:08.639 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.639 [Task submitter] INFO  nextflow.Session - [a6/19e913] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012370)
+Jun-26 10:09:08.644 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.645 [Task submitter] INFO  nextflow.Session - [a3/356df2] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565395_1)
+Jun-26 10:09:08.649 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.649 [Task submitter] INFO  nextflow.Session - [a6/723929] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_44W_S64_GCF_014713025_1_Laos)
+Jun-26 10:09:08.654 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.655 [Task submitter] INFO  nextflow.Session - [92/44d41f] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0158-6_S8_L001-SPAdes)
+Jun-26 10:09:08.659 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.659 [Task submitter] INFO  nextflow.Session - [bc/f545dd] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013354)
+Jun-26 10:09:08.663 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.664 [Task submitter] INFO  nextflow.Session - [b0/acab52] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0044-8_S4_L001-SPAdes)
+Jun-26 10:09:08.668 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.668 [Task submitter] INFO  nextflow.Session - [60/1bcad5] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012328)
+Jun-26 10:09:08.672 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.673 [Task submitter] INFO  nextflow.Session - [be/2ccd26] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012354)
+Jun-26 10:09:08.677 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.677 [Task submitter] INFO  nextflow.Session - [55/2f2158] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0006-7_S6_L001-SPAdes)
+Jun-26 10:09:08.682 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.683 [Task submitter] INFO  nextflow.Session - [d3/75f603] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0187-5_S2-SPAdes)
+Jun-26 10:09:08.687 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.688 [Task submitter] INFO  nextflow.Session - [03/eeff48] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0027_S9-SPAdes)
+Jun-26 10:09:08.693 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.693 [Task submitter] INFO  nextflow.Session - [48/f67aa5] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012317)
+Jun-26 10:09:08.698 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.699 [Task submitter] INFO  nextflow.Session - [0d/3e55eb] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963572995_1)
+Jun-26 10:09:08.705 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:08.705 [Task submitter] INFO  nextflow.Session - [68/d423b0] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0039-8_S9_L001-SPAdes)
+Jun-26 10:09:19.130 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 78; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571495_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/41/39aa8a2d189e95ba8d335180ad91fc]
+Jun-26 10:09:19.130 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jun-26 10:09:19.134 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:19.135 [Task submitter] INFO  nextflow.Session - [53/0b744c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963570105_1)
+Jun-26 10:09:19.160 [TaskFinalizer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jun-26 10:09:19.446 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 67; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963567115_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/b9/8006ff5593ddaa45b4d5cdd4937005]
+Jun-26 10:09:19.454 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:19.455 [Task submitter] INFO  nextflow.Session - [d4/9f971f] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963568785_1)
+Jun-26 10:09:19.476 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 99; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008829); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/02/10e0b6d59f98345d28dfc370fb8112]
+Jun-26 10:09:19.480 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:19.480 [Task submitter] INFO  nextflow.Session - [2f/358443] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0105-7_S5_L001-SPAdes)
+Jun-26 10:09:19.676 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 98; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0164-4_S3-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/95/ce36b23214cb9a0219e829cf292a52]
+Jun-26 10:09:19.680 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:19.680 [Task submitter] INFO  nextflow.Session - [0c/56bf65] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0073-7_S7_L001-SPAdes)
+Jun-26 10:09:19.931 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 53; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012380); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/03/c2f1a90f52af2809698c18604d01af]
+Jun-26 10:09:19.938 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:19.938 [Task submitter] INFO  nextflow.Session - [e4/75fc40] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012303)
+Jun-26 10:09:20.195 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 97; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012330); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/3c/f443f9fad0758f1ee81425b36b9329]
+Jun-26 10:09:20.199 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:20.199 [Task submitter] INFO  nextflow.Session - [a1/da7bbd] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008804)
+Jun-26 10:09:20.423 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0025_S11-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/1b/7861e0767a7460f05ea0f3b12e9ee2]
+Jun-26 10:09:20.429 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:20.430 [Task submitter] INFO  nextflow.Session - [fe/1e5060] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0010_S4_L001-SPAdes)
+Jun-26 10:09:20.938 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 71; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012317); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/48/f67aa5fc232370b54fcd0a0854561c]
+Jun-26 10:09:20.942 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:20.942 [Task submitter] INFO  nextflow.Session - [18/e24874] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565345_1)
+Jun-26 10:09:21.321 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 42; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0109-9_S9_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/7f/3252dea07a8acb39b8ccf28a575c8a]
+Jun-26 10:09:21.325 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:21.325 [Task submitter] INFO  nextflow.Session - [1e/ce646e] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0177-6_S2-SPAdes)
+Jun-26 10:09:22.400 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 116; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012314); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a4/c832163fab8df761d59fff1b7cb8b2]
+Jun-26 10:09:22.404 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:22.404 [Task submitter] INFO  nextflow.Session - [43/04372e] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963564305_1)
+Jun-26 10:09:22.658 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561435_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/e2/4faa9786cb2c332a35fd37968c0d50]
+Jun-26 10:09:22.662 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:22.662 [Task submitter] INFO  nextflow.Session - [eb/91ea50] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0050-5_S10_L001-SPAdes)
+Jun-26 10:09:22.720 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 88; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963572755_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/45/f4e39394652b8b01251aa4c2366b31]
+Jun-26 10:09:22.724 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:22.725 [Task submitter] INFO  nextflow.Session - [5f/f5cf79] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012377)
+Jun-26 10:09:22.827 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 65; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008841); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/70/9457d57f1aeeebab1647448296baf6]
+Jun-26 10:09:22.831 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:22.831 [Task submitter] INFO  nextflow.Session - [df/98d205] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0021_S7-SPAdes)
+Jun-26 10:09:23.083 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008816); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/10/5a33ef677f520c1424d05a8eaac10b]
+Jun-26 10:09:23.086 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:23.087 [Task submitter] INFO  nextflow.Session - [c0/e45918] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0069-5_S3_L001-SPAdes)
+Jun-26 10:09:23.140 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 70; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0044-8_S4_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/b0/acab525befc3d1c90e1646e819d42f]
+Jun-26 10:09:23.143 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:23.144 [Task submitter] INFO  nextflow.Session - [d4/6c5b0e] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0091-9_S3_L001-SPAdes)
+Jun-26 10:09:23.336 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0158-6_S8_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/92/44d41f117ad14c3d3bfee676284d5c]
+Jun-26 10:09:23.340 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:23.341 [Task submitter] INFO  nextflow.Session - [5b/28bdc5] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566475_1)
+Jun-26 10:09:23.468 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0145-3_S5_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/f2/09c0f7354f34bc924ec83261fac0c9]
+Jun-26 10:09:23.469 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 105; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0194-1_S9-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/ba/7456918ccb3914554e359ae11b9d69]
+Jun-26 10:09:23.473 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:23.473 [Task submitter] INFO  nextflow.Session - [69/347b30] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_2002734728_GCF_002111105_1_USA_California)
+Jun-26 10:09:23.478 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:23.479 [Task submitter] INFO  nextflow.Session - [4a/d761d8] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0015-8_S6_L001-SPAdes)
+Jun-26 10:09:23.524 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 107; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0004_S9_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/5a/492ace86599310677b4cefbb594bb2]
+Jun-26 10:09:23.528 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:23.529 [Task submitter] INFO  nextflow.Session - [b3/d2958b] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0195-8_S10-SPAdes)
+Jun-26 10:09:24.161 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 123; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963569325_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/09/193a1ee89b1c69a81fa709fdb1dfc5]
+Jun-26 10:09:24.165 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:24.166 [Task submitter] INFO  nextflow.Session - [4f/bce590] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013365)
+Jun-26 10:09:24.188 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 66; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565485_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/55/6f237487d86917b97cd82d3e05ff46]
+Jun-26 10:09:24.193 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:24.193 [Task submitter] INFO  nextflow.Session - [75/c3414d] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561355_1)
+Jun-26 10:09:24.357 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563065_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/c0/b80a470c79b772abb40cfec410f0ce]
+Jun-26 10:09:24.360 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:24.360 [Task submitter] INFO  nextflow.Session - [44/14aef3] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565565_1)
+Jun-26 10:09:24.538 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 56; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0184-2_S9-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/b8/28f1d726acc9f23399fe84b4c45d1d]
+Jun-26 10:09:24.542 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:24.543 [Task submitter] INFO  nextflow.Session - [dd/9c428c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0163-6_S2-SPAdes)
+Jun-26 10:09:24.557 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 91; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565395_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a3/356df271721781e06ecc33350d7591]
+Jun-26 10:09:24.561 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:24.562 [Task submitter] INFO  nextflow.Session - [ce/0ed8c2] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_619s005_GCF_001207785_2_Malaysia)
+Jun-26 10:09:24.566 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 57; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0125-5_S5_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/3c/53e53466cb9864ef930d6c68e17299]
+Jun-26 10:09:24.566 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 48; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012328); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/60/1bcad50fef34d3659093952bbcc5c1]
+Jun-26 10:09:24.567 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 44; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0027_S9-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/03/eeff48a044c8826d02fe15f5eeec87]
+Jun-26 10:09:24.567 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0039-8_S9_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/68/d423b040965639dff0669847ae6378]
+Jun-26 10:09:24.570 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:24.570 [Task submitter] INFO  nextflow.Session - [9a/e78658] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0033-1_S3_L001-SPAdes)
+Jun-26 10:09:24.575 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:24.575 [Task submitter] INFO  nextflow.Session - [66/2b4578] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_7400_GCF_025848135_1_Viet_Nam)
+Jun-26 10:09:24.580 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:24.580 [Task submitter] INFO  nextflow.Session - [a7/2b563e] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0129-7_S9_L001-SPAdes)
+Jun-26 10:09:24.585 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:24.585 [Task submitter] INFO  nextflow.Session - [a5/58505c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0013_S7_L001-SPAdes)
+Jun-26 10:09:25.141 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 122; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0104-0_S4_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/f2/d30db8e6a7d53d98cda8bd2141f8db]
+Jun-26 10:09:25.144 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:25.144 [Task submitter] INFO  nextflow.Session - [0b/5b7c7e] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008794)
+Jun-26 10:09:25.339 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013354); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/bc/f545dd12f0da1fccb6d019ce7bbfbd]
+Jun-26 10:09:25.342 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:25.343 [Task submitter] INFO  nextflow.Session - [58/9433d1] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0127-1_S7_L001-SPAdes)
+Jun-26 10:09:25.456 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 115; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0080-2_S3_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a3/1e8e78100421f76d4ee212d95f0c2a]
+Jun-26 10:09:25.459 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:25.460 [Task submitter] INFO  nextflow.Session - [e8/0520ac] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0041-4_S1_L001-SPAdes)
+Jun-26 10:09:25.538 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 34; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012370); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a6/19e913186715969b2241a60781c0c6]
+Jun-26 10:09:25.542 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:25.542 [Task submitter] INFO  nextflow.Session - [a0/d21723] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0112-3_S3_L001-SPAdes)
+Jun-26 10:09:25.779 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008786); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/aa/ee950c7edbf2bc1769e76e0e170fd2]
+Jun-26 10:09:25.783 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:25.784 [Task submitter] INFO  nextflow.Session - [4b/0b2bfb] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_28P_GCF_025847415_1_Viet_Nam)
+Jun-26 10:09:25.801 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0124-8_S4_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/9c/a6cb6cd919c15f24cd00d6a52163e9]
+Jun-26 10:09:25.805 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:25.806 [Task submitter] INFO  nextflow.Session - [0e/e2b962] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0075-2_S9_L001-SPAdes)
+Jun-26 10:09:25.909 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0031-5_S1_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/d0/51c4bfb52bebda8e660110983dd9fc]
+Jun-26 10:09:25.913 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:25.914 [Task submitter] INFO  nextflow.Session - [45/5a9f7c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0014-1_S5_L001-SPAdes)
+Jun-26 10:09:26.125 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 76; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963569785_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/3f/be03658e2803817a7fb0d68636aa81]
+Jun-26 10:09:26.128 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:26.129 [Task submitter] INFO  nextflow.Session - [a9/43d057] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0077-8_S11_L001-SPAdes)
+Jun-26 10:09:26.207 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 40; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0122-2_S2_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/99/cd9105e3a973dc8fd03c1c8203f0fd]
+Jun-26 10:09:26.212 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:26.212 [Task submitter] INFO  nextflow.Session - [aa/26975d] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0023-2_S3_L001-SPAdes)
+Jun-26 10:09:26.412 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 51; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0131-3_S1_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/7f/df690819617608b018502acb70c019]
+Jun-26 10:09:26.416 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:26.417 [Task submitter] INFO  nextflow.Session - [11/100943] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_ABCPW_91_GCF_000774405_1_Australia)
+Jun-26 10:09:26.641 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 43; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_619s008_GCF_001326955_2_Malaysia); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/6b/81ba4663ad08f5cb32b43fd93e8176]
+Jun-26 10:09:26.646 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:26.647 [Task submitter] INFO  nextflow.Session - [a9/6d922d] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0093-5_S5_L001-SPAdes)
+Jun-26 10:09:26.909 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 94; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012334); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/f8/f8ab6a820514bab19486e663490302]
+Jun-26 10:09:26.913 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:26.914 [Task submitter] INFO  nextflow.Session - [2a/cbe9cf] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0182-6_S7-SPAdes)
+Jun-26 10:09:27.063 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 79; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_406e_GCF_000410895_1_Thailand); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/3a/230a35fbb5162d175f4dcb21ae067e]
+Jun-26 10:09:27.067 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:27.068 [Task submitter] INFO  nextflow.Session - [60/2a9dd2] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0200-6_S5-SPAdes)
+Jun-26 10:09:27.117 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 102; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012351); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/59/d3efdf2e966426b13ede3fac80c5dd]
+Jun-26 10:09:27.122 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:27.130 [Task submitter] INFO  nextflow.Session - [8e/fa79ea] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0110-7_S10_L001-SPAdes)
+Jun-26 10:09:27.232 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008803); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/bc/3df57868a6f07132087274adadf7b8]
+Jun-26 10:09:27.236 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:27.236 [Task submitter] INFO  nextflow.Session - [5e/44615f] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_619s007_GCF_001326935_2_Malaysia)
+Jun-26 10:09:27.504 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 114; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563525_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/78/5b40d9360d1845248533ab50e91588]
+Jun-26 10:09:27.509 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:27.510 [Task submitter] INFO  nextflow.Session - [28/15f81e] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566455_1)
+Jun-26 10:09:27.529 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 100; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013348); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/bf/04abf4448c6901cdb03ad8f335cca8]
+Jun-26 10:09:27.555 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:27.556 [Task submitter] INFO  nextflow.Session - [12/14e882] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563305_1)
+Jun-26 10:09:27.637 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 62; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0058-8_S3_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/2a/58c17b3fb920d58bf2f8aad3656147]
+Jun-26 10:09:27.642 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:27.642 [Task submitter] INFO  nextflow.Session - [0a/0eca5a] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0137-0_S7_L001-SPAdes)
+Jun-26 10:09:27.947 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 90; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0113-1_S4_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/79/77d2430b4e149593faeb252ee055b0]
+Jun-26 10:09:27.952 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:27.952 [Task submitter] INFO  nextflow.Session - [43/64fa4f] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0144-6_S4_L001-SPAdes)
+Jun-26 10:09:28.081 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_900595585_2); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/8b/ab346d7489fa32313f0481515c742b]
+Jun-26 10:09:28.086 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:28.087 [Task submitter] INFO  nextflow.Session - [a9/c510b9] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0047-1_S7_L001-SPAdes)
+Jun-26 10:09:28.161 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0006-7_S6_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/55/2f21583e5704f8568f97a4fb09a87f]
+Jun-26 10:09:28.165 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:28.166 [Task submitter] INFO  nextflow.Session - [ba/9ba186] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0178-4_S3-SPAdes)
+Jun-26 10:09:28.368 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 128; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013345); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/04/f74317b25a689c5b2201897263ac96]
+Jun-26 10:09:28.373 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:28.373 [Task submitter] INFO  nextflow.Session - [ee/6fbf68] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_900598305_2)
+Jun-26 10:09:28.453 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 54; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561565_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/0c/e8eb9f5cfa249b52f144bba61d894b]
+Jun-26 10:09:28.457 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:28.457 [Task submitter] INFO  nextflow.Session - [71/8ae410] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561215_1)
+Jun-26 10:09:28.472 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 92; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_44W_S64_GCF_014713025_1_Laos); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a6/723929321d8eba2e041be7eb4db378]
+Jun-26 10:09:28.477 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:28.477 [Task submitter] INFO  nextflow.Session - [73/fb685f] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963567325_1)
+Jun-26 10:09:28.647 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 93; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008819); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/6b/3927f843e5fd092c1a896d1907bf43]
+Jun-26 10:09:28.651 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:28.652 [Task submitter] INFO  nextflow.Session - [64/6cd128] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0155-2_S5_L001-SPAdes)
+Jun-26 10:09:28.722 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 38; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012354); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/be/2ccd2609b5f2a33a8b33dbbc6724bc]
+Jun-26 10:09:28.726 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:28.727 [Task submitter] INFO  nextflow.Session - [2a/fe65df] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0111-5_S2_L001-SPAdes)
+Jun-26 10:09:28.894 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963568005_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/59/8db32884de4a9117ab653addad33e3]
+Jun-26 10:09:28.898 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:28.898 [Task submitter] INFO  nextflow.Session - [d3/949e46] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963573095_1)
+Jun-26 10:09:28.970 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0187-5_S2-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/d3/75f603980daf5720b3111bc09e1393]
+Jun-26 10:09:28.974 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:28.974 [Task submitter] INFO  nextflow.Session - [31/ceb069] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008820)
+Jun-26 10:09:29.029 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0139-6_S9_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/ee/e9976374dce3f02479886a593a315d]
+Jun-26 10:09:29.033 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:29.033 [Task submitter] INFO  nextflow.Session - [fc/0766fc] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0135-4_S5_L001-SPAdes)
+Jun-26 10:09:29.291 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963562615_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/ec/d1df7b5445954eac2c0c6d79dcd591]
+Jun-26 10:09:29.295 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:29.295 [Task submitter] INFO  nextflow.Session - [ce/eddb2d] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0062-0_S7_L001-SPAdes)
+Jun-26 10:09:29.801 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 45; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0072-9_S6_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/1e/4d444b550b89522fa0242ce8a6b8b2]
+Jun-26 10:09:29.805 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:29.806 [Task submitter] INFO  nextflow.Session - [6b/02a87c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0034-9_S4_L001-SPAdes)
+Jun-26 10:09:29.832 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 64; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0179-2_S4-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/e5/78f738bcbca5a2678bbaf1c1bf92bf]
+Jun-26 10:09:29.837 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:29.837 [Task submitter] INFO  nextflow.Session - [34/e4f276] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0071-1_S5_L001-SPAdes)
+Jun-26 10:09:29.973 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 85; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_8400_GCF_025847635_1_Viet_Nam); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/6f/ed647581001b35054476c3bde7a1fe]
+Jun-26 10:09:29.977 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:29.977 [Task submitter] INFO  nextflow.Session - [54/257c05] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0089-3_S1_L001-SPAdes)
+Jun-26 10:09:30.294 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963568705_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/cc/7eed1da0ae61307466ca62f4600dba]
+Jun-26 10:09:30.298 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:30.298 [Task submitter] INFO  nextflow.Session - [ad/c735ff] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0054-7_S4_L001-SPAdes)
+Jun-26 10:09:30.567 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008837); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/d2/ed6accc8025ca1548e98543ca84c99]
+Jun-26 10:09:30.571 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:30.571 [Task submitter] INFO  nextflow.Session - [89/0bee73] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0057-0_S2_L001-SPAdes)
+Jun-26 10:09:30.761 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 83; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012308); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/5a/b0132ab194e5b562462f9f83063cf2]
+Jun-26 10:09:30.766 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:30.766 [Task submitter] INFO  nextflow.Session - [e6/66e289] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963562695_1)
+Jun-26 10:09:30.909 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 46; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0036-4_S6_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/52/0f35342c0b1360300469ea0a3e04fb]
+Jun-26 10:09:30.913 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:30.913 [Task submitter] INFO  nextflow.Session - [04/798282] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963560915_1)
+Jun-26 10:09:31.128 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 119; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963569685_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/3c/af37b42eafedd6a5291e0f723ebc58]
+Jun-26 10:09:31.131 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:31.132 [Task submitter] INFO  nextflow.Session - [4f/758cf0] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0030-7_S10_L001-SPAdes)
+Jun-26 10:09:31.241 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 41; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0048-9_S8_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/94/e46ed83e1343e11eff56c53fd5a5c4]
+Jun-26 10:09:31.244 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:31.244 [Task submitter] INFO  nextflow.Session - [80/e6c4b9] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_64W_S75_GCF_014712815_1_Laos)
+Jun-26 10:09:31.273 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 89; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963572995_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/0d/3e55eb96944d4fb69c7cb3b71f32be]
+Jun-26 10:09:31.278 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:31.278 [Task submitter] INFO  nextflow.Session - [6a/bc294b] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_577ci_GCF_001980815_1_Thailand)
+Jun-26 10:09:31.280 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008822); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/71/3682f6113752416cd779206adee528]
+Jun-26 10:09:31.283 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:31.283 [Task submitter] INFO  nextflow.Session - [6f/e463cc] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0148-7_S8_L001-SPAdes)
+Jun-26 10:09:31.500 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 72; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0198-2_S3-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/1e/90dea82639508c0983ae93da125962]
+Jun-26 10:09:31.504 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:31.504 [Task submitter] INFO  nextflow.Session - [5d/b5f97c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008813)
+Jun-26 10:09:31.766 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 109; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566495_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a3/d25c49d2d335f3c961ce87ecccc41c]
+Jun-26 10:09:31.770 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:31.771 [Task submitter] INFO  nextflow.Session - [38/2ce2e3] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963562655_1)
+Jun-26 10:09:31.857 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012347); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/0a/28e7e3e170426cf4c638e1854654d8]
+Jun-26 10:09:31.861 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:31.861 [Task submitter] INFO  nextflow.Session - [70/0abfc3] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571365_1)
+Jun-26 10:09:31.930 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 110; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566855_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/f8/d77aacbae201411371fe0674a359d9]
+Jun-26 10:09:31.934 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:31.934 [Task submitter] INFO  nextflow.Session - [e8/0f72fa] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008838)
+Jun-26 10:09:32.065 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963560585_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/f0/ded554f7d6f8f65af19f3a8a2c09a5]
+Jun-26 10:09:32.067 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:32.068 [Task submitter] INFO  nextflow.Session - [82/ebbcbe] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0189-1_S4-SPAdes)
+Jun-26 10:09:32.333 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 82; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565675_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/c4/959dcca6cc4d85330b0398fdc2a837]
+Jun-26 10:09:32.337 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:32.337 [Task submitter] INFO  nextflow.Session - [24/334411] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012331)
+Jun-26 10:09:32.390 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 87; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0076-0_S10_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/4b/4c67e7db9fae55acce31b17332671a]
+Jun-26 10:09:32.393 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:32.393 [Task submitter] INFO  nextflow.Session - [af/f52f97] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0173-5_S8-SPAdes)
+Jun-26 10:09:32.550 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 47; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_ABCPW_30_GCF_000774495_1_Australia); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a9/b36c828519650c797cbb7067725c0b]
+Jun-26 10:09:32.553 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:32.553 [Task submitter] INFO  nextflow.Session - [7c/c46e57] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0067-9_S1_L001-SPAdes)
+Jun-26 10:09:32.788 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 104; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561075_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/d2/828337fee8cbbc32fcb785514bf99e]
+Jun-26 10:09:32.792 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:32.792 [Task submitter] INFO  nextflow.Session - [a8/1d5a31] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0028_S10-SPAdes)
+Jun-26 10:09:32.799 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 73; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571005_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/22/549f11bdb3135b7eeb935f92c8c127]
+Jun-26 10:09:32.802 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:32.803 [Task submitter] INFO  nextflow.Session - [3e/8a8bab] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565125_1)
+Jun-26 10:09:32.948 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 74; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0051-3_S1_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/18/eda969a2b44947682d0a63af0c4900]
+Jun-26 10:09:32.951 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:32.952 [Task submitter] INFO  nextflow.Session - [c4/e1dc4e] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565015_1)
+Jun-26 10:09:33.990 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 69; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0175-0_S10-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a7/5da207e173fbc58d53525fea7e1178]
+Jun-26 10:09:33.994 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:33.994 [Task submitter] INFO  nextflow.Session - [28/e4831c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0045-5_S5_L001-SPAdes)
+Jun-26 10:09:34.277 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 103; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0046-3_S6_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/ec/58ba64bedeb522cc91cbb7d3cc1f61]
+Jun-26 10:09:34.281 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:34.281 [Task submitter] INFO  nextflow.Session - [27/0a4864] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0083-6_S6_L001-SPAdes)
+Jun-26 10:09:34.561 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963570105_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/53/0b744c3f570d1086c65101f2ebed30]
+Jun-26 10:09:34.565 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:34.565 [Task submitter] INFO  nextflow.Session - [45/92c2bc] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0193-3_S8-SPAdes)
+Jun-26 10:09:34.625 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 112; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_402a_GCF_001980775_1_Thailand); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/c9/7f94298737a16fb1b5f0ec212cc697]
+Jun-26 10:09:34.628 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:34.628 [Task submitter] INFO  nextflow.Session - [35/87da3c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_BDD_GCF_000756905_1_Australia_Townsville_Queensland)
+Jun-26 10:09:35.011 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 101; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963568785_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/d4/9f971fcb3f4f24d45391a24b8eaa8b]
+Jun-26 10:09:35.014 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:35.014 [Task submitter] INFO  nextflow.Session - [89/30f7e1] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0037-2_S7_L001-SPAdes)
+Jun-26 10:09:35.169 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 111; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0073-7_S7_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/0c/56bf65f1c993f0d903ab7a6ac63a5d]
+Jun-26 10:09:35.175 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:35.175 [Task submitter] INFO  nextflow.Session - [e2/e72ec9] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0001-8_S1_L001-SPAdes)
+Jun-26 10:09:35.478 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 84; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008804); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a1/da7bbd2771ec3c4eb00606f1d211d8]
+Jun-26 10:09:35.481 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:35.481 [Task submitter] INFO  nextflow.Session - [13/fec694] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008824)
+Jun-26 10:09:35.519 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 86; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0010_S4_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/fe/1e506036edb36a630a870eb4b9dd7a]
+Jun-26 10:09:35.523 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:35.523 [Task submitter] INFO  nextflow.Session - [20/a365b6] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_43S_S63_GCF_014713085_1_Laos)
+Jun-26 10:09:35.754 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012303); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/e4/75fc4043a3934c1c863cfb9689e724]
+Jun-26 10:09:35.757 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:35.757 [Task submitter] INFO  nextflow.Session - [f8/00a6f3] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963573025_1)
+Jun-26 10:09:36.056 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 108; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0105-7_S5_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/2f/3584433d000247367220ded08fcb92]
+Jun-26 10:09:36.060 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:36.060 [Task submitter] INFO  nextflow.Session - [47/341bba] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013363)
+Jun-26 10:09:36.187 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 117; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565345_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/18/e248742c7684fecf01ce2b2559946f]
+Jun-26 10:09:36.190 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:36.190 [Task submitter] INFO  nextflow.Session - [f5/b009e7] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008828)
+Jun-26 10:09:36.201 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963564305_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/43/04372e0b9493dbb65315cda892be55]
+Jun-26 10:09:36.204 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:36.204 [Task submitter] INFO  nextflow.Session - [82/6900e7] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0009_S3_L001-SPAdes)
+Jun-26 10:09:36.241 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 96; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0177-6_S2-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/1e/ce646eedefd65bc904857c1c0e3d9f]
+Jun-26 10:09:36.245 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:36.245 [Task submitter] INFO  nextflow.Session - [b2/5dc231] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008784)
+Jun-26 10:09:36.468 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 124; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0050-5_S10_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/eb/91ea501fc329a85cfb258967212ffa]
+Jun-26 10:09:36.471 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:36.471 [Task submitter] INFO  nextflow.Session - [7a/a47a23] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0001_S6_L001-SPAdes)
+Jun-26 10:09:36.499 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 50; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566475_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/5b/28bdc5a0defeaea02ef19a2746464f]
+Jun-26 10:09:36.502 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:36.502 [Task submitter] INFO  nextflow.Session - [9d/2c8fc0] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0013-3_S4_L001-SPAdes)
+Jun-26 10:09:36.662 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 59; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012377); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/5f/f5cf798baebdea67d3e87b52a12763]
+Jun-26 10:09:36.665 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:36.665 [Task submitter] INFO  nextflow.Session - [ba/d5a30a] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0012_S6_L001-SPAdes)
+Jun-26 10:09:36.857 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 52; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0021_S7-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/df/98d20582949bf621949957b41d8889]
+Jun-26 10:09:36.860 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:36.860 [Task submitter] INFO  nextflow.Session - [63/82cb18] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0019_S5-SPAdes)
+Jun-26 10:09:38.625 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0069-5_S3_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/c0/e459185b4390cc60caaa26af88eac3]
+Jun-26 10:09:38.629 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:38.629 [Task submitter] INFO  nextflow.Session - [d4/d863d5] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_4811_GCF_003268075_1_Viet_Nam)
+Jun-26 10:09:38.958 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 61; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0195-8_S10-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/b3/d2958bd51985ef29becf0e1903d733]
+Jun-26 10:09:38.996 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:38.996 [Task submitter] INFO  nextflow.Session - [62/36c238] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0192-5_S7-SPAdes)
+Jun-26 10:09:39.029 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0091-9_S3_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/d4/6c5b0e25c3a4618885605fdb4d1f64]
+Jun-26 10:09:39.035 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:39.035 [Task submitter] INFO  nextflow.Session - [96/79bb3a] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963560735_1)
+Jun-26 10:09:39.288 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 113; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565565_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/44/14aef3b5ef045258bbbe835a200f41]
+Jun-26 10:09:39.292 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:39.292 [Task submitter] INFO  nextflow.Session - [14/b94405] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571845_1)
+Jun-26 10:09:39.517 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 55; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0015-8_S6_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/4a/d761d81ed9530508caa2d4990da659]
+Jun-26 10:09:39.520 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:39.520 [Task submitter] INFO  nextflow.Session - [db/976e2c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0123-0_S3_L001-SPAdes)
+Jun-26 10:09:39.564 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 80; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561355_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/75/c3414dbf2c331a1f3476f6937aa113]
+Jun-26 10:09:39.567 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:39.568 [Task submitter] INFO  nextflow.Session - [31/942136] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012324)
+Jun-26 10:09:40.349 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 125; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_2002734728_GCF_002111105_1_USA_California); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/69/347b30eb71ca7642d5042c2ca0f3b4]
+Jun-26 10:09:40.353 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:40.353 [Task submitter] INFO  nextflow.Session - [9b/f8d381] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0064-6_S9_L001-SPAdes)
+Jun-26 10:09:40.620 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 77; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_619s005_GCF_001207785_2_Malaysia); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/ce/0ed8c298f69d2925c8e4b01701673a]
+Jun-26 10:09:40.623 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:40.624 [Task submitter] INFO  nextflow.Session - [39/0a151b] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0063-8_S8_L001-SPAdes)
+Jun-26 10:09:40.680 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 75; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013365); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/4f/bce590595de6e1525d3b9257241cfc]
+Jun-26 10:09:40.684 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:40.684 [Task submitter] INFO  nextflow.Session - [00/246114] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963570975_1)
+Jun-26 10:09:40.905 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0033-1_S3_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/9a/e786580af79250a8f4cd785437700e]
+Jun-26 10:09:40.908 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:40.909 [Task submitter] INFO  nextflow.Session - [d7/17b040] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0042-2_S2_L001-SPAdes)
+Jun-26 10:09:40.935 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 63; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0129-7_S9_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a7/2b563e99048b60e79cba3b3c5a98bf]
+Jun-26 10:09:40.939 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:40.939 [Task submitter] INFO  nextflow.Session - [c5/64e369] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008781)
+Jun-26 10:09:41.225 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 33; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0163-6_S2-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/dd/9c428cf3152ee8c1ea9b9f272270c1]
+Jun-26 10:09:41.228 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:41.229 [Task submitter] INFO  nextflow.Session - [52/2bfe06] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0094-3_S6_L001-SPAdes)
+Jun-26 10:09:41.426 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 49; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_7400_GCF_025848135_1_Viet_Nam); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/66/2b457882c9d432e22aaa292c7462a3]
+Jun-26 10:09:41.429 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:41.429 [Task submitter] INFO  nextflow.Session - [c5/1532ac] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0199-0_S4-SPAdes)
+Jun-26 10:09:41.469 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 127; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0013_S7_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a5/58505c68bda0fdeb90f85bc4cee533]
+Jun-26 10:09:41.472 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:41.472 [Task submitter] INFO  nextflow.Session - [d4/00513e] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_576_GCF_000182195_1_Thailand)
+Jun-26 10:09:41.667 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 118; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0127-1_S7_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/58/9433d16f2ecf05f8bb9dbd3fef38fc]
+Jun-26 10:09:41.670 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:41.670 [Task submitter] INFO  nextflow.Session - [f8/46f782] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0106-5_S6_L001-SPAdes)
+Jun-26 10:09:41.730 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008794); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/0b/5b7c7ec96dd40384e45c35309fc156]
+Jun-26 10:09:41.733 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:41.734 [Task submitter] INFO  nextflow.Session - [02/dc216d] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0201-4_S6-SPAdes)
+Jun-26 10:09:41.799 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0041-4_S1_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/e8/0520ac8a489ff026ff6ad9dcca4f16]
+Jun-26 10:09:41.802 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:41.802 [Task submitter] INFO  nextflow.Session - [bc/0fb6ba] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963572615_1)
+Jun-26 10:09:42.005 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 106; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_28P_GCF_025847415_1_Viet_Nam); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/4b/0b2bfbd1f217c8eafdd3fd0def0268]
+Jun-26 10:09:42.009 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:42.009 [Task submitter] INFO  nextflow.Session - [16/cef632] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0032-3_S2_L001-SPAdes)
+Jun-26 10:09:42.170 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0112-3_S3_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a0/d217230b0068addd25192b78342e7f]
+Jun-26 10:09:42.174 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:42.174 [Task submitter] INFO  nextflow.Session - [f9/dc5b61] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0017_S11_L001-SPAdes)
+Jun-26 10:09:42.195 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0075-2_S9_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/0e/e2b962b15e7cd9bd045071832d9588]
+Jun-26 10:09:42.198 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:42.198 [Task submitter] INFO  nextflow.Session - [8e/a0e6f1] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0147-9_S7_L001-SPAdes)
+Jun-26 10:09:42.203 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0014-1_S5_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/45/5a9f7c65d3785d65ea027f9be893fe]
+Jun-26 10:09:42.207 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:42.207 [Task submitter] INFO  nextflow.Session - [b9/0b8c56] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0115-6_S6_L001-SPAdes)
+Jun-26 10:09:42.434 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 58; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0023-2_S3_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/aa/26975d7bed57537ed2e81b6a7ca703]
+Jun-26 10:09:42.437 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:42.438 [Task submitter] INFO  nextflow.Session - [ee/037d07] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0103-2_S3_L001-SPAdes)
+Jun-26 10:09:42.622 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 60; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0077-8_S11_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a9/43d05751469ade6cebdc9b5470c664]
+Jun-26 10:09:42.625 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:42.625 [Task submitter] INFO  nextflow.Session - [d7/275834] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0133-9_S3_L001-SPAdes)
+Jun-26 10:09:43.062 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 95; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0182-6_S7-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/2a/cbe9cfd47eca51b0f40f82a8f67671]
+Jun-26 10:09:43.066 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:43.066 [Task submitter] INFO  nextflow.Session - [5e/ae59e0] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0049-7_S9_L001-SPAdes)
+Jun-26 10:09:43.214 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0093-5_S5_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/a9/6d922ddba75d0eaf05bf812d5680b7]
+Jun-26 10:09:43.214 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0200-6_S5-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/60/2a9dd2850de3ae8503e792cc1d5df4]
+Jun-26 10:09:43.217 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:43.218 [Task submitter] INFO  nextflow.Session - [fd/8efc11] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0005-9_S5_L001-SPAdes)
+Jun-26 10:09:43.222 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:43.222 [Task submitter] INFO  nextflow.Session - [70/2c9432] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012306)
+Jun-26 10:09:43.306 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 81; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_ABCPW_91_GCF_000774405_1_Australia); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/11/1009435b2d2acf018438fab0a780f9]
+Jun-26 10:09:43.309 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:43.310 [Task submitter] INFO  nextflow.Session - [53/38fda0] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0108-1_S8_L001-SPAdes)
+Jun-26 10:09:43.376 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 126; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0110-7_S10_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/8e/fa79ea377791fcba6609927b47f519]
+Jun-26 10:09:43.380 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:43.380 [Task submitter] INFO  nextflow.Session - [2a/7c7ce1] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0085-1_S8_L001-SPAdes)
+Jun-26 10:09:43.653 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 120; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_619s007_GCF_001326935_2_Malaysia); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/5e/44615f8de858dc6604ce1809e93806]
+Jun-26 10:09:43.657 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:43.657 [Task submitter] INFO  nextflow.Session - [62/a36252] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0180-0_S5-SPAdes)
+Jun-26 10:09:43.904 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 68; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566455_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/28/15f81e2ce82e3cacf4d2d89f95ef58]
+Jun-26 10:09:43.908 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:43.909 [Task submitter] INFO  nextflow.Session - [e7/21931a] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563715_1)
+Jun-26 10:09:43.924 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 121; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563305_1); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/12/14e882cfd03dcb49a92f127991da8d]
+Jun-26 10:09:43.928 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:43.928 [Task submitter] INFO  nextflow.Session - [69/eb63b8] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_4822_GCF_009826725_1_Viet_Nam)
+Jun-26 10:09:44.381 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 131; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0137-0_S7_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/0a/0eca5a4c789a141b162349e57474d0]
+Jun-26 10:09:44.385 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:44.385 [Task submitter] INFO  nextflow.Session - [39/ed552d] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0070-3_S4_L001-SPAdes)
+Jun-26 10:09:44.661 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 133; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0144-6_S4_L001-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/43/64fa4fdac4045216dc2fa364fa3504]
+Jun-26 10:09:44.665 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:44.665 [Task submitter] INFO  nextflow.Session - [60/33f4d4] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013346)
+Jun-26 10:09:44.888 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 256; name: ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0178-4_S3-SPAdes); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/ba/9ba1862c572af8e3bc5baee1e977df]
+Jun-26 10:09:44.892 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-26 10:09:44.892 [Task submitter] INFO  nextflow.Session - [97/65a065] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0023_S9-SPAdes)
+Jun-26 10:09:45.842 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
+Jun-26 10:09:45.874 [SIGINT handler] DEBUG nextflow.Session - The following nodes are still active:
+[process] ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: -
+  port 2: (cntrl) -     ; channel: $
+
+[process] ASSEMBLY_SNPS:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] ASSEMBLY_SNPS:CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] ASSEMBLY_SNPS:CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: -
+  port 2: (cntrl) -     ; channel: $
+
+[process] ASSEMBLY_SNPS:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: -
+  port 2: (cntrl) -     ; channel: $
+
+[process] ASSEMBLY_SNPS:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Jun-26 10:09:45.876 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jun-26 10:09:45.876 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jun-26 10:09:45.877 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jun-26 10:09:45.882 [main] INFO  nextflow.Nextflow - -[0;35m[bacterial-genomics/wf-assembly-snps][0;31m Pipeline completed with errors[0m-
+Jun-26 10:09:45.886 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (83)
+Jun-26 10:09:45.965 [Actor Thread 79] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 131; slices: 1; internal sort time: 0.025 s; external sort time: 0.06 s; total time: 0.085 s
+Jun-26 10:09:45.966 [Actor Thread 63] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 131; slices: 1; internal sort time: 0.077 s; external sort time: 0.009 s; total time: 0.086 s
+Jun-26 10:09:45.981 [Actor Thread 63] DEBUG nextflow.file.FileCollector - Saved collect-files list to: /home/cdcadmin/wf-assembly-snps/work/collect-file/2f38815c752a335a989a67f50ce1310e
+Jun-26 10:09:45.981 [Actor Thread 79] DEBUG nextflow.file.FileCollector - Saved collect-files list to: /home/cdcadmin/wf-assembly-snps/work/collect-file/cc615c12f58b987f03883800a7d162fe
+Jun-26 10:09:45.988 [Actor Thread 79] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-17455291430328122835
+Jun-26 10:09:45.988 [Actor Thread 63] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-18300627655734942992
+Jun-26 10:09:46.139 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=131; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=250; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=83; succeedDuration=8.7s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=83; peakCpus=83; peakMemory=498 GB; ]
+Jun-26 10:09:46.139 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Jun-26 10:09:46.141 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Jun-26 10:09:46.747 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Jun-26 10:09:46.884 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jun-26 10:09:46.893 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
