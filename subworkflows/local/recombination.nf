@@ -13,6 +13,7 @@
 //
 include { RECOMBINATION_GUBBINS       } from "../../modules/local/recombination_gubbins/main"
 include { RECOMBINATION_CLONALFRAMEML } from "../../modules/local/recombination_clonalframeml/main"
+include { RECOMBINATION_LIGHTWEIGHT   } from "../../modules/local/recombination_lightweight/main"
 
 //
 // SUBWORKFLOW: Consisting of a mix of local and nf-core/modules
@@ -45,20 +46,36 @@ workflow RECOMBINATION {
     ch_versions      = Channel.empty()
     ch_recombination = Channel.empty()
 
-    // Perform recombination
+    // Perform recombination - check method and dataset size
     if ( toLower(params.recombination) == "gubbins" ) {
-        // PROCESS: Perform recombination using Gubbins
-        RECOMBINATION_GUBBINS (
-            ch_core_alignment_fasta,
-            ch_alignment_files
-        )
-        ch_versions      = ch_versions.mix(RECOMBINATION_GUBBINS.out.versions)
-        ch_recombination = RECOMBINATION_GUBBINS.out.positions_and_tree
-                                .map{
-                                    meta, file ->
-                                        meta['recombination'] = "Gubbins"
-                                        [ meta, file ]
-                                }
+        // Check if we should use lightweight method for very large datasets
+        if ( params.recombination_method == "lightweight" ) {
+            // PROCESS: Use lightweight recombination for ultra-large datasets
+            RECOMBINATION_LIGHTWEIGHT (
+                ch_core_alignment_fasta,
+                ch_alignment_files
+            )
+            ch_versions      = ch_versions.mix(RECOMBINATION_LIGHTWEIGHT.out.versions)
+            ch_recombination = RECOMBINATION_LIGHTWEIGHT.out.positions_and_tree
+                                    .map{
+                                        meta, file ->
+                                            meta['recombination'] = "Lightweight"
+                                            [ meta, file ]
+                                    }
+        } else {
+            // PROCESS: Perform recombination using Gubbins
+            RECOMBINATION_GUBBINS (
+                ch_core_alignment_fasta,
+                ch_alignment_files
+            )
+            ch_versions      = ch_versions.mix(RECOMBINATION_GUBBINS.out.versions)
+            ch_recombination = RECOMBINATION_GUBBINS.out.positions_and_tree
+                                    .map{
+                                        meta, file ->
+                                            meta['recombination'] = "Gubbins"
+                                            [ meta, file ]
+                                    }
+        }
 
     } else if ( toLower(params.recombination) == "clonalframeml" ) {
         // PROCESS: Perform recombination using ClonalFrameML

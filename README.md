@@ -77,9 +77,9 @@ nextflow run main.nf \
   --max_memory 600.GB
 ```
 
-### DGX A100 systems
+### DGX A100 systems (512GB RAM, 64 CPUs)
 
-For NVIDIA DGX A100 systems with SLURM:
+For NVIDIA DGX A100 systems:
 
 ```bash
 nextflow run main.nf \
@@ -89,7 +89,19 @@ nextflow run main.nf \
   --snp_package parsnp
 ```
 
-**Note**: Large datasets require significant computational resources. See [Large Dataset Guide](docs/large-datasets.md) for detailed requirements and troubleshooting.
+### Google Cloud VM Large instances (1,536GB RAM, 192 vCPUs)
+
+For Google Cloud ultra-high-memory instances:
+
+```bash
+nextflow run main.nf \
+  -profile google_vm_large \
+  --input new-fasta-dir \
+  --outdir my-results \
+  --snp_package parsnp
+```
+
+**Note**: Large datasets require significant computational resources. See [Memory Optimization Guide](docs/memory-optimization.md) for detailed requirements and troubleshooting.
 
 ## Introduction
 
@@ -185,10 +197,34 @@ Please see the [output documentation](docs/output.md) for a table of all outputs
 A: View file contents in the `<outdir>/pipeline_info` directory.
 
 **Q: Bus error (exit status 135) in Gubbins process?**
-A: This indicates insufficient memory. Use the `large_dataset` profile or increase `--max_memory`:
+A: This indicates insufficient memory for large datasets. Solutions by system type:
+
+For DGX Station A100 (512GB RAM):
+```bash
+nextflow run main.nf -profile dgx_a100
+```
+
+For Google Cloud large instances (1,536GB RAM):
+```bash
+nextflow run main.nf -profile google_vm_large
+```
+
+For ultra-large datasets (500+ genomes) or persistent bus errors:
+```bash
+nextflow run main.nf -profile ultra_large_dataset --recombination_method lightweight
+```
+
+For other high-memory systems:
 ```bash
 nextflow run main.nf -profile large_dataset --max_memory 600.GB
 ```
+
+Check system resources:
+```bash
+./bin/check_system_resources.sh
+```
+
+See [Memory Optimization Guide](docs/memory-optimization.md) for detailed troubleshooting.
 
 **Q: Out of memory errors with large datasets?**
 A: Check system resources and see the [Large Dataset Guide](docs/large-datasets.md). You can also run:

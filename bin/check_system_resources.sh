@@ -57,10 +57,23 @@ if [ "$TOTAL_MEM_GB" -lt 32 ]; then
     echo "Consider running on a system with more memory or using cloud computing."
 fi
 
-echo "For large datasets (200+ genomes), recommended minimum:"
-echo "- Memory: 600GB+"
-echo "- CPUs: 32+"
-echo "- Use: -profile large_dataset"
+echo "=== PROFILE RECOMMENDATIONS BY SYSTEM ==="
+if [ "$TOTAL_MEM_GB" -ge 1400 ]; then
+    echo "Google Cloud Ultra-Large VM detected: Use -profile google_vm_large"
+elif [ "$TOTAL_MEM_GB" -ge 480 ] && [ "$TOTAL_MEM_GB" -le 520 ]; then
+    echo "DGX Station A100 detected: Use -profile dgx_a100"
+elif [ "$TOTAL_MEM_GB" -ge 128 ]; then
+    echo "High-memory workstation: Use -profile large_dataset"
+else
+    echo "Standard system: Use -profile docker (limited to small datasets)"
+fi
+
+echo ""
+echo "=== PROFILE RECOMMENDATIONS BY GENOME COUNT ==="
+echo "< 50 genomes:     -profile docker"
+echo "50-200 genomes:   -profile large_dataset"
+echo "200-500 genomes:  -profile dgx_a100 (DGX Station) or google_vm_large (cloud)"
+echo "> 500 genomes:    -profile google_vm_large"
 echo
 
 echo "=== End Resource Check ==="

@@ -21,23 +21,43 @@ process RECOMBINATION_GUBBINS {
 
     # Set memory limits and optimizations for large datasets
     export OMP_NUM_THREADS=!{task.cpus}
-    export MALLOC_ARENA_MAX=4
+    export MALLOC_ARENA_MAX=2
     
-    # Set memory-related environment variables for better memory management
-    export MALLOC_MMAP_THRESHOLD_=131072
-    export MALLOC_TRIM_THRESHOLD_=131072
-    export MALLOC_TOP_PAD_=131072
-    export MALLOC_MMAP_MAX_=65536
+    # Enhanced memory management for very large datasets (300+ genomes)
+    export MALLOC_MMAP_THRESHOLD_=65536
+    export MALLOC_TRIM_THRESHOLD_=65536
+    export MALLOC_TOP_PAD_=65536
+    export MALLOC_MMAP_MAX_=32768
     
-    # Don't set ulimit -v as it can cause bus errors with large datasets
-    # ulimit -v $((!{task.memory.toMega()} * 1024))
-
-    run_gubbins.py \
-      --starting-tree "!{meta.snp_package}.tree" \
-      --prefix "!{meta.snp_package}-Gubbins" \
-      --threads !{task.cpus} \
-      --verbose \
-      "!{core_alignment_fasta}"
+    # Set conservative memory limits to prevent bus errors
+    # Use 90% of available memory to leave buffer for system
+    MEMORY_LIMIT_KB=$(((!{task.memory.toMega()} * 1024 * 90) / 100))
+    ulimit -v $MEMORY_LIMIT_KB
+    
+    # For very large datasets (300+ genomes), use more conservative Gubbins options
+    GENOME_COUNT=$(grep -c "^>" "!{core_alignment_fasta}" || echo "0")
+    msg "INFO: Processing $GENOME_COUNT genomes with Gubbins"
+    
+    if [[ $GENOME_COUNT -gt 300 ]]; then
+        msg "INFO: Large dataset detected ($GENOME_COUNT genomes). Using conservative Gubbins settings."
+        run_gubbins.py \
+          --starting-tree "!{meta.snp_package}.tree" \
+          --prefix "!{meta.snp_package}-Gubbins" \
+          --threads !{task.cpus} \
+          --iterations 3 \
+          --min-snps-for-recombination 10 \
+          --filter-percentage 50 \
+          --verbose \
+          "!{core_alignment_fasta}"
+    else
+        msg "INFO: Standard dataset size ($GENOME_COUNT genomes). Using default Gubbins settings."
+        run_gubbins.py \
+          --starting-tree "!{meta.snp_package}.tree" \
+          --prefix "!{meta.snp_package}-Gubbins" \
+          --threads !{task.cpus} \
+          --verbose \
+          "!{core_alignment_fasta}"
+    fi
 
     # Check if output files exist before renaming
     if [[ -f "!{meta.snp_package}-Gubbins.recombination_predictions.gff" ]]; then
