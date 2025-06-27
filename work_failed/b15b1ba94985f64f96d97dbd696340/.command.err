@@ -1,0 +1,1 @@
+/home/cdcadmin/wf-assembly-snps/work/35/b15b1ba94985f64f96d97dbd696340/.command.sh: line 19:    33 Bus error               run_gubbins.py --starting-tree "Parsnp.tree" --prefix "Parsnp-Gubbins" --threads 64 --verbose "Parsnp.Core_Alignment.fasta"

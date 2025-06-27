@@ -4,13 +4,19 @@ source bash_functions.sh
 msg "INFO: Performing recombination using Gubbins."
 
 # Set memory limits and optimizations for large datasets
-export OMP_NUM_THREADS=24
+export OMP_NUM_THREADS=64
 export MALLOC_ARENA_MAX=4
 
-# Use ulimit to prevent memory issues
-ulimit -v $((491520 * 1024))
+# Set memory-related environment variables for better memory management
+export MALLOC_MMAP_THRESHOLD_=131072
+export MALLOC_TRIM_THRESHOLD_=131072
+export MALLOC_TOP_PAD_=131072
+export MALLOC_MMAP_MAX_=65536
 
-run_gubbins.py       --starting-tree "Parsnp.tree"       --prefix "Parsnp-Gubbins"       --threads 120       --verbose       "Parsnp.Core_Alignment.fasta"
+# Don't set ulimit -v as it can cause bus errors with large datasets
+# ulimit -v $((491520 * 1024))
+
+run_gubbins.py       --starting-tree "Parsnp.tree"       --prefix "Parsnp-Gubbins"       --threads 64       --verbose       "Parsnp.Core_Alignment.fasta"
 
 # Check if output files exist before renaming
 if [[ -f "Parsnp-Gubbins.recombination_predictions.gff" ]]; then

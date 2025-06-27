@@ -1,45 +1,45 @@
-Jun-27 13:54:21.050 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile large_dataset --input /home/cdcadmin/Downloads/bp_subset_100 --outdir /home/cdcadmin/Downloads/bp_subset_100/results_resumed --parsnp_outputs ./parsnp_outputs --snp_package parsnp --max_memory 480.GB
-Jun-27 13:54:21.146 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.04.3
-Jun-27 13:54:21.163 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/cdcadmin/.nextflow/plugins; core-plugins: nf-amazon@2.5.2,nf-azure@1.6.0,nf-cloudcache@0.4.1,nf-codecommit@0.2.0,nf-console@1.1.3,nf-ga4gh@1.3.0,nf-google@1.13.2-patch1,nf-tower@1.9.1,nf-wave@1.4.2
-Jun-27 13:54:21.172 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-Jun-27 13:54:21.183 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-Jun-27 13:54:21.186 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.10.0 in 'deployment' mode
-Jun-27 13:54:21.198 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-Jun-27 13:54:21.218 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/cdcadmin/wf-assembly-snps/nextflow.config
-Jun-27 13:54:21.220 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/cdcadmin/wf-assembly-snps/nextflow.config
-Jun-27 13:54:21.243 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/cdcadmin/.nextflow/secrets/store.json
-Jun-27 13:54:21.246 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@267bbe1a] - activable => nextflow.secret.LocalSecretsProvider@267bbe1a
-Jun-27 13:54:21.257 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `large_dataset`
-Jun-27 13:54:22.568 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [aspen_hpc, slurm, debug, shifter, test, conda, singularity, rosalind_hpc, large_dataset, dgx_a100, test_full, docker]
-Jun-27 13:54:22.610 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
-Jun-27 13:54:22.625 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [serene_franklin] DSL2 - revision: 5117d6d157
-Jun-27 13:54:22.626 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-Jun-27 13:54:22.626 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
-Jun-27 13:54:22.677 [main] DEBUG nextflow.Session - Session UUID: dbbe83d8-9a14-4499-afbb-b1a8eb892627
-Jun-27 13:54:22.678 [main] DEBUG nextflow.Session - Run name: serene_franklin
-Jun-27 13:54:22.678 [main] DEBUG nextflow.Session - Executor pool size: 128
-Jun-27 13:54:22.685 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
-Jun-27 13:54:22.690 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-Jun-27 13:54:22.709 [main] DEBUG nextflow.cli.CmdRun - 
+Jun-27 13:58:44.980 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile large_dataset --input /home/cdcadmin/Downloads/bp_subset_100 --outdir /home/cdcadmin/Downloads/bp_subset_100/results_resumed --parsnp_outputs ./parsnp_outputs --snp_package parsnp --recombination gubbins --max_memory 480.GB -resume
+Jun-27 13:58:45.081 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.04.3
+Jun-27 13:58:45.099 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/cdcadmin/.nextflow/plugins; core-plugins: nf-amazon@2.5.2,nf-azure@1.6.0,nf-cloudcache@0.4.1,nf-codecommit@0.2.0,nf-console@1.1.3,nf-ga4gh@1.3.0,nf-google@1.13.2-patch1,nf-tower@1.9.1,nf-wave@1.4.2
+Jun-27 13:58:45.108 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jun-27 13:58:45.109 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jun-27 13:58:45.111 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.10.0 in 'deployment' mode
+Jun-27 13:58:45.124 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jun-27 13:58:45.146 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/cdcadmin/wf-assembly-snps/nextflow.config
+Jun-27 13:58:45.149 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/cdcadmin/wf-assembly-snps/nextflow.config
+Jun-27 13:58:45.172 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/cdcadmin/.nextflow/secrets/store.json
+Jun-27 13:58:45.175 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@267bbe1a] - activable => nextflow.secret.LocalSecretsProvider@267bbe1a
+Jun-27 13:58:45.188 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `large_dataset`
+Jun-27 13:58:46.555 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [aspen_hpc, slurm, debug, shifter, test, conda, singularity, rosalind_hpc, large_dataset, dgx_a100, test_full, docker]
+Jun-27 13:58:46.596 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Jun-27 13:58:46.611 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [gloomy_lorenz] DSL2 - revision: 5117d6d157
+Jun-27 13:58:46.612 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jun-27 13:58:46.612 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jun-27 13:58:46.660 [main] DEBUG nextflow.Session - Session UUID: dbbe83d8-9a14-4499-afbb-b1a8eb892627
+Jun-27 13:58:46.660 [main] DEBUG nextflow.Session - Run name: gloomy_lorenz
+Jun-27 13:58:46.660 [main] DEBUG nextflow.Session - Executor pool size: 128
+Jun-27 13:58:46.667 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jun-27 13:58:46.672 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jun-27 13:58:46.696 [main] DEBUG nextflow.cli.CmdRun - 
   Version: 24.04.3 build 5916
   Created: 09-07-2024 19:35 UTC (10-07-2024 02:35 ICST)
   System: Linux 5.4.0-169-generic
   Runtime: Groovy 4.0.21 on OpenJDK 64-Bit Server VM 17.0.10+7
   Encoding: UTF-8 (UTF-8)
-  Process: 1259076@dgx-a100 [192.168.1.11]
-  CPUs: 128 - Mem: 503.7 GB (342.6 GB) - Swap: 0 (0)
-Jun-27 13:54:22.734 [main] DEBUG nextflow.Session - Work-dir: /home/cdcadmin/wf-assembly-snps/work [ext2/ext3]
-Jun-27 13:54:22.774 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-Jun-27 13:54:22.784 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
-Jun-27 13:54:22.848 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-Jun-27 13:54:22.856 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 129; maxThreads: 1000
-Jun-27 13:54:22.923 [main] DEBUG nextflow.Session - Session start
-Jun-27 13:54:22.925 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/cdcadmin/Downloads/bp_subset_100/results_resumed/pipeline_info/execution_trace_2025-06-27_13-54-22.txt
-Jun-27 13:54:22.931 [main] DEBUG nextflow.Session - Using default localLib path: /home/cdcadmin/wf-assembly-snps/lib
-Jun-27 13:54:22.941 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib
-Jun-27 13:54:22.941 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib/nfcore_external_java_deps.jar
-Jun-27 13:54:23.719 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-Jun-27 13:54:23.766 [main] INFO  nextflow.Nextflow - 
+  Process: 1264811@dgx-a100 [192.168.1.11]
+  CPUs: 128 - Mem: 503.7 GB (331.5 GB) - Swap: 0 (0)
+Jun-27 13:58:46.724 [main] DEBUG nextflow.Session - Work-dir: /home/cdcadmin/wf-assembly-snps/work [ext2/ext3]
+Jun-27 13:58:46.769 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jun-27 13:58:46.778 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jun-27 13:58:46.843 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jun-27 13:58:46.850 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 129; maxThreads: 1000
+Jun-27 13:58:46.909 [main] DEBUG nextflow.Session - Session start
+Jun-27 13:58:46.912 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/cdcadmin/Downloads/bp_subset_100/results_resumed/pipeline_info/execution_trace_2025-06-27_13-58-46.txt
+Jun-27 13:58:46.917 [main] DEBUG nextflow.Session - Using default localLib path: /home/cdcadmin/wf-assembly-snps/lib
+Jun-27 13:58:46.921 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib
+Jun-27 13:58:46.921 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib/nfcore_external_java_deps.jar
+Jun-27 13:58:47.699 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-27 13:58:47.746 [main] INFO  nextflow.Nextflow - 
 
 -[2m----------------------------------------------------[0m-
 [0;34m     __         __ __ __     __            __     __  __    [0m
@@ -52,7 +52,7 @@ Jun-27 13:54:23.766 [main] INFO  nextflow.Nextflow -
 [0;35m     bacterial-genomics/wf-assembly-snps v1.0.2[0m
 -[2m----------------------------------------------------[0m-
 [1mCore Nextflow options[0m
-  [0;34mrunName             : [0;32mserene_franklin[0m
+  [0;34mrunName             : [0;32mgloomy_lorenz[0m
   [0;34mcontainerEngine     : [0;32mdocker[0m
   [0;34mlaunchDir           : [0;32m/home/cdcadmin/wf-assembly-snps[0m
   [0;34mworkDir             : [0;32m/home/cdcadmin/wf-assembly-snps/work[0m
@@ -67,7 +67,7 @@ Jun-27 13:54:23.766 [main] INFO  nextflow.Nextflow -
   [0;34moutdir              : [0;32m/home/cdcadmin/Downloads/bp_subset_100/results_resumed[0m
 
 [1mAnalysis options[0m
-  [0;34mrecombination       : [0;32mnone[0m
+  [0;34mrecombination       : [0;32mgubbins[0m
 
 [1mProfile options[0m
   [0;34mprofile_cache_dir   : [0;32m/home/cdcadmin/wf-assembly-snps/assets/.cache[0m
@@ -92,96 +92,279 @@ If you use bacterial-genomics/wf-assembly-snps for your analysis please cite:
 * Software dependencies
   https://github.com/bacterial-genomics/wf-assembly-snps/blob/main/CITATIONS.md
 -[2m----------------------------------------------------[0m-
-Jun-27 13:54:24.977 [main] INFO  nextflow.Nextflow - === WORKFLOW PARAMETERS ===
-Jun-27 13:54:24.978 [main] INFO  nextflow.Nextflow - Input: /home/cdcadmin/Downloads/bp_subset_100
-Jun-27 13:54:24.978 [main] INFO  nextflow.Nextflow - Output directory: /home/cdcadmin/Downloads/bp_subset_100/results_resumed
-Jun-27 13:54:24.979 [main] INFO  nextflow.Nextflow - ParSNP outputs: ./parsnp_outputs
-Jun-27 13:54:24.979 [main] INFO  nextflow.Nextflow - SNP package: parsnp
-Jun-27 13:54:24.979 [main] INFO  nextflow.Nextflow - Recombination: none
-Jun-27 13:54:24.980 [main] INFO  nextflow.Nextflow - ==========================
-Jun-27 13:54:24.981 [main] INFO  nextflow.Nextflow - Skipping input preprocessing - using existing ParSNP outputs
-Jun-27 13:54:24.982 [main] INFO  nextflow.Nextflow - Using existing ParSNP outputs from: ./parsnp_outputs
-Jun-27 13:54:25.074 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_low` matches labels `process_low` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
-Jun-27 13:54:25.077 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
-Jun-27 13:54:25.088 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Jun-27 13:54:25.088 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Jun-27 13:54:25.093 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
-Jun-27 13:54:25.098 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=128; memory=503.7 GB; capacity=128; pollInterval=100ms; dumpInterval=5m
-Jun-27 13:54:25.100 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
-Jun-27 13:54:25.169 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
-Jun-27 13:54:25.169 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MASK_RECOMBINANT_POSITIONS_BIOPYTHON` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
-Jun-27 13:54:25.171 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Jun-27 13:54:25.171 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Jun-27 13:54:25.180 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
-Jun-27 13:54:25.181 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
-Jun-27 13:54:25.183 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Jun-27 13:54:25.183 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Jun-27 13:54:25.194 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_high` matches labels `process_high` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:BUILD_PHYLOGENETIC_TREE_PARSNP
-Jun-27 13:54:25.195 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:BUILD_PHYLOGENETIC_TREE_PARSNP` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:BUILD_PHYLOGENETIC_TREE_PARSNP
-Jun-27 13:54:25.197 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Jun-27 13:54:25.197 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Jun-27 13:54:25.236 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: REF_INFILE_HANDLING_UNIX, INFILE_HANDLING_UNIX, CONVERT_TSV_TO_EXCEL_PYTHON, CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS, ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS, RECOMBINATION_GUBBINS, CONVERT_SAMPLESHEET_PYTHON, CREATE_EXCEL_RUN_SUMMARY_PYTHON, CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS, ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS, CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS, CONVERT_GINGR_TO_FASTA_HARVESTTOOLS, MASK_RECOMBINANT_POSITIONS_BIOPYTHON, CORE_GENOME_ALIGNMENT_PARSNP, ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:MASK_RECOMBINANT_POSITIONS_BIOPYTHON, ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:BUILD_PHYLOGENETIC_TREE_PARSNP, BUILD_PHYLOGENETIC_TREE_PARSNP, RECOMBINATION_CLONALFRAMEML
-Jun-27 13:54:25.257 [main] WARN  nextflow.Session - There's no process matching config selector: ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS
-Jun-27 13:54:25.258 [main] WARN  nextflow.Session - There's no process matching config selector: ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP
-Jun-27 13:54:25.259 [main] WARN  nextflow.Session - There's no process matching config selector: ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP
-Jun-27 13:54:25.261 [main] DEBUG nextflow.Session - Igniting dataflow network (15)
-Jun-27 13:54:25.266 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: ./parsnp_outputs/; pattern: *; options: [:]
-Jun-27 13:54:25.267 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
-Jun-27 13:54:25.268 [PathVisitor-2] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: ./parsnp_outputs/; pattern: *.SNP_Distances_Matrix.tsv; options: [:]
-Jun-27 13:54:25.268 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
-Jun-27 13:54:25.268 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
-Jun-27 13:54:25.268 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:BUILD_PHYLOGENETIC_TREE_PARSNP
-Jun-27 13:54:25.269 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+Jun-27 13:58:48.927 [main] INFO  nextflow.Nextflow - === WORKFLOW PARAMETERS ===
+Jun-27 13:58:48.928 [main] INFO  nextflow.Nextflow - Input: /home/cdcadmin/Downloads/bp_subset_100
+Jun-27 13:58:48.928 [main] INFO  nextflow.Nextflow - Output directory: /home/cdcadmin/Downloads/bp_subset_100/results_resumed
+Jun-27 13:58:48.928 [main] INFO  nextflow.Nextflow - ParSNP outputs: ./parsnp_outputs
+Jun-27 13:58:48.928 [main] INFO  nextflow.Nextflow - SNP package: parsnp
+Jun-27 13:58:48.929 [main] INFO  nextflow.Nextflow - Recombination: gubbins
+Jun-27 13:58:48.929 [main] INFO  nextflow.Nextflow - ==========================
+Jun-27 13:58:48.931 [main] INFO  nextflow.Nextflow - Skipping input preprocessing - using existing ParSNP outputs
+Jun-27 13:58:48.931 [main] INFO  nextflow.Nextflow - Using existing ParSNP outputs from: ./parsnp_outputs
+Jun-27 13:58:49.023 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_low` matches labels `process_low` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
+Jun-27 13:58:49.025 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
+Jun-27 13:58:49.037 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-27 13:58:49.037 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-27 13:58:49.042 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jun-27 13:58:49.047 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=128; memory=503.7 GB; capacity=128; pollInterval=100ms; dumpInterval=5m
+Jun-27 13:58:49.049 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jun-27 13:58:49.114 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_high_memory` matches labels `process_high_memory` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS
+Jun-27 13:58:49.115 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:RECOMBINATION_GUBBINS` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS
+Jun-27 13:58:49.118 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-27 13:58:49.118 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-27 13:58:49.132 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
+Jun-27 13:58:49.133 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MASK_RECOMBINANT_POSITIONS_BIOPYTHON` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
+Jun-27 13:58:49.135 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-27 13:58:49.135 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-27 13:58:49.143 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
+Jun-27 13:58:49.144 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
+Jun-27 13:58:49.145 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-27 13:58:49.146 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-27 13:58:49.157 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_high` matches labels `process_high` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:BUILD_PHYLOGENETIC_TREE_PARSNP
+Jun-27 13:58:49.158 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:BUILD_PHYLOGENETIC_TREE_PARSNP` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:BUILD_PHYLOGENETIC_TREE_PARSNP
+Jun-27 13:58:49.161 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-27 13:58:49.161 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-27 13:58:49.201 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS, REF_INFILE_HANDLING_UNIX, INFILE_HANDLING_UNIX, CONVERT_TSV_TO_EXCEL_PYTHON, CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS, ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS, CONVERT_SAMPLESHEET_PYTHON, RECOMBINATION_GUBBINS, CREATE_EXCEL_RUN_SUMMARY_PYTHON, CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS, ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS, CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS, CONVERT_GINGR_TO_FASTA_HARVESTTOOLS, MASK_RECOMBINANT_POSITIONS_BIOPYTHON, CORE_GENOME_ALIGNMENT_PARSNP, ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:MASK_RECOMBINANT_POSITIONS_BIOPYTHON, ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:BUILD_PHYLOGENETIC_TREE_PARSNP, BUILD_PHYLOGENETIC_TREE_PARSNP, RECOMBINATION_CLONALFRAMEML
+Jun-27 13:58:49.222 [main] WARN  nextflow.Session - There's no process matching config selector: ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS
+Jun-27 13:58:49.223 [main] WARN  nextflow.Session - There's no process matching config selector: ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP
+Jun-27 13:58:49.223 [main] WARN  nextflow.Session - There's no process matching config selector: ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP
+Jun-27 13:58:49.225 [main] DEBUG nextflow.Session - Igniting dataflow network (15)
+Jun-27 13:58:49.230 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: ./parsnp_outputs/; pattern: *; options: [:]
+Jun-27 13:58:49.230 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
+Jun-27 13:58:49.231 [PathVisitor-2] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: ./parsnp_outputs/; pattern: *.SNP_Distances_Matrix.tsv; options: [:]
+Jun-27 13:58:49.231 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS
+Jun-27 13:58:49.231 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
+Jun-27 13:58:49.231 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
+Jun-27 13:58:49.232 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:BUILD_PHYLOGENETIC_TREE_PARSNP
+Jun-27 13:58:49.233 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
   Script_daab3931d6dbebc6: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/convert_tsv_to_excel_python/main.nf
   Script_f7914ed81aa8da08: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/../../modules/local/recombination_gubbins/main.nf
   Script_dcf838433c2ae4c2: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/convert_gingr_to_fasta_harvesttools/main.nf
-  Script_bdfe511ac4c90ab8: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/recombination.nf
   Script_92a8fd2e65506f13: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/create_excel_run_summary_python/main.nf
+  Script_bdfe511ac4c90ab8: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/recombination.nf
   Script_be748a6dbf6992d5: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/core_genome_alignment_parsnp/main.nf
   Script_b9ab49f20dd212c4: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/create_snp_distance_matrix_snp_dists/main.nf
   Script_d07a09c54728bf6d: /home/cdcadmin/wf-assembly-snps/main.nf
   Script_53b40eb3093c3510: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/input_check.nf
-  Script_30224b4410519b3a: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/mask_recombinant_positions_biopython/main.nf
   Script_05e55c2bb47079b7: /home/cdcadmin/wf-assembly-snps/./workflows/assembly_snps.nf
-  Script_6ef5bdac66e9e392: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/build_phylogenetic_tree_parsnp/main.nf
+  Script_30224b4410519b3a: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/mask_recombinant_positions_biopython/main.nf
   Script_5fe74d10bc089bcc: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/calculate_pairwise_distances_snp_dists/main.nf
-  Script_e98f7bebdf7d3a01: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/create_masked_snp_distance_matrix_snp_dists/main.nf
+  Script_6ef5bdac66e9e392: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/build_phylogenetic_tree_parsnp/main.nf
   Script_40fb9d8af3f8dec5: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/../../modules/local/recombination_clonalframeml/main.nf
-  Script_b712480f57627fb6: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/infile_handling_unix/main.nf
+  Script_e98f7bebdf7d3a01: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/create_masked_snp_distance_matrix_snp_dists/main.nf
   Script_cf92b0cfd5970f35: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/../../modules/local/convert_samplesheet_python/main.nf
-Jun-27 13:54:25.270 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
-Jun-27 13:54:25.270 [main] DEBUG nextflow.Session - Session await
-Jun-27 13:54:25.428 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-27 13:54:25.430 [Task submitter] INFO  nextflow.Session - [b5/8c4b71] Submitted process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS (Parsnp)
-Jun-27 13:58:35.118 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
-Jun-27 13:58:35.137 [SIGINT handler] DEBUG nextflow.Session - The following nodes are still active:
-  [operator] mix
-  [operator] map
-  [operator] join
-  [operator] map
-  [operator] mix
-  [operator] collect
-  [operator] mix
-  [operator] mix
-  [operator] mix
-  [operator] concat
-  [operator] map
-  [operator] collectFile
-  [operator] collect
-  [operator] mix
-  [operator] unique
-  [operator] collectFile
+  Script_b712480f57627fb6: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/infile_handling_unix/main.nf
+Jun-27 13:58:49.233 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jun-27 13:58:49.233 [main] DEBUG nextflow.Session - Session await
+Jun-27 13:58:49.437 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-27 13:58:49.439 [Task submitter] INFO  nextflow.Session - [9e/79aaaf] Submitted process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS (Parsnp)
+Jun-27 14:03:49.187 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 1; name: ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS (Parsnp); status: RUNNING; exit: -; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/9e/79aaaf48409c030fc3a9d0109929f3]
+Jun-27 14:08:49.208 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 1; name: ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS (Parsnp); status: RUNNING; exit: -; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/9e/79aaaf48409c030fc3a9d0109929f3]
+Jun-27 14:13:49.248 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 1; name: ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS (Parsnp); status: RUNNING; exit: -; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/9e/79aaaf48409c030fc3a9d0109929f3]
+Jun-27 14:15:18.461 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS (Parsnp); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/9e/79aaaf48409c030fc3a9d0109929f3]
+Jun-27 14:15:18.462 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jun-27 14:15:18.496 [TaskFinalizer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jun-27 14:15:18.535 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-27 14:15:18.536 [Task submitter] INFO  nextflow.Session - [2b/a966c7] Submitted process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp)
+Jun-27 14:18:49.250 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 2; name: ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp); status: RUNNING; exit: -; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/2b/a966c7b94fa19375be78ccf8400ea3]
+Jun-27 14:22:08.923 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp); status: COMPLETED; exit: 135; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/2b/a966c7b94fa19375be78ccf8400ea3]
+Jun-27 14:22:08.928 [TaskFinalizer-2] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp); work-dir=/home/cdcadmin/wf-assembly-snps/work/2b/a966c7b94fa19375be78ccf8400ea3
+  error [nextflow.exception.ProcessFailedException]: Process `ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp)` terminated with an error exit status (135)
+Jun-27 14:22:08.940 [TaskFinalizer-2] INFO  nextflow.processor.TaskProcessor - [2b/a966c7] NOTE: Process `ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp)` terminated with an error exit status (135) -- Execution is retried (1)
+Jun-27 14:22:08.955 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-27 14:22:08.956 [Task submitter] INFO  nextflow.Session - [e7/a6c103] Re-submitted process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp)
+Jun-27 14:23:49.335 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp); status: RUNNING; exit: -; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/e7/a6c103bae260727901cc7d05602abc]
+Jun-27 14:23:54.647 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp); status: COMPLETED; exit: 135; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/e7/a6c103bae260727901cc7d05602abc]
+Jun-27 14:23:54.648 [TaskFinalizer-3] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp); work-dir=/home/cdcadmin/wf-assembly-snps/work/e7/a6c103bae260727901cc7d05602abc
+  error [nextflow.exception.ProcessFailedException]: Process `ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp)` terminated with an error exit status (135)
+Jun-27 14:23:54.649 [TaskFinalizer-3] INFO  nextflow.processor.TaskProcessor - [e7/a6c103] NOTE: Process `ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp)` terminated with an error exit status (135) -- Execution is retried (2)
+Jun-27 14:23:54.660 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-27 14:23:54.661 [Task submitter] INFO  nextflow.Session - [30/11c3ad] Re-submitted process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp)
+Jun-27 14:25:41.293 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp); status: COMPLETED; exit: 135; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/30/11c3addbd36d7860b84ba037238bdd]
+Jun-27 14:25:41.294 [TaskFinalizer-4] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp); work-dir=/home/cdcadmin/wf-assembly-snps/work/30/11c3addbd36d7860b84ba037238bdd
+  error [nextflow.exception.ProcessFailedException]: Process `ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp)` terminated with an error exit status (135)
+Jun-27 14:25:41.307 [TaskFinalizer-4] ERROR nextflow.processor.TaskProcessor - Error executing process > 'ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp)'
 
-Jun-27 13:58:35.139 [main] DEBUG nextflow.Session - Session await > all processes finished
-Jun-27 13:58:35.140 [main] DEBUG nextflow.Session - Session await > all barriers passed
-Jun-27 13:58:35.140 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
-Jun-27 13:58:35.142 [Actor Thread 93] DEBUG nextflow.file.SortFileCollector - FileCollector temp dir not removed: null
-Jun-27 13:58:35.142 [Actor Thread 97] DEBUG nextflow.file.SortFileCollector - FileCollector temp dir not removed: null
-Jun-27 13:58:35.144 [main] INFO  nextflow.Nextflow - -[0;35m[bacterial-genomics/wf-assembly-snps][0;31m Pipeline completed with errors[0m-
-Jun-27 13:58:35.147 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (1)
-Jun-27 13:58:35.163 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=1; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=10; peakMemory=120 GB; ]
-Jun-27 13:58:35.163 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
-Jun-27 13:58:35.164 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
-Jun-27 13:58:35.624 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
-Jun-27 13:58:35.708 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
-Jun-27 13:58:35.723 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
+Caused by:
+  Process `ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp)` terminated with an error exit status (135)
+
+
+Command executed:
+
+  source bash_functions.sh
+  
+  msg "INFO: Performing recombination using Gubbins."
+  
+  # Set memory limits and optimizations for large datasets
+  export OMP_NUM_THREADS=24
+  export MALLOC_ARENA_MAX=4
+  
+  # Use ulimit to prevent memory issues
+  ulimit -v $((491520 * 1024))
+  
+  run_gubbins.py       --starting-tree "Parsnp.tree"       --prefix "Parsnp-Gubbins"       --threads 120       --verbose       "Parsnp.Core_Alignment.fasta"
+  
+  # Check if output files exist before renaming
+  if [[ -f "Parsnp-Gubbins.recombination_predictions.gff" ]]; then
+      mv "Parsnp-Gubbins.recombination_predictions.gff"           "Parsnp-Gubbins.recombination_positions.txt"
+  else
+      msg "ERROR: Gubbins recombination predictions file not found"
+      exit 1
+  fi
+  
+  if [[ -f "Parsnp-Gubbins.node_labelled.final_tree.tre" ]]; then
+      mv "Parsnp-Gubbins.node_labelled.final_tree.tre"           "Parsnp-Gubbins.labelled_tree.tree"
+  else
+      msg "ERROR: Gubbins tree file not found"
+      exit 1
+  fi
+  
+  cat <<-END_VERSIONS > versions.yml
+  "ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS":
+      gubbins: $(run_gubbins.py --version | sed 's/^/    /')
+  END_VERSIONS
+
+Command exit status:
+  135
+
+Command output:
+  Sample IP-0053-9_S3_L001-SPAdes.fasta has missing data percentage of 0.22879993749761843
+  Sample IE-0014_S8_L001-SPAdes.fasta has missing data percentage of 0.2280090714729592
+  Sample GCA_963568055_1.fasta has missing data percentage of 0.2283445903925116
+  Sample IP-0177-6_S2-SPAdes.fasta has missing data percentage of 0.22985442553049734
+  Sample IP-0055-4_S5_L001-SPAdes.fasta has missing data percentage of 0.2276975181905177
+  Sample IP-0191-7_S6-SPAdes.fasta has missing data percentage of 0.22937511278827966
+  Sample GCA_963568785_1.fasta has missing data percentage of 0.22702648035141293
+  Sample Burkholderia_pseudomallei_2011756296_GCF_002110985_1_USA_Puerto_Rico.fasta has missing data percentage of 0.2281768309327354
+  Sample IP-0023-2_S3_L001-SPAdes.fasta has missing data percentage of 0.22937511278827966
+  Sample IP-0110-7_S10_L001-SPAdes.fasta has missing data percentage of 0.22824872784406805
+  Sample IE-0016_S10_L001-SPAdes.fasta has missing data percentage of 0.22810493402140275
+  Sample IP-0095-0_S7_L001-SPAdes.fasta has missing data percentage of 0.22918338769139257
+  Sample IP-0195-8_S10-SPAdes.fasta has missing data percentage of 0.22822476220695717
+  Sample IE-0004_S9_L001-SPAdes.fasta has missing data percentage of 0.22827269348117896
+  Sample IP-0168-5_S3-SPAdes.fasta has missing data percentage of 0.22791320892451566
+  Sample Burkholderia_pseudomallei_619s005_GCF_001207785_2_Malaysia.fasta has missing data percentage of 0.22906355950583815
+  Sample IP-0139-6_S9_L001-SPAdes.fasta has missing data percentage of 0.2280090714729592
+  Sample IE-0026_S8-SPAdes.fasta has missing data percentage of 0.22858424676362046
+  Sample IE-0015_S9_L001-SPAdes.fasta has missing data percentage of 0.22899166259450549
+  Sample GCA_963561915_1.fasta has missing data percentage of 0.2267388927060823
+  Sample Burkholderia_pseudomallei_ABCPW_107_GCF_000773235_1_Australia.fasta has missing data percentage of 0.22570837031031427
+  Sample ERS012303.fasta has missing data percentage of 0.2288239031347293
+  Sample IP-0097-6_S9_L001-SPAdes.fasta has missing data percentage of 0.22858424676362046
+  Sample IP-0183-4_S8-SPAdes.fasta has missing data percentage of 0.22908752514294903
+  Sample GCA_963561435_1.fasta has missing data percentage of 0.22949494097383408
+  Sample IP-0160-2_S10_L001-SPAdes.fasta has missing data percentage of 0.22879993749761843
+  Sample GCA_963562795_1.fasta has missing data percentage of 0.22951890661094496
+  Sample GCA_963566495_1.fasta has missing data percentage of 0.22887183440895106
+  Sample IE-0018_S12_L001-SPAdes.fasta has missing data percentage of 0.22731406799674356
+  Sample IP-0006-7_S6_L001-SPAdes.fasta has missing data percentage of 0.22808096838429187
+  Sample IP-0021-6_S1_L001-SPAdes.fasta has missing data percentage of 0.22810493402140275
+  Sample Burkholderia_pseudomallei_53W_S72_GCF_014712895_1_Laos.fasta has missing data percentage of 0.22918338769139257
+  Sample GCA_963563525_1.fasta has missing data percentage of 0.22752975873074152
+  ...done. Run time: 59.86 s
+  
+  Running Gubbins to detect SNPs...
+  gubbins tmpz1ka5cg2/Parsnp.Core_Alignment.fasta
+  ...done. Run time: 96.70 s
+  
+  Entering the main loop.
+  
+  *** Iteration 1 ***
+  
+  Copying the starting tree...
+  ...done. Run time: 97.94 s
+  
+  Reconstructing ancestral sequences with pyjar...
+  Trying to open file Parsnp.Core_Alignment.fasta.start as fasta
+  Alignment read successfully
+  Finding unique base patterns
+
+Command error:
+  Sample IE-0014_S8_L001-SPAdes.fasta has missing data percentage of 0.2280090714729592
+  Sample GCA_963568055_1.fasta has missing data percentage of 0.2283445903925116
+  Sample IP-0177-6_S2-SPAdes.fasta has missing data percentage of 0.22985442553049734
+  Sample IP-0055-4_S5_L001-SPAdes.fasta has missing data percentage of 0.2276975181905177
+  Sample IP-0191-7_S6-SPAdes.fasta has missing data percentage of 0.22937511278827966
+  Sample GCA_963568785_1.fasta has missing data percentage of 0.22702648035141293
+  Sample Burkholderia_pseudomallei_2011756296_GCF_002110985_1_USA_Puerto_Rico.fasta has missing data percentage of 0.2281768309327354
+  Sample IP-0023-2_S3_L001-SPAdes.fasta has missing data percentage of 0.22937511278827966
+  Sample IP-0110-7_S10_L001-SPAdes.fasta has missing data percentage of 0.22824872784406805
+  Sample IE-0016_S10_L001-SPAdes.fasta has missing data percentage of 0.22810493402140275
+  Sample IP-0095-0_S7_L001-SPAdes.fasta has missing data percentage of 0.22918338769139257
+  Sample IP-0195-8_S10-SPAdes.fasta has missing data percentage of 0.22822476220695717
+  Sample IE-0004_S9_L001-SPAdes.fasta has missing data percentage of 0.22827269348117896
+  Sample IP-0168-5_S3-SPAdes.fasta has missing data percentage of 0.22791320892451566
+  Sample Burkholderia_pseudomallei_619s005_GCF_001207785_2_Malaysia.fasta has missing data percentage of 0.22906355950583815
+  Sample IP-0139-6_S9_L001-SPAdes.fasta has missing data percentage of 0.2280090714729592
+  Sample IE-0026_S8-SPAdes.fasta has missing data percentage of 0.22858424676362046
+  Sample IE-0015_S9_L001-SPAdes.fasta has missing data percentage of 0.22899166259450549
+  Sample GCA_963561915_1.fasta has missing data percentage of 0.2267388927060823
+  Sample Burkholderia_pseudomallei_ABCPW_107_GCF_000773235_1_Australia.fasta has missing data percentage of 0.22570837031031427
+  Sample ERS012303.fasta has missing data percentage of 0.2288239031347293
+  Sample IP-0097-6_S9_L001-SPAdes.fasta has missing data percentage of 0.22858424676362046
+  Sample IP-0183-4_S8-SPAdes.fasta has missing data percentage of 0.22908752514294903
+  Sample GCA_963561435_1.fasta has missing data percentage of 0.22949494097383408
+  Sample IP-0160-2_S10_L001-SPAdes.fasta has missing data percentage of 0.22879993749761843
+  Sample GCA_963562795_1.fasta has missing data percentage of 0.22951890661094496
+  Sample GCA_963566495_1.fasta has missing data percentage of 0.22887183440895106
+  Sample IE-0018_S12_L001-SPAdes.fasta has missing data percentage of 0.22731406799674356
+  Sample IP-0006-7_S6_L001-SPAdes.fasta has missing data percentage of 0.22808096838429187
+  Sample IP-0021-6_S1_L001-SPAdes.fasta has missing data percentage of 0.22810493402140275
+  Sample Burkholderia_pseudomallei_53W_S72_GCF_014712895_1_Laos.fasta has missing data percentage of 0.22918338769139257
+  Sample GCA_963563525_1.fasta has missing data percentage of 0.22752975873074152
+  ...done. Run time: 59.86 s
+  
+  Running Gubbins to detect SNPs...
+  gubbins tmpz1ka5cg2/Parsnp.Core_Alignment.fasta
+  ...done. Run time: 96.70 s
+  
+  Entering the main loop.
+  
+  *** Iteration 1 ***
+  
+  Copying the starting tree...
+  ...done. Run time: 97.94 s
+  
+  Reconstructing ancestral sequences with pyjar...
+  Trying to open file Parsnp.Core_Alignment.fasta.start as fasta
+  Alignment read successfully
+  Finding unique base patterns
+  .command.sh: line 13:    34 Bus error               run_gubbins.py --starting-tree "Parsnp.tree" --prefix "Parsnp-Gubbins" --threads 120 --verbose "Parsnp.Core_Alignment.fasta"
+
+Work dir:
+  /home/cdcadmin/wf-assembly-snps/work/30/11c3addbd36d7860b84ba037238bdd
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Jun-27 14:25:41.311 [TaskFinalizer-4] DEBUG nextflow.Session - Session aborted -- Cause: Process `ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS (Parsnp)` terminated with an error exit status (135)
+Jun-27 14:25:41.313 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jun-27 14:25:41.320 [Actor Thread 127] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 1; slices: 1; internal sort time: 0.001 s; external sort time: 0.003 s; total time: 0.004 s
+Jun-27 14:25:41.320 [Actor Thread 125] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 1; slices: 1; internal sort time: 0.001 s; external sort time: 0.003 s; total time: 0.004 s
+Jun-27 14:25:41.320 [Actor Thread 127] DEBUG nextflow.file.FileCollector - >> temp file exists? false
+Jun-27 14:25:41.320 [Actor Thread 125] DEBUG nextflow.file.FileCollector - >> temp file exists? false
+Jun-27 14:25:41.321 [Actor Thread 127] DEBUG nextflow.file.FileCollector - Missed collect-file cache -- cause: java.nio.file.NoSuchFileException: /home/cdcadmin/wf-assembly-snps/work/collect-file/dc8043ae7e7ce285b28592d0e0d2ce27
+Jun-27 14:25:41.321 [Actor Thread 125] DEBUG nextflow.file.FileCollector - Missed collect-file cache -- cause: java.nio.file.NoSuchFileException: /home/cdcadmin/wf-assembly-snps/work/collect-file/3aa4e7bf3629cf22e468881ef52567e2
+Jun-27 14:25:41.324 [Actor Thread 125] DEBUG nextflow.file.FileCollector - Saved collect-files list to: /home/cdcadmin/wf-assembly-snps/work/collect-file/3aa4e7bf3629cf22e468881ef52567e2
+Jun-27 14:25:41.324 [Actor Thread 127] DEBUG nextflow.file.FileCollector - Saved collect-files list to: /home/cdcadmin/wf-assembly-snps/work/collect-file/dc8043ae7e7ce285b28592d0e0d2ce27
+Jun-27 14:25:41.325 [TaskFinalizer-4] DEBUG nextflow.Session - The following nodes are still active:
+  [operator] collect
+  [operator] mix
+
+Jun-27 14:25:41.327 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jun-27 14:25:41.327 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jun-27 14:25:41.330 [main] INFO  nextflow.Nextflow - -[0;35m[bacterial-genomics/wf-assembly-snps][0;31m Pipeline completed with errors[0m-
+Jun-27 14:25:41.330 [Actor Thread 127] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-4496683213403935046
+Jun-27 14:25:41.330 [Actor Thread 125] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-6243813240038752776
+Jun-27 14:25:41.333 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=1; failedCount=3; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=2; abortedCount=0; succeedDuration=2h 24m; failedDuration=2h 5m 30s; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=24; peakMemory=480 GB; ]
+Jun-27 14:25:41.333 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Jun-27 14:25:41.334 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Jun-27 14:25:41.752 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Jun-27 14:25:41.833 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jun-27 14:25:41.845 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

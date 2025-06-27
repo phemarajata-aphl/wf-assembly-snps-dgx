@@ -23,13 +23,19 @@ process RECOMBINATION_GUBBINS {
     export OMP_NUM_THREADS=!{task.cpus}
     export MALLOC_ARENA_MAX=4
     
-    # Use ulimit to prevent memory issues
-    ulimit -v $((!{task.memory.toMega()} * 1024))
+    # Set memory-related environment variables for better memory management
+    export MALLOC_MMAP_THRESHOLD_=131072
+    export MALLOC_TRIM_THRESHOLD_=131072
+    export MALLOC_TOP_PAD_=131072
+    export MALLOC_MMAP_MAX_=65536
+    
+    # Don't set ulimit -v as it can cause bus errors with large datasets
+    # ulimit -v $((!{task.memory.toMega()} * 1024))
 
     run_gubbins.py \
       --starting-tree "!{meta.snp_package}.tree" \
       --prefix "!{meta.snp_package}-Gubbins" \
-      --threads 120 \
+      --threads !{task.cpus} \
       --verbose \
       "!{core_alignment_fasta}"
 

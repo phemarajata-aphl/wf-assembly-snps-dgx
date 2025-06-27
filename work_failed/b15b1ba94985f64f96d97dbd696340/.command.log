@@ -1,4 +1,4 @@
-[2025-Jun-27 Fri 07:23:55] INFO: Performing recombination using Gubbins.
+[2025-Jun-27 Fri 08:52:48] INFO: Performing recombination using Gubbins.
 
 --- Gubbins 3.1.4 ---
 
@@ -8,7 +8,7 @@ Checking dependencies...
 ...done. Run time: 0.05 s
 
 Checking input files...
-...done. Run time: 36.63 s
+...done. Run time: 40.20 s
 
 Filtering input alignment...
 Sample Burkholderia_pseudomallei_ABCPW_30_GCF_000774495_1_Australia.fasta has missing data percentage of 0.22815286529562454
@@ -333,20 +333,21 @@ Sample IP-0006-7_S6_L001-SPAdes.fasta has missing data percentage of 0.228080968
 Sample IP-0021-6_S1_L001-SPAdes.fasta has missing data percentage of 0.22810493402140275
 Sample Burkholderia_pseudomallei_53W_S72_GCF_014712895_1_Laos.fasta has missing data percentage of 0.22918338769139257
 Sample GCA_963563525_1.fasta has missing data percentage of 0.22752975873074152
-...done. Run time: 59.86 s
+...done. Run time: 63.75 s
 
 Running Gubbins to detect SNPs...
-gubbins /home/cdcadmin/wf-assembly-snps/work/30/11c3addbd36d7860b84ba037238bdd/tmpz1ka5cg2/Parsnp.Core_Alignment.fasta
-...done. Run time: 96.70 s
+gubbins /home/cdcadmin/wf-assembly-snps/work/35/b15b1ba94985f64f96d97dbd696340/tmpn58dttse/Parsnp.Core_Alignment.fasta
+...done. Run time: 101.05 s
 
 Entering the main loop.
 
 *** Iteration 1 ***
 
 Copying the starting tree...
-...done. Run time: 97.94 s
+...done. Run time: 102.68 s
 
 Reconstructing ancestral sequences with pyjar...
 Trying to open file Parsnp.Core_Alignment.fasta.start as fasta
 Alignment read successfully
 Finding unique base patterns
+/home/cdcadmin/wf-assembly-snps/work/35/b15b1ba94985f64f96d97dbd696340/.command.sh: line 19:    33 Bus error               run_gubbins.py --starting-tree "Parsnp.tree" --prefix "Parsnp-Gubbins" --threads 64 --verbose "Parsnp.Core_Alignment.fasta"

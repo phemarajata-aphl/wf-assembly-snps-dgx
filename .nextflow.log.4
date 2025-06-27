@@ -1,45 +1,45 @@
-Jun-27 13:42:30.627 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile large_dataset --input /home/cdcadmin/Downloads/bp_subset_100 --outdir /home/cdcadmin/Downloads/bp_subset_100/results_resumed --parsnp_outputs ./parsnp_outputs --snp_package parsnp --recombination gubbins --max_memory 480.GB
-Jun-27 13:42:30.719 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.04.3
-Jun-27 13:42:30.737 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/cdcadmin/.nextflow/plugins; core-plugins: nf-amazon@2.5.2,nf-azure@1.6.0,nf-cloudcache@0.4.1,nf-codecommit@0.2.0,nf-console@1.1.3,nf-ga4gh@1.3.0,nf-google@1.13.2-patch1,nf-tower@1.9.1,nf-wave@1.4.2
-Jun-27 13:42:30.746 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-Jun-27 13:42:30.747 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-Jun-27 13:42:30.749 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.10.0 in 'deployment' mode
-Jun-27 13:42:30.761 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-Jun-27 13:42:30.781 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/cdcadmin/wf-assembly-snps/nextflow.config
-Jun-27 13:42:30.783 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/cdcadmin/wf-assembly-snps/nextflow.config
-Jun-27 13:42:30.805 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/cdcadmin/.nextflow/secrets/store.json
-Jun-27 13:42:30.808 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@267bbe1a] - activable => nextflow.secret.LocalSecretsProvider@267bbe1a
-Jun-27 13:42:30.821 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `large_dataset`
-Jun-27 13:42:32.324 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [aspen_hpc, slurm, debug, shifter, test, conda, singularity, rosalind_hpc, large_dataset, dgx_a100, test_full, docker]
-Jun-27 13:42:32.370 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
-Jun-27 13:42:32.388 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [nostalgic_carson] DSL2 - revision: 5117d6d157
-Jun-27 13:42:32.389 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-Jun-27 13:42:32.389 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
-Jun-27 13:42:32.440 [main] DEBUG nextflow.Session - Session UUID: 4202d116-2b99-4fb7-b5f7-b88e98242fb4
-Jun-27 13:42:32.440 [main] DEBUG nextflow.Session - Run name: nostalgic_carson
-Jun-27 13:42:32.440 [main] DEBUG nextflow.Session - Executor pool size: 128
-Jun-27 13:42:32.447 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
-Jun-27 13:42:32.451 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-Jun-27 13:42:32.469 [main] DEBUG nextflow.cli.CmdRun - 
+Jun-27 13:48:17.281 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile large_dataset --input /home/cdcadmin/Downloads/bp_subset_100 --outdir /home/cdcadmin/Downloads/bp_subset_100/results_resumed --parsnp_outputs ./parsnp_outputs --snp_package parsnp --recombination gubbins --max_memory 480.GB
+Jun-27 13:48:17.376 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.04.3
+Jun-27 13:48:17.394 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/cdcadmin/.nextflow/plugins; core-plugins: nf-amazon@2.5.2,nf-azure@1.6.0,nf-cloudcache@0.4.1,nf-codecommit@0.2.0,nf-console@1.1.3,nf-ga4gh@1.3.0,nf-google@1.13.2-patch1,nf-tower@1.9.1,nf-wave@1.4.2
+Jun-27 13:48:17.403 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jun-27 13:48:17.404 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jun-27 13:48:17.406 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.10.0 in 'deployment' mode
+Jun-27 13:48:17.418 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jun-27 13:48:17.438 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/cdcadmin/wf-assembly-snps/nextflow.config
+Jun-27 13:48:17.440 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/cdcadmin/wf-assembly-snps/nextflow.config
+Jun-27 13:48:17.463 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/cdcadmin/.nextflow/secrets/store.json
+Jun-27 13:48:17.466 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@267bbe1a] - activable => nextflow.secret.LocalSecretsProvider@267bbe1a
+Jun-27 13:48:17.478 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `large_dataset`
+Jun-27 13:48:18.754 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [aspen_hpc, slurm, debug, shifter, test, conda, singularity, rosalind_hpc, large_dataset, dgx_a100, test_full, docker]
+Jun-27 13:48:18.794 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Jun-27 13:48:18.809 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [cranky_baekeland] DSL2 - revision: 5117d6d157
+Jun-27 13:48:18.810 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jun-27 13:48:18.810 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jun-27 13:48:18.860 [main] DEBUG nextflow.Session - Session UUID: cdcfc7ec-7d18-433e-a601-a849c03aef2c
+Jun-27 13:48:18.860 [main] DEBUG nextflow.Session - Run name: cranky_baekeland
+Jun-27 13:48:18.861 [main] DEBUG nextflow.Session - Executor pool size: 128
+Jun-27 13:48:18.867 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jun-27 13:48:18.871 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jun-27 13:48:18.889 [main] DEBUG nextflow.cli.CmdRun - 
   Version: 24.04.3 build 5916
   Created: 09-07-2024 19:35 UTC (10-07-2024 02:35 ICST)
   System: Linux 5.4.0-169-generic
   Runtime: Groovy 4.0.21 on OpenJDK 64-Bit Server VM 17.0.10+7
   Encoding: UTF-8 (UTF-8)
-  Process: 1252294@dgx-a100 [192.168.1.11]
-  CPUs: 128 - Mem: 503.7 GB (345.2 GB) - Swap: 0 (0)
-Jun-27 13:42:32.494 [main] DEBUG nextflow.Session - Work-dir: /home/cdcadmin/wf-assembly-snps/work [ext2/ext3]
-Jun-27 13:42:32.528 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-Jun-27 13:42:32.537 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
-Jun-27 13:42:32.607 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-Jun-27 13:42:32.616 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 129; maxThreads: 1000
-Jun-27 13:42:32.662 [main] DEBUG nextflow.Session - Session start
-Jun-27 13:42:32.664 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/cdcadmin/Downloads/bp_subset_100/results_resumed/pipeline_info/execution_trace_2025-06-27_13-42-32.txt
-Jun-27 13:42:32.669 [main] DEBUG nextflow.Session - Using default localLib path: /home/cdcadmin/wf-assembly-snps/lib
-Jun-27 13:42:32.672 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib
-Jun-27 13:42:32.673 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib/nfcore_external_java_deps.jar
-Jun-27 13:42:33.365 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-Jun-27 13:42:33.412 [main] INFO  nextflow.Nextflow - 
+  Process: 1254279@dgx-a100 [192.168.1.11]
+  CPUs: 128 - Mem: 503.7 GB (344.4 GB) - Swap: 0 (0)
+Jun-27 13:48:18.913 [main] DEBUG nextflow.Session - Work-dir: /home/cdcadmin/wf-assembly-snps/work [ext2/ext3]
+Jun-27 13:48:18.952 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jun-27 13:48:18.962 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jun-27 13:48:19.024 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jun-27 13:48:19.033 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 129; maxThreads: 1000
+Jun-27 13:48:19.081 [main] DEBUG nextflow.Session - Session start
+Jun-27 13:48:19.083 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/cdcadmin/Downloads/bp_subset_100/results_resumed/pipeline_info/execution_trace_2025-06-27_13-48-18.txt
+Jun-27 13:48:19.088 [main] DEBUG nextflow.Session - Using default localLib path: /home/cdcadmin/wf-assembly-snps/lib
+Jun-27 13:48:19.091 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib
+Jun-27 13:48:19.091 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib/nfcore_external_java_deps.jar
+Jun-27 13:48:19.858 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-27 13:48:19.905 [main] INFO  nextflow.Nextflow - 
 
 -[2m----------------------------------------------------[0m-
 [0;34m     __         __ __ __     __            __     __  __    [0m
@@ -52,7 +52,7 @@ Jun-27 13:42:33.412 [main] INFO  nextflow.Nextflow -
 [0;35m     bacterial-genomics/wf-assembly-snps v1.0.2[0m
 -[2m----------------------------------------------------[0m-
 [1mCore Nextflow options[0m
-  [0;34mrunName             : [0;32mnostalgic_carson[0m
+  [0;34mrunName             : [0;32mcranky_baekeland[0m
   [0;34mcontainerEngine     : [0;32mdocker[0m
   [0;34mlaunchDir           : [0;32m/home/cdcadmin/wf-assembly-snps[0m
   [0;34mworkDir             : [0;32m/home/cdcadmin/wf-assembly-snps/work[0m
@@ -92,97 +92,92 @@ If you use bacterial-genomics/wf-assembly-snps for your analysis please cite:
 * Software dependencies
   https://github.com/bacterial-genomics/wf-assembly-snps/blob/main/CITATIONS.md
 -[2m----------------------------------------------------[0m-
-Jun-27 13:42:33.682 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+Jun-27 13:48:21.081 [main] INFO  nextflow.Nextflow - === WORKFLOW PARAMETERS ===
+Jun-27 13:48:21.082 [main] INFO  nextflow.Nextflow - Input: /home/cdcadmin/Downloads/bp_subset_100
+Jun-27 13:48:21.082 [main] INFO  nextflow.Nextflow - Output directory: /home/cdcadmin/Downloads/bp_subset_100/results_resumed
+Jun-27 13:48:21.083 [main] INFO  nextflow.Nextflow - ParSNP outputs: ./parsnp_outputs
+Jun-27 13:48:21.083 [main] INFO  nextflow.Nextflow - SNP package: parsnp
+Jun-27 13:48:21.083 [main] INFO  nextflow.Nextflow - Recombination: gubbins
+Jun-27 13:48:21.084 [main] INFO  nextflow.Nextflow - ==========================
+Jun-27 13:48:21.085 [main] INFO  nextflow.Nextflow - Skipping input preprocessing - using existing ParSNP outputs
+Jun-27 13:48:21.086 [main] INFO  nextflow.Nextflow - Using existing ParSNP outputs from: ./parsnp_outputs
+Jun-27 13:48:21.188 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_low` matches labels `process_low` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
+Jun-27 13:48:21.190 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
+Jun-27 13:48:21.201 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-27 13:48:21.202 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-27 13:48:21.207 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jun-27 13:48:21.212 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=128; memory=503.7 GB; capacity=128; pollInterval=100ms; dumpInterval=5m
+Jun-27 13:48:21.214 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jun-27 13:48:21.279 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_high_memory` matches labels `process_high_memory` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS
+Jun-27 13:48:21.279 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:RECOMBINATION_GUBBINS` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS
+Jun-27 13:48:21.282 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-27 13:48:21.282 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-27 13:48:21.295 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
+Jun-27 13:48:21.296 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MASK_RECOMBINANT_POSITIONS_BIOPYTHON` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
+Jun-27 13:48:21.298 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-27 13:48:21.298 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-27 13:48:21.306 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
+Jun-27 13:48:21.307 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
+Jun-27 13:48:21.309 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-27 13:48:21.309 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-27 13:48:21.321 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_high` matches labels `process_high` for process with name ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:BUILD_PHYLOGENETIC_TREE_PARSNP
+Jun-27 13:48:21.322 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:BUILD_PHYLOGENETIC_TREE_PARSNP` matches process ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:BUILD_PHYLOGENETIC_TREE_PARSNP
+Jun-27 13:48:21.325 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-27 13:48:21.325 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-27 13:48:21.371 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS, REF_INFILE_HANDLING_UNIX, INFILE_HANDLING_UNIX, CONVERT_TSV_TO_EXCEL_PYTHON, CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS, ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS, CONVERT_SAMPLESHEET_PYTHON, RECOMBINATION_GUBBINS, CREATE_EXCEL_RUN_SUMMARY_PYTHON, CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS, ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS, CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS, CONVERT_GINGR_TO_FASTA_HARVESTTOOLS, MASK_RECOMBINANT_POSITIONS_BIOPYTHON, CORE_GENOME_ALIGNMENT_PARSNP, ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:MASK_RECOMBINANT_POSITIONS_BIOPYTHON, ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:BUILD_PHYLOGENETIC_TREE_PARSNP, BUILD_PHYLOGENETIC_TREE_PARSNP, RECOMBINATION_CLONALFRAMEML
+Jun-27 13:48:21.392 [main] WARN  nextflow.Session - There's no process matching config selector: ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS
+Jun-27 13:48:21.393 [main] WARN  nextflow.Session - There's no process matching config selector: ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP
+Jun-27 13:48:21.393 [main] WARN  nextflow.Session - There's no process matching config selector: ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP
+Jun-27 13:48:21.395 [main] DEBUG nextflow.Session - Igniting dataflow network (15)
+Jun-27 13:48:21.399 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: ./parsnp_outputs/; pattern: *; options: [:]
+Jun-27 13:48:21.400 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
+Jun-27 13:48:21.400 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:RECOMBINATION:RECOMBINATION_GUBBINS
+Jun-27 13:48:21.400 [PathVisitor-2] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: ./parsnp_outputs/; pattern: *.SNP_Distances_Matrix.tsv; options: [:]
+Jun-27 13:48:21.401 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
+Jun-27 13:48:21.401 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
+Jun-27 13:48:21.401 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:BUILD_PHYLOGENETIC_TREE_PARSNP
+Jun-27 13:48:21.402 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_daab3931d6dbebc6: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/convert_tsv_to_excel_python/main.nf
+  Script_f7914ed81aa8da08: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/../../modules/local/recombination_gubbins/main.nf
+  Script_dcf838433c2ae4c2: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/convert_gingr_to_fasta_harvesttools/main.nf
+  Script_92a8fd2e65506f13: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/create_excel_run_summary_python/main.nf
+  Script_bdfe511ac4c90ab8: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/recombination.nf
+  Script_be748a6dbf6992d5: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/core_genome_alignment_parsnp/main.nf
+  Script_b9ab49f20dd212c4: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/create_snp_distance_matrix_snp_dists/main.nf
   Script_d07a09c54728bf6d: /home/cdcadmin/wf-assembly-snps/main.nf
-Jun-27 13:42:33.690 [main] ERROR nextflow.cli.Launcher - Module compilation error
-- file : /home/cdcadmin/wf-assembly-snps/./workflows/assembly_snps.nf
-- cause: Unexpected input: 'ASSEMBLY_SNPS {\n\n    // SETUP: Define empty channels to concatenate certain outputs\n    ch_versions             = Channel.empty()\n    ch_qc_filecheck         = Channel.empty()\n    ch_output_summary_files = Channel.empty()\n\n    // DEBUG: Log key parameters\n    log.info "=== WORKFLOW PARAMETERS ==="\n    log.info "Input: ${params.input}"\n    log.info "Output directory: ${params.outdir}"\n    log.info "ParSNP outputs: ${params.parsnp_outputs}"\n    log.info "SNP package: ${params.snp_package}"\n    log.info "Recombination: ${params.recombination}"\n    log.info "=========================="\n\n    // Branch workflow based on whether we're using existing ParSNP outputs\n    if (params.parsnp_outputs) {\n        // Resume from existing ParSNP outputs\n        ASSEMBLY_SNPS_RESUME()\n    } else {\n        // Run full workflow\n        ASSEMBLY_SNPS_FULL()\n    }\n}\n\n\n}' @ line 147, column 1.
-   }
-   ^
-
-1 error
-
-nextflow.exception.ScriptCompilationException: Module compilation error
-- file : /home/cdcadmin/wf-assembly-snps/./workflows/assembly_snps.nf
-- cause: Unexpected input: 'ASSEMBLY_SNPS {\n\n    // SETUP: Define empty channels to concatenate certain outputs\n    ch_versions             = Channel.empty()\n    ch_qc_filecheck         = Channel.empty()\n    ch_output_summary_files = Channel.empty()\n\n    // DEBUG: Log key parameters\n    log.info "=== WORKFLOW PARAMETERS ==="\n    log.info "Input: ${params.input}"\n    log.info "Output directory: ${params.outdir}"\n    log.info "ParSNP outputs: ${params.parsnp_outputs}"\n    log.info "SNP package: ${params.snp_package}"\n    log.info "Recombination: ${params.recombination}"\n    log.info "=========================="\n\n    // Branch workflow based on whether we're using existing ParSNP outputs\n    if (params.parsnp_outputs) {\n        // Resume from existing ParSNP outputs\n        ASSEMBLY_SNPS_RESUME()\n    } else {\n        // Run full workflow\n        ASSEMBLY_SNPS_FULL()\n    }\n}\n\n\n}' @ line 147, column 1.
-   }
-   ^
-
-1 error
-
-	at nextflow.script.ScriptParser.parse0(ScriptParser.groovy:196)
-	at nextflow.script.ScriptParser.parse(ScriptParser.groovy:206)
-	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:221)
-	at nextflow.script.IncludeDef.memoizedMethodPriv$loadModule0PathMapSession(IncludeDef.groovy:140)
-	at nextflow.script.IncludeDef.access$0(IncludeDef.groovy)
-	at nextflow.script.IncludeDef$__clinit__closure2.doCall(IncludeDef.groovy)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
-	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:279)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
-	at groovy.lang.Closure.call(Closure.java:433)
-	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.lambda$call$0(Memoize.java:137)
-	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:137)
-	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:113)
-	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.call(Memoize.java:136)
-	at nextflow.script.IncludeDef.loadModule0(IncludeDef.groovy)
-	at nextflow.script.IncludeDef.load0(IncludeDef.groovy:112)
-	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
-	at Script_d07a09c54728bf6d.runScript(Script_d07a09c54728bf6d:28)
-	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
-	at nextflow.script.BaseScript.run0(BaseScript.groovy:159)
-	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
-	at nextflow.script.BaseScript.run(BaseScript.groovy:209)
-	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:236)
-	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:243)
-	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:138)
-	at nextflow.cli.CmdRun.run(CmdRun.groovy:372)
-	at nextflow.cli.Launcher.run(Launcher.groovy:503)
-	at nextflow.cli.Launcher.main(Launcher.groovy:657)
-Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
-Script_82119c9097de3324: 147: Unexpected input: 'ASSEMBLY_SNPS {\n\n    // SETUP: Define empty channels to concatenate certain outputs\n    ch_versions             = Channel.empty()\n    ch_qc_filecheck         = Channel.empty()\n    ch_output_summary_files = Channel.empty()\n\n    // DEBUG: Log key parameters\n    log.info "=== WORKFLOW PARAMETERS ==="\n    log.info "Input: ${params.input}"\n    log.info "Output directory: ${params.outdir}"\n    log.info "ParSNP outputs: ${params.parsnp_outputs}"\n    log.info "SNP package: ${params.snp_package}"\n    log.info "Recombination: ${params.recombination}"\n    log.info "=========================="\n\n    // Branch workflow based on whether we're using existing ParSNP outputs\n    if (params.parsnp_outputs) {\n        // Resume from existing ParSNP outputs\n        ASSEMBLY_SNPS_RESUME()\n    } else {\n        // Run full workflow\n        ASSEMBLY_SNPS_FULL()\n    }\n}\n\n\n}' @ line 147, column 1.
-   }
-   ^
-
-1 error
-
-	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:292)
-	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:148)
-	at org.apache.groovy.parser.antlr4.AstBuilder.collectSyntaxError(AstBuilder.java:4753)
-	at org.apache.groovy.parser.antlr4.AstBuilder.access$100(AstBuilder.java:169)
-	at org.apache.groovy.parser.antlr4.AstBuilder$3.syntaxError(AstBuilder.java:4764)
-	at groovyjarjarantlr4.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:44)
-	at groovyjarjarantlr4.v4.runtime.Parser.notifyErrorListeners(Parser.java:543)
-	at groovyjarjarantlr4.v4.runtime.DefaultErrorStrategy.notifyErrorListeners(DefaultErrorStrategy.java:154)
-	at org.apache.groovy.parser.antlr4.internal.DescriptiveErrorStrategy.reportNoViableAlternative(DescriptiveErrorStrategy.java:92)
-	at groovyjarjarantlr4.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:139)
-	at org.apache.groovy.parser.antlr4.GroovyParser.commandExpression(GroovyParser.java:9738)
-	at org.apache.groovy.parser.antlr4.GroovyParser.statementExpression(GroovyParser.java:8235)
-	at org.apache.groovy.parser.antlr4.GroovyParser.statement(GroovyParser.java:7080)
-	at org.apache.groovy.parser.antlr4.GroovyParser.scriptStatement(GroovyParser.java:517)
-	at org.apache.groovy.parser.antlr4.GroovyParser.scriptStatements(GroovyParser.java:427)
-	at org.apache.groovy.parser.antlr4.GroovyParser.compilationUnit(GroovyParser.java:363)
-	at org.apache.groovy.parser.antlr4.AstBuilder.buildCST(AstBuilder.java:243)
-	at org.apache.groovy.parser.antlr4.AstBuilder.buildCST(AstBuilder.java:221)
-	at org.apache.groovy.parser.antlr4.AstBuilder.buildAST(AstBuilder.java:262)
-	at org.apache.groovy.parser.antlr4.Antlr4ParserPlugin.buildAST(Antlr4ParserPlugin.java:58)
-	at org.codehaus.groovy.control.SourceUnit.buildAST(SourceUnit.java:256)
-	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
-	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
-	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:663)
-	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:373)
-	at groovy.lang.GroovyClassLoader.lambda$parseClass$2(GroovyClassLoader.java:316)
-	at org.codehaus.groovy.runtime.memoize.StampedCommonCache.compute(StampedCommonCache.java:163)
-	at org.codehaus.groovy.runtime.memoize.StampedCommonCache.getAndPut(StampedCommonCache.java:154)
-	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:314)
-	at groovy.lang.GroovyShell.parseClass(GroovyShell.java:572)
-	at groovy.lang.GroovyShell.parse(GroovyShell.java:585)
-	at groovy.lang.GroovyShell.parse(GroovyShell.java:639)
-	at groovy.lang.GroovyShell.parse(GroovyShell.java:643)
-	at nextflow.script.ScriptParser.parse0(ScriptParser.groovy:175)
-	... 32 common frames omitted
+  Script_53b40eb3093c3510: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/input_check.nf
+  Script_05e55c2bb47079b7: /home/cdcadmin/wf-assembly-snps/./workflows/assembly_snps.nf
+  Script_30224b4410519b3a: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/mask_recombinant_positions_biopython/main.nf
+  Script_6ef5bdac66e9e392: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/build_phylogenetic_tree_parsnp/main.nf
+  Script_5fe74d10bc089bcc: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/calculate_pairwise_distances_snp_dists/main.nf
+  Script_40fb9d8af3f8dec5: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/../../modules/local/recombination_clonalframeml/main.nf
+  Script_e98f7bebdf7d3a01: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/create_masked_snp_distance_matrix_snp_dists/main.nf
+  Script_cf92b0cfd5970f35: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/../../modules/local/convert_samplesheet_python/main.nf
+  Script_b712480f57627fb6: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/infile_handling_unix/main.nf
+Jun-27 13:48:21.402 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jun-27 13:48:21.402 [main] DEBUG nextflow.Session - Session await
+Jun-27 13:48:21.565 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-27 13:48:21.567 [Task submitter] INFO  nextflow.Session - [79/07848c] Submitted process > ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS (Parsnp)
+Jun-27 13:48:22.216 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: ASSEMBLY_SNPS:ASSEMBLY_SNPS_RESUME:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS (Parsnp); status: COMPLETED; exit: 0; error: -; workDir: /home/cdcadmin/wf-assembly-snps/work/79/07848ce646a7d68e1556072bf20ab2]
+Jun-27 13:48:22.216 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jun-27 13:48:22.242 [Actor Thread 83] WARN  nextflow.Nextflow - Parsnp Gingr to FastA File QC check failed during process CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
+Jun-27 13:48:22.249 [TaskFinalizer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jun-27 13:48:22.256 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jun-27 13:48:22.307 [Actor Thread 78] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 1; slices: 1; internal sort time: 0.001 s; external sort time: 0.01 s; total time: 0.011 s
+Jun-27 13:48:22.307 [Actor Thread 84] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 1; slices: 1; internal sort time: 0.001 s; external sort time: 0.01 s; total time: 0.011 s
+Jun-27 13:48:22.310 [Actor Thread 84] DEBUG nextflow.file.FileCollector - Saved collect-files list to: /home/cdcadmin/wf-assembly-snps/work/collect-file/4632161d093e14d8660c52352e279f9b
+Jun-27 13:48:22.311 [Actor Thread 78] DEBUG nextflow.file.FileCollector - Saved collect-files list to: /home/cdcadmin/wf-assembly-snps/work/collect-file/7736377b6bcbffb3f1a52a9b43eda6e3
+Jun-27 13:48:22.315 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jun-27 13:48:22.315 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jun-27 13:48:22.316 [Actor Thread 84] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-6089029288215276311
+Jun-27 13:48:22.316 [Actor Thread 78] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-636696456663790189
+Jun-27 13:48:22.319 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+Jun-27 13:48:22.319 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Jun-27 13:48:22.321 [main] INFO  nextflow.Nextflow - -[0;35m[bacterial-genomics/wf-assembly-snps][0;32m Pipeline completed successfully[0m-
+Jun-27 13:48:22.325 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=1; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=10; peakMemory=120 GB; ]
+Jun-27 13:48:22.325 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Jun-27 13:48:22.326 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Jun-27 13:48:22.734 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Jun-27 13:48:22.921 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jun-27 13:48:22.933 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Jun-27 13:48:22.934 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
