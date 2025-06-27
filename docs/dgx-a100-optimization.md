@@ -36,10 +36,10 @@ The DGX profile automatically sets:
 - **Time**: 4 hours
 - **Special**: Exclusive node access for large datasets
 
-#### Recombination Detection
-- **Resources**: 32 CPUs, 128GB RAM  
-- **Time**: 8 hours
-- **Optimization**: High memory allocation for ClonalFrameML
+#### Gubbins Recombination Detection
+- **Resources**: 32 CPUs, 600GB RAM  
+- **Time**: 48 hours
+- **Optimization**: High memory allocation for large datasets
 
 #### Phylogenetic Tree Building
 - **Resources**: 40 CPUs, 192GB RAM
@@ -71,7 +71,7 @@ scontrol show job $SLURM_JOB_ID
 ### 4. Cache Management
 ```bash
 # Pre-pull containers
-nextflow pull bacterial-genomics/wf-assembly-snps
+nextflow pull phemarajata-aphl/wf-assembly-snps-dgx
 
 # Clean cache periodically
 nextflow clean -f

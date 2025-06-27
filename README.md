@@ -52,19 +52,44 @@ nextflow run \
 
 ## Quick Start: Run
 
-Example command on FastAs in "new-fasta-dir" data using **BLAST** with singularity:
+Example command on FastAs in "new-fasta-dir" data using **ParSNP** with Docker:
 
-### Run workflow
+### Standard datasets (<200 genomes)
 
 ```bash
-nextflow run \
-  bacterial-genomics/wf-assembly-snps \
-  -r main \
+nextflow run main.nf \
   -profile docker \
   --input new-fasta-dir \
   --outdir my-results \
   --snp_package parsnp
 ```
+
+### Large datasets (200+ genomes)
+
+For large datasets, use the optimized `large_dataset` profile:
+
+```bash
+nextflow run main.nf \
+  -profile large_dataset \
+  --input new-fasta-dir \
+  --outdir my-results \
+  --snp_package parsnp \
+  --max_memory 600.GB
+```
+
+### DGX A100 systems
+
+For NVIDIA DGX A100 systems with SLURM:
+
+```bash
+nextflow run main.nf \
+  -profile dgx_a100 \
+  --input new-fasta-dir \
+  --outdir my-results \
+  --snp_package parsnp
+```
+
+**Note**: Large datasets require significant computational resources. See [Large Dataset Guide](docs/large-datasets.md) for detailed requirements and troubleshooting.
 
 ## Introduction
 
@@ -154,9 +179,30 @@ Please see the [output documentation](docs/output.md) for a table of all outputs
 
 ## Troubleshooting
 
-Q: It failed, how do I find out what went wrong?
+### Common Issues
 
+**Q: It failed, how do I find out what went wrong?**
 A: View file contents in the `<outdir>/pipeline_info` directory.
+
+**Q: Bus error (exit status 135) in Gubbins process?**
+A: This indicates insufficient memory. Use the `large_dataset` profile or increase `--max_memory`:
+```bash
+nextflow run main.nf -profile large_dataset --max_memory 600.GB
+```
+
+**Q: Out of memory errors with large datasets?**
+A: Check system resources and see the [Large Dataset Guide](docs/large-datasets.md). You can also run:
+```bash
+./bin/check_system_resources.sh
+```
+
+**Q: Process timeout with many genomes?**
+A: Increase time limits:
+```bash
+nextflow run main.nf --max_time 168.h
+```
+
+For comprehensive troubleshooting of large datasets, see [docs/large-datasets.md](docs/large-datasets.md).
 
 ## Contributions and Support
 

@@ -20,7 +20,7 @@ process CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS {
 
     snp-dists \
       -b \
-      -j !{task.cpus} \
+      -j 120 \
       "!{meta.snp_package}.SNPs.fa.gz" \
       > "!{meta.snp_package}.SNP_Distances_Matrix.tsv"
 

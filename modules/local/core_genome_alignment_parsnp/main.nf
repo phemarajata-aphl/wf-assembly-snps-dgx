@@ -1,7 +1,7 @@
 process CORE_GENOME_ALIGNMENT_PARSNP {
 
     tag { "${meta_input.snp_package}" }
-    label "process_medium"
+    label "process_high"
     container "quay.io/biocontainers/parsnp@sha256:b46999fb9842f183443dd6226b461c1d8074d4c1391c1f2b1e51cc20cee8f8b2"
 
     input:
@@ -34,7 +34,7 @@ process CORE_GENOME_ALIGNMENT_PARSNP {
       --verbose \
       !{treeMethod} \
       !{curatedInput} \
-      --threads !{task.cpus} \
+      --threads 120 \
       --max-partition-size !{params.max_partition_size}
 
     # Move files to current directory

@@ -22,6 +22,12 @@
                     "description": "Path to file ** OR ** samplesheet containing a FastA file. Recognized extensions are {fasta,fas,fna,fsa,fa} with optional gzip compression.",
                     "fa_icon": "fas fa-folder-open"
                 },
+                "parsnp_outputs": {
+                    "type": "string",
+                    "format": "directory-path",
+                    "description": "Path to directory containing existing ParSNP output files to resume workflow from Gubbins step. Use this to skip ParSNP re-computation.",
+                    "fa_icon": "fas fa-folder-open"
+                },
                 "outdir": {
                     "type": "string",
                     "format": "directory-path",

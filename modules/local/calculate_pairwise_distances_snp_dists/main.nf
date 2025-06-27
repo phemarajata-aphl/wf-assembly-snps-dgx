@@ -20,7 +20,7 @@ process CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS {
 
     snp-dists \
       -m \
-      -j !{task.cpus} \
+      -j 120 \
       "!{meta.snp_package}.SNPs.fa.gz" \
       | sort -nk3 \
       > "!{meta.snp_package}.SNP-Distances.Pairs.tsv"

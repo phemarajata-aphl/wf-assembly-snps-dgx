@@ -1,45 +1,45 @@
-Jun-26 10:22:43.157 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile docker --input /home/cdcadmin/Downloads/bp_contextual_samples --outdir /home/cdcadmin/Downloads/bp_contextual_samples/results --snp_package parsnp --recombination gubbins -resume
-Jun-26 10:22:43.237 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.04.3
-Jun-26 10:22:43.256 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/cdcadmin/.nextflow/plugins; core-plugins: nf-amazon@2.5.2,nf-azure@1.6.0,nf-cloudcache@0.4.1,nf-codecommit@0.2.0,nf-console@1.1.3,nf-ga4gh@1.3.0,nf-google@1.13.2-patch1,nf-tower@1.9.1,nf-wave@1.4.2
-Jun-26 10:22:43.265 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-Jun-26 10:22:43.266 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-Jun-26 10:22:43.269 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.10.0 in 'deployment' mode
-Jun-26 10:22:43.286 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-Jun-26 10:22:43.306 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/cdcadmin/wf-assembly-snps/nextflow.config
-Jun-26 10:22:43.308 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/cdcadmin/wf-assembly-snps/nextflow.config
-Jun-26 10:22:43.331 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/cdcadmin/.nextflow/secrets/store.json
-Jun-26 10:22:43.334 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@28952dea] - activable => nextflow.secret.LocalSecretsProvider@28952dea
-Jun-26 10:22:43.346 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
-Jun-26 10:22:44.554 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [aspen_hpc, slurm, debug, shifter, test, conda, singularity, rosalind_hpc, dgx_a100, test_full, docker]
-Jun-26 10:22:44.596 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
-Jun-26 10:22:44.611 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [silly_monod] DSL2 - revision: 5117d6d157
-Jun-26 10:22:44.612 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-Jun-26 10:22:44.612 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
-Jun-26 10:22:44.660 [main] DEBUG nextflow.Session - Session UUID: adba15ec-4e58-4a5f-9f23-1aff8ee2b5aa
-Jun-26 10:22:44.661 [main] DEBUG nextflow.Session - Run name: silly_monod
-Jun-26 10:22:44.661 [main] DEBUG nextflow.Session - Executor pool size: 128
-Jun-26 10:22:44.667 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
-Jun-26 10:22:44.672 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-Jun-26 10:22:44.689 [main] DEBUG nextflow.cli.CmdRun - 
+Jun-27 13:42:30.627 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile large_dataset --input /home/cdcadmin/Downloads/bp_subset_100 --outdir /home/cdcadmin/Downloads/bp_subset_100/results_resumed --parsnp_outputs ./parsnp_outputs --snp_package parsnp --recombination gubbins --max_memory 480.GB
+Jun-27 13:42:30.719 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.04.3
+Jun-27 13:42:30.737 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/cdcadmin/.nextflow/plugins; core-plugins: nf-amazon@2.5.2,nf-azure@1.6.0,nf-cloudcache@0.4.1,nf-codecommit@0.2.0,nf-console@1.1.3,nf-ga4gh@1.3.0,nf-google@1.13.2-patch1,nf-tower@1.9.1,nf-wave@1.4.2
+Jun-27 13:42:30.746 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jun-27 13:42:30.747 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jun-27 13:42:30.749 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.10.0 in 'deployment' mode
+Jun-27 13:42:30.761 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jun-27 13:42:30.781 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/cdcadmin/wf-assembly-snps/nextflow.config
+Jun-27 13:42:30.783 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/cdcadmin/wf-assembly-snps/nextflow.config
+Jun-27 13:42:30.805 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/cdcadmin/.nextflow/secrets/store.json
+Jun-27 13:42:30.808 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@267bbe1a] - activable => nextflow.secret.LocalSecretsProvider@267bbe1a
+Jun-27 13:42:30.821 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `large_dataset`
+Jun-27 13:42:32.324 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [aspen_hpc, slurm, debug, shifter, test, conda, singularity, rosalind_hpc, large_dataset, dgx_a100, test_full, docker]
+Jun-27 13:42:32.370 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Jun-27 13:42:32.388 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [nostalgic_carson] DSL2 - revision: 5117d6d157
+Jun-27 13:42:32.389 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jun-27 13:42:32.389 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jun-27 13:42:32.440 [main] DEBUG nextflow.Session - Session UUID: 4202d116-2b99-4fb7-b5f7-b88e98242fb4
+Jun-27 13:42:32.440 [main] DEBUG nextflow.Session - Run name: nostalgic_carson
+Jun-27 13:42:32.440 [main] DEBUG nextflow.Session - Executor pool size: 128
+Jun-27 13:42:32.447 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jun-27 13:42:32.451 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jun-27 13:42:32.469 [main] DEBUG nextflow.cli.CmdRun - 
   Version: 24.04.3 build 5916
   Created: 09-07-2024 19:35 UTC (10-07-2024 02:35 ICST)
   System: Linux 5.4.0-169-generic
   Runtime: Groovy 4.0.21 on OpenJDK 64-Bit Server VM 17.0.10+7
   Encoding: UTF-8 (UTF-8)
-  Process: 622830@dgx-a100 [192.168.1.11]
-  CPUs: 128 - Mem: 503.7 GB (377.5 GB) - Swap: 0 (0)
-Jun-26 10:22:44.712 [main] DEBUG nextflow.Session - Work-dir: /home/cdcadmin/wf-assembly-snps/work [ext2/ext3]
-Jun-26 10:22:44.744 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-Jun-26 10:22:44.752 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
-Jun-26 10:22:44.805 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-Jun-26 10:22:44.820 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 129; maxThreads: 1000
-Jun-26 10:22:44.930 [main] DEBUG nextflow.Session - Session start
-Jun-26 10:22:44.933 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/cdcadmin/Downloads/bp_contextual_samples/results/pipeline_info/execution_trace_2025-06-26_10-22-44.txt
-Jun-26 10:22:44.939 [main] DEBUG nextflow.Session - Using default localLib path: /home/cdcadmin/wf-assembly-snps/lib
-Jun-26 10:22:44.942 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib
-Jun-26 10:22:44.942 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib/nfcore_external_java_deps.jar
-Jun-26 10:22:45.612 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-Jun-26 10:22:45.675 [main] INFO  nextflow.Nextflow - 
+  Process: 1252294@dgx-a100 [192.168.1.11]
+  CPUs: 128 - Mem: 503.7 GB (345.2 GB) - Swap: 0 (0)
+Jun-27 13:42:32.494 [main] DEBUG nextflow.Session - Work-dir: /home/cdcadmin/wf-assembly-snps/work [ext2/ext3]
+Jun-27 13:42:32.528 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jun-27 13:42:32.537 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jun-27 13:42:32.607 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jun-27 13:42:32.616 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 129; maxThreads: 1000
+Jun-27 13:42:32.662 [main] DEBUG nextflow.Session - Session start
+Jun-27 13:42:32.664 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/cdcadmin/Downloads/bp_subset_100/results_resumed/pipeline_info/execution_trace_2025-06-27_13-42-32.txt
+Jun-27 13:42:32.669 [main] DEBUG nextflow.Session - Using default localLib path: /home/cdcadmin/wf-assembly-snps/lib
+Jun-27 13:42:32.672 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib
+Jun-27 13:42:32.673 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/cdcadmin/wf-assembly-snps/lib/nfcore_external_java_deps.jar
+Jun-27 13:42:33.365 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-27 13:42:33.412 [main] INFO  nextflow.Nextflow - 
 
 -[2m----------------------------------------------------[0m-
 [0;34m     __         __ __ __     __            __     __  __    [0m
@@ -52,18 +52,19 @@ Jun-26 10:22:45.675 [main] INFO  nextflow.Nextflow -
 [0;35m     bacterial-genomics/wf-assembly-snps v1.0.2[0m
 -[2m----------------------------------------------------[0m-
 [1mCore Nextflow options[0m
-  [0;34mrunName             : [0;32msilly_monod[0m
+  [0;34mrunName             : [0;32mnostalgic_carson[0m
   [0;34mcontainerEngine     : [0;32mdocker[0m
   [0;34mlaunchDir           : [0;32m/home/cdcadmin/wf-assembly-snps[0m
   [0;34mworkDir             : [0;32m/home/cdcadmin/wf-assembly-snps/work[0m
   [0;34mprojectDir          : [0;32m/home/cdcadmin/wf-assembly-snps[0m
   [0;34muserName            : [0;32mcdcadmin[0m
-  [0;34mprofile             : [0;32mdocker[0m
+  [0;34mprofile             : [0;32mlarge_dataset[0m
   [0;34mconfigFiles         : [0;32m/home/cdcadmin/wf-assembly-snps/nextflow.config[0m
 
 [1mInput/output options[0m
-  [0;34minput               : [0;32m/home/cdcadmin/Downloads/bp_contextual_samples[0m
-  [0;34moutdir              : [0;32m/home/cdcadmin/Downloads/bp_contextual_samples/results[0m
+  [0;34minput               : [0;32m/home/cdcadmin/Downloads/bp_subset_100[0m
+  [0;34mparsnp_outputs      : [0;32m./parsnp_outputs[0m
+  [0;34moutdir              : [0;32m/home/cdcadmin/Downloads/bp_subset_100/results_resumed[0m
 
 [1mAnalysis options[0m
   [0;34mrecombination       : [0;32mgubbins[0m
@@ -71,10 +72,15 @@ Jun-26 10:22:45.675 [main] INFO  nextflow.Nextflow -
 [1mProfile options[0m
   [0;34mprofile_cache_dir   : [0;32m/home/cdcadmin/wf-assembly-snps/assets/.cache[0m
 
+[1mMax job request options[0m
+  [0;34mmax_cpus            : [0;32m64[0m
+  [0;34mmax_memory          : [0;32m480.GB[0m
+  [0;34mmax_time            : [0;32m168.h[0m
+
 [1mGeneric options[0m
-  [0;34mtracedir            : [0;32m/home/cdcadmin/Downloads/bp_contextual_samples/results/pipeline_info[0m
-  [0;34mprocess_log_dir     : [0;32m/home/cdcadmin/Downloads/bp_contextual_samples/results/pipeline_info/process_logs[0m
-  [0;34mqc_filecheck_log_dir: [0;32m/home/cdcadmin/Downloads/bp_contextual_samples/results/pipeline_info/qc_file_checks[0m
+  [0;34mtracedir            : [0;32m/home/cdcadmin/Downloads/bp_subset_100/results_resumed/pipeline_info[0m
+  [0;34mprocess_log_dir     : [0;32m/home/cdcadmin/Downloads/bp_subset_100/results_resumed/pipeline_info/process_logs[0m
+  [0;34mqc_filecheck_log_dir: [0;32m/home/cdcadmin/Downloads/bp_subset_100/results_resumed/pipeline_info/qc_file_checks[0m
 
 !! Only displaying parameters that differ from the pipeline defaults !!
 -[2m----------------------------------------------------[0m-
@@ -86,667 +92,97 @@ If you use bacterial-genomics/wf-assembly-snps for your analysis please cite:
 * Software dependencies
   https://github.com/bacterial-genomics/wf-assembly-snps/blob/main/CITATIONS.md
 -[2m----------------------------------------------------[0m-
-Jun-26 10:22:47.043 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Jun-26 10:22:47.044 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Jun-26 10:22:47.049 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
-Jun-26 10:22:47.054 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=128; memory=503.7 GB; capacity=128; pollInterval=100ms; dumpInterval=5m
-Jun-26 10:22:47.056 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
-Jun-26 10:22:47.127 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP
-Jun-26 10:22:47.128 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CORE_GENOME_ALIGNMENT_PARSNP` matches process ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP
-Jun-26 10:22:47.131 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Jun-26 10:22:47.131 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Jun-26 10:22:47.150 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_low` matches labels `process_low` for process with name ASSEMBLY_SNPS:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
-Jun-26 10:22:47.150 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS` matches process ASSEMBLY_SNPS:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
-Jun-26 10:22:47.156 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Jun-26 10:22:47.157 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Jun-26 10:22:47.173 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS
-Jun-26 10:22:47.174 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS` matches process ASSEMBLY_SNPS:CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS
-Jun-26 10:22:47.175 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Jun-26 10:22:47.175 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Jun-26 10:22:47.189 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_low` matches labels `process_low` for process with name ASSEMBLY_SNPS:CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS
-Jun-26 10:22:47.190 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS` matches process ASSEMBLY_SNPS:CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS
-Jun-26 10:22:47.192 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Jun-26 10:22:47.196 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Jun-26 10:22:47.213 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS
-Jun-26 10:22:47.214 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:RECOMBINATION_GUBBINS` matches process ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS
-Jun-26 10:22:47.217 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Jun-26 10:22:47.217 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Jun-26 10:22:47.230 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
-Jun-26 10:22:47.231 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MASK_RECOMBINANT_POSITIONS_BIOPYTHON` matches process ASSEMBLY_SNPS:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
-Jun-26 10:22:47.232 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Jun-26 10:22:47.233 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Jun-26 10:22:47.242 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ASSEMBLY_SNPS:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
-Jun-26 10:22:47.245 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS` matches process ASSEMBLY_SNPS:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
-Jun-26 10:22:47.247 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Jun-26 10:22:47.247 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Jun-26 10:22:47.259 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_high` matches labels `process_high` for process with name ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP
-Jun-26 10:22:47.260 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:BUILD_PHYLOGENETIC_TREE_PARSNP` matches process ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP
-Jun-26 10:22:47.262 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Jun-26 10:22:47.262 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Jun-26 10:22:47.295 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: ASSEMBLY_SNPS:MASK_RECOMBINANT_POSITIONS_BIOPYTHON, REF_INFILE_HANDLING_UNIX, INFILE_HANDLING_UNIX, CONVERT_TSV_TO_EXCEL_PYTHON, ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP, ASSEMBLY_SNPS:CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS, ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS, CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS, ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP, RECOMBINATION_GUBBINS, CONVERT_SAMPLESHEET_PYTHON, CREATE_EXCEL_RUN_SUMMARY_PYTHON, CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS, ASSEMBLY_SNPS:INFILE_HANDLING_UNIX, ASSEMBLY_SNPS:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS, CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS, ASSEMBLY_SNPS:CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS, CONVERT_GINGR_TO_FASTA_HARVESTTOOLS, ASSEMBLY_SNPS:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS, MASK_RECOMBINANT_POSITIONS_BIOPYTHON, CORE_GENOME_ALIGNMENT_PARSNP, BUILD_PHYLOGENETIC_TREE_PARSNP, RECOMBINATION_CLONALFRAMEML
-Jun-26 10:22:47.300 [main] DEBUG nextflow.Session - Igniting dataflow network (17)
-Jun-26 10:22:47.306 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/cdcadmin/Downloads/bp_contextual_samples/; pattern: **.{fasta,fas,fna,fsa,fa}{,.gz}; options: [checkIfExists:true]
-Jun-26 10:22:47.306 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX
-Jun-26 10:22:47.307 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP
-Jun-26 10:22:47.307 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
-Jun-26 10:22:47.307 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS
-Jun-26 10:22:47.308 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS
-Jun-26 10:22:47.308 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS
-Jun-26 10:22:47.308 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
-Jun-26 10:22:47.309 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
-Jun-26 10:22:47.309 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP
-Jun-26 10:22:47.310 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
-  Script_b9a8232e0fa11be0: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/create_masked_snp_distance_matrix_snp_dists/main.nf
-  Script_daab3931d6dbebc6: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/convert_tsv_to_excel_python/main.nf
-  Script_dcf838433c2ae4c2: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/convert_gingr_to_fasta_harvesttools/main.nf
-  Script_de42343b4a60b37d: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/create_snp_distance_matrix_snp_dists/main.nf
-  Script_bdfe511ac4c90ab8: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/recombination.nf
-  Script_92a8fd2e65506f13: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/create_excel_run_summary_python/main.nf
-  Script_06e5d24f60b5d34e: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/calculate_pairwise_distances_snp_dists/main.nf
-  Script_deecfb13783fd705: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/../../modules/local/recombination_gubbins/main.nf
+Jun-27 13:42:33.682 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
   Script_d07a09c54728bf6d: /home/cdcadmin/wf-assembly-snps/main.nf
-  Script_53b40eb3093c3510: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/input_check.nf
-  Script_30224b4410519b3a: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/mask_recombinant_positions_biopython/main.nf
-  Script_095ac330d7162a4b: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/core_genome_alignment_parsnp/main.nf
-  Script_6ef5bdac66e9e392: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/build_phylogenetic_tree_parsnp/main.nf
-  Script_cf1907f7a901597f: /home/cdcadmin/wf-assembly-snps/./workflows/assembly_snps.nf
-  Script_40fb9d8af3f8dec5: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/../../modules/local/recombination_clonalframeml/main.nf
-  Script_cf92b0cfd5970f35: /home/cdcadmin/wf-assembly-snps/./workflows/../subworkflows/local/../../modules/local/convert_samplesheet_python/main.nf
-  Script_b712480f57627fb6: /home/cdcadmin/wf-assembly-snps/./workflows/../modules/local/infile_handling_unix/main.nf
-Jun-26 10:22:47.310 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
-Jun-26 10:22:47.310 [main] DEBUG nextflow.Session - Session await
-Jun-26 10:22:47.798 [Actor Thread 92] INFO  nextflow.processor.TaskProcessor - [c0/e45918] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0069-5_S3_L001-SPAdes)
-Jun-26 10:22:47.798 [Actor Thread 112] INFO  nextflow.processor.TaskProcessor - [d2/ed6acc] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008837)
-Jun-26 10:22:47.798 [Actor Thread 106] INFO  nextflow.processor.TaskProcessor - [53/0b744c] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963570105_1)
-Jun-26 10:22:47.798 [Actor Thread 48] INFO  nextflow.processor.TaskProcessor - [a4/c83216] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012314)
-Jun-26 10:22:47.842 [Actor Thread 106] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-Jun-26 10:22:47.852 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [a3/d25c49] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566495_1)
-Jun-26 10:22:47.852 [Actor Thread 95] INFO  nextflow.processor.TaskProcessor - [e8/0520ac] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0041-4_S1_L001-SPAdes)
-Jun-26 10:22:47.852 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [f8/d77aac] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566855_1)
-Jun-26 10:22:47.856 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [59/d3efdf] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012351)
-Jun-26 10:22:47.856 [Actor Thread 82] INFO  nextflow.processor.TaskProcessor - [b8/28f1d7] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0184-2_S9-SPAdes)
-Jun-26 10:22:47.859 [Actor Thread 97] INFO  nextflow.processor.TaskProcessor - [0a/28e7e3] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012347)
-Jun-26 10:22:47.869 [Actor Thread 119] INFO  nextflow.processor.TaskProcessor - [59/8db328] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963568005_1)
-Jun-26 10:22:47.870 [Actor Thread 52] INFO  nextflow.processor.TaskProcessor - [ce/0ed8c2] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_619s005_GCF_001207785_2_Malaysia)
-Jun-26 10:22:47.870 [Actor Thread 19] INFO  nextflow.processor.TaskProcessor - [eb/91ea50] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0050-5_S10_L001-SPAdes)
-Jun-26 10:22:47.870 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [b9/8006ff] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963567115_1)
-Jun-26 10:22:47.870 [Actor Thread 72] INFO  nextflow.processor.TaskProcessor - [2a/58c17b] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0058-8_S3_L001-SPAdes)
-Jun-26 10:22:47.870 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [c9/7f9429] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_402a_GCF_001980775_1_Thailand)
-Jun-26 10:22:47.870 [Actor Thread 46] INFO  nextflow.processor.TaskProcessor - [5a/b0132a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012308)
-Jun-26 10:22:47.870 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [b0/acab52] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0044-8_S4_L001-SPAdes)
-Jun-26 10:22:47.870 [Actor Thread 111] INFO  nextflow.processor.TaskProcessor - [9c/a6cb6c] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0124-8_S4_L001-SPAdes)
-Jun-26 10:22:47.870 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [4b/0b2bfb] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_28P_GCF_025847415_1_Viet_Nam)
-Jun-26 10:22:47.870 [Actor Thread 42] INFO  nextflow.processor.TaskProcessor - [4b/4c67e7] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0076-0_S10_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 83] INFO  nextflow.processor.TaskProcessor - [1e/4d444b] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0072-9_S6_L001-SPAdes)
-Jun-26 10:22:47.870 [Actor Thread 41] INFO  nextflow.processor.TaskProcessor - [45/f4e393] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963572755_1)
-Jun-26 10:22:47.870 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [f8/f8ab6a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012334)
-Jun-26 10:22:47.871 [Actor Thread 77] INFO  nextflow.processor.TaskProcessor - [7f/df6908] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0131-3_S1_L001-SPAdes)
-Jun-26 10:22:47.870 [Actor Thread 107] INFO  nextflow.processor.TaskProcessor - [d3/75f603] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0187-5_S2-SPAdes)
-Jun-26 10:22:47.870 [Actor Thread 74] INFO  nextflow.processor.TaskProcessor - [0c/e8eb9f] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561565_1)
-Jun-26 10:22:47.870 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [bd/2e89e5] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_900598305_2)
-Jun-26 10:22:47.871 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [44/14aef3] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565565_1)
-Jun-26 10:22:47.871 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [5a/492ace] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0004_S9_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [12/14e882] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563305_1)
-Jun-26 10:22:47.870 [Actor Thread 110] INFO  nextflow.processor.TaskProcessor - [68/d423b0] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0039-8_S9_L001-SPAdes)
-Jun-26 10:22:47.870 [Actor Thread 129] INFO  nextflow.processor.TaskProcessor - [d4/6c5b0e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0091-9_S3_L001-SPAdes)
-Jun-26 10:22:47.870 [Actor Thread 57] INFO  nextflow.processor.TaskProcessor - [48/f67aa5] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012317)
-Jun-26 10:22:47.870 [Actor Thread 96] INFO  nextflow.processor.TaskProcessor - [a6/19e913] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012370)
-Jun-26 10:22:47.871 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [a5/58505c] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0013_S7_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 53] INFO  nextflow.processor.TaskProcessor - [3f/be0365] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963569785_1)
-Jun-26 10:22:47.871 [Actor Thread 99] INFO  nextflow.processor.TaskProcessor - [dd/9c428c] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0163-6_S2-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 45] INFO  nextflow.processor.TaskProcessor - [a1/da7bbd] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008804)
-Jun-26 10:22:47.871 [Actor Thread 35] INFO  nextflow.processor.TaskProcessor - [1e/ce646e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0177-6_S2-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 93] INFO  nextflow.processor.TaskProcessor - [99/cd9105] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0122-2_S2_L001-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [2f/358443] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0105-7_S5_L001-SPAdes)
-Jun-26 10:22:47.870 [Actor Thread 122] INFO  nextflow.processor.TaskProcessor - [0e/e2b962] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0075-2_S9_L001-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [95/ce36b2] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0164-4_S3-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 76] INFO  nextflow.processor.TaskProcessor - [df/98d205] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0021_S7-SPAdes)
-Jun-26 10:22:47.870 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [22/549f11] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571005_1)
-Jun-26 10:22:47.872 [Actor Thread 49] INFO  nextflow.processor.TaskProcessor - [75/c3414d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561355_1)
-Jun-26 10:22:47.872 [Actor Thread 33] INFO  nextflow.processor.TaskProcessor - [3c/f443f9] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012330)
-Jun-26 10:22:47.870 [Actor Thread 80] INFO  nextflow.processor.TaskProcessor - [60/1bcad5] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012328)
-Jun-26 10:22:47.870 [Actor Thread 89] INFO  nextflow.processor.TaskProcessor - [6b/81ba46] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_619s008_GCF_001326955_2_Malaysia)
-Jun-26 10:22:47.870 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [f2/d30db8] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0104-0_S4_L001-SPAdes)
-Jun-26 10:22:47.870 [Actor Thread 121] INFO  nextflow.processor.TaskProcessor - [bc/3df578] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008803)
-Jun-26 10:22:47.870 [Actor Thread 128] INFO  nextflow.processor.TaskProcessor - [43/04372e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963564305_1)
-Jun-26 10:22:47.870 [Actor Thread 126] INFO  nextflow.processor.TaskProcessor - [55/2f2158] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0006-7_S6_L001-SPAdes)
-Jun-26 10:22:47.870 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [a3/1e8e78] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0080-2_S3_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 104] INFO  nextflow.processor.TaskProcessor - [8b/ab346d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_900595585_2)
-Jun-26 10:22:47.871 [Actor Thread 90] INFO  nextflow.processor.TaskProcessor - [10/5a33ef] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008816)
-Jun-26 10:22:47.871 [Actor Thread 28] INFO  nextflow.processor.TaskProcessor - [d2/828337] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561075_1)
-Jun-26 10:22:47.871 [Actor Thread 66] INFO  nextflow.processor.TaskProcessor - [bf/04abf4] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013348)
-Jun-26 10:22:47.871 [Actor Thread 115] INFO  nextflow.processor.TaskProcessor - [a0/d21723] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0112-3_S3_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 44] INFO  nextflow.processor.TaskProcessor - [6f/ed6475] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_8400_GCF_025847635_1_Viet_Nam)
-Jun-26 10:22:47.871 [Actor Thread 34] INFO  nextflow.processor.TaskProcessor - [2a/cbe9cf] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0182-6_S7-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 38] INFO  nextflow.processor.TaskProcessor - [a6/723929] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_44W_S64_GCF_014713025_1_Laos)
-Jun-26 10:22:47.871 [Actor Thread 69] INFO  nextflow.processor.TaskProcessor - [5f/f5cf79] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012377)
-Jun-26 10:22:47.871 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [8e/fa79ea] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0110-7_S10_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [3c/af37b4] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963569685_1)
-Jun-26 10:22:47.871 [Actor Thread 88] INFO  nextflow.processor.TaskProcessor - [94/e46ed8] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0048-9_S8_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [04/f74317] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013345)
-Jun-26 10:22:47.872 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [78/5b40d9] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563525_1)
-Jun-26 10:22:47.871 [Actor Thread 123] INFO  nextflow.processor.TaskProcessor - [ec/d1df7b] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963562615_1)
-Jun-26 10:22:47.871 [Actor Thread 71] INFO  nextflow.processor.TaskProcessor - [3c/53e534] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0125-5_S5_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 43] INFO  nextflow.processor.TaskProcessor - [fe/1e5060] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0010_S4_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [79/77d243] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0113-1_S4_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [69/347b30] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_2002734728_GCF_002111105_1_USA_California)
-Jun-26 10:22:47.870 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [09/193a1e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963569325_1)
-Jun-26 10:22:47.871 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [5e/44615f] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_619s007_GCF_001326935_2_Malaysia)
-Jun-26 10:22:47.871 [Actor Thread 87] INFO  nextflow.processor.TaskProcessor - [7f/3252de] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0109-9_S9_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 84] INFO  nextflow.processor.TaskProcessor - [a7/5da207] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0175-0_S10-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 91] INFO  nextflow.processor.TaskProcessor - [be/2ccd26] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012354)
-Jun-26 10:22:47.871 [Actor Thread 94] INFO  nextflow.processor.TaskProcessor - [d0/51c4bf] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0031-5_S1_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 130] INFO  nextflow.processor.TaskProcessor - [19/ff4382] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561215_1)
-Jun-26 10:22:47.871 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [6b/3927f8] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008819)
-Jun-26 10:22:47.871 [Actor Thread 131] INFO  nextflow.processor.TaskProcessor - [0a/0eca5a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0137-0_S7_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 103] INFO  nextflow.processor.TaskProcessor - [9a/e78658] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0033-1_S3_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 81] INFO  nextflow.processor.TaskProcessor - [66/2b4578] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_7400_GCF_025848135_1_Viet_Nam)
-Jun-26 10:22:47.871 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [c4/959dcc] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565675_1)
-Jun-26 10:22:47.871 [Actor Thread 98] INFO  nextflow.processor.TaskProcessor - [0b/5b7c7e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008794)
-Jun-26 10:22:47.871 [Actor Thread 55] INFO  nextflow.processor.TaskProcessor - [18/eda969] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0051-3_S1_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [0d/3e55eb] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963572995_1)
-Jun-26 10:22:47.871 [Actor Thread 63] INFO  nextflow.processor.TaskProcessor - [70/9457d5] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008841)
-Jun-26 10:22:47.871 [Actor Thread 113] INFO  nextflow.processor.TaskProcessor - [f2/09c0f7] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0145-3_S5_L001-SPAdes)
-Jun-26 10:22:47.871 [Actor Thread 117] INFO  nextflow.processor.TaskProcessor - [a9/6d922d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0093-5_S5_L001-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 64] INFO  nextflow.processor.TaskProcessor - [e5/78f738] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0179-2_S4-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 118] INFO  nextflow.processor.TaskProcessor - [ee/e99763] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0139-6_S9_L001-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 100] INFO  nextflow.processor.TaskProcessor - [45/5a9f7c] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0014-1_S5_L001-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 102] INFO  nextflow.processor.TaskProcessor - [e4/75fc40] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012303)
-Jun-26 10:22:47.872 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [58/9433d1] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0127-1_S7_L001-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [d4/9f971f] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963568785_1)
-Jun-26 10:22:47.872 [Actor Thread 101] INFO  nextflow.processor.TaskProcessor - [71/3682f6] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008822)
-Jun-26 10:22:47.872 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [60/646d6a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0047-1_S7_L001-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 116] INFO  nextflow.processor.TaskProcessor - [60/2a9dd2] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0200-6_S5-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 75] INFO  nextflow.processor.TaskProcessor - [03/c2f1a9] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012380)
-Jun-26 10:22:47.872 [Actor Thread 68] INFO  nextflow.processor.TaskProcessor - [a9/43d057] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0077-8_S11_L001-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 79] INFO  nextflow.processor.TaskProcessor - [55/6f2374] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565485_1)
-Jun-26 10:22:47.872 [Actor Thread 109] INFO  nextflow.processor.TaskProcessor - [cc/7eed1d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963568705_1)
-Jun-26 10:22:47.872 [Actor Thread 86] INFO  nextflow.processor.TaskProcessor - [a9/b36c82] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_ABCPW_30_GCF_000774495_1_Australia)
-Jun-26 10:22:47.872 [Actor Thread 65] INFO  nextflow.processor.TaskProcessor - [a7/2b563e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0129-7_S9_L001-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [0c/56bf65] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0073-7_S7_L001-SPAdes)
-Jun-26 10:22:47.872 [Actor Thread 127] INFO  nextflow.processor.TaskProcessor - [c0/b80a47] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563065_1)
-Jun-26 10:22:47.873 [Actor Thread 50] INFO  nextflow.processor.TaskProcessor - [11/100943] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_ABCPW_91_GCF_000774405_1_Australia)
-Jun-26 10:22:47.890 [Actor Thread 51] INFO  nextflow.processor.TaskProcessor - [41/39aa8a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571495_1)
-Jun-26 10:22:47.890 [Actor Thread 125] INFO  nextflow.processor.TaskProcessor - [e2/4faa97] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561435_1)
-Jun-26 10:22:47.890 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [ec/58ba64] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0046-3_S6_L001-SPAdes)
-Jun-26 10:22:47.891 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [3a/230a35] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_406e_GCF_000410895_1_Thailand)
-Jun-26 10:22:47.891 [Actor Thread 105] INFO  nextflow.processor.TaskProcessor - [bc/f545dd] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013354)
-Jun-26 10:22:47.891 [Actor Thread 70] INFO  nextflow.processor.TaskProcessor - [aa/26975d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0023-2_S3_L001-SPAdes)
-Jun-26 10:22:47.891 [Actor Thread 30] INFO  nextflow.processor.TaskProcessor - [02/10e0b6] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008829)
-Jun-26 10:22:47.891 [Actor Thread 120] INFO  nextflow.processor.TaskProcessor - [f0/ded554] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963560585_1)
-Jun-26 10:22:47.891 [Actor Thread 114] INFO  nextflow.processor.TaskProcessor - [aa/ee950c] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008786)
-Jun-26 10:22:47.891 [Actor Thread 54] INFO  nextflow.processor.TaskProcessor - [4f/bce590] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013365)
-Jun-26 10:22:47.891 [Actor Thread 60] INFO  nextflow.processor.TaskProcessor - [28/15f81e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566455_1)
-Jun-26 10:22:47.891 [Actor Thread 67] INFO  nextflow.processor.TaskProcessor - [b3/d2958b] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0195-8_S10-SPAdes)
-Jun-26 10:22:47.891 [Actor Thread 39] INFO  nextflow.processor.TaskProcessor - [a3/356df2] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565395_1)
-Jun-26 10:22:47.891 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [18/e24874] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565345_1)
-Jun-26 10:22:47.891 [Actor Thread 73] INFO  nextflow.processor.TaskProcessor - [4a/d761d8] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0015-8_S6_L001-SPAdes)
-Jun-26 10:22:47.891 [Actor Thread 85] INFO  nextflow.processor.TaskProcessor - [52/0f3534] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0036-4_S6_L001-SPAdes)
-Jun-26 10:22:47.891 [Actor Thread 124] INFO  nextflow.processor.TaskProcessor - [92/44d41f] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0158-6_S8_L001-SPAdes)
-Jun-26 10:22:47.894 [Actor Thread 78] INFO  nextflow.processor.TaskProcessor - [5b/28bdc5] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566475_1)
-Jun-26 10:22:47.911 [Actor Thread 97] INFO  nextflow.processor.TaskProcessor - [92/834b57] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008820)
-Jun-26 10:22:47.911 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [43/64fa4f] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0144-6_S4_L001-SPAdes)
-Jun-26 10:22:47.912 [Actor Thread 106] INFO  nextflow.processor.TaskProcessor - [0b/15e3ea] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963567325_1)
-Jun-26 10:22:47.913 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [84/72dcbd] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0034-9_S4_L001-SPAdes)
-Jun-26 10:22:47.913 [Actor Thread 112] INFO  nextflow.processor.TaskProcessor - [31/fdd3bb] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0155-2_S5_L001-SPAdes)
-Jun-26 10:22:47.913 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [94/66bdd2] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0062-0_S7_L001-SPAdes)
-Jun-26 10:22:47.914 [Actor Thread 82] INFO  nextflow.processor.TaskProcessor - [96/3703e8] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963573095_1)
-Jun-26 10:22:47.915 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [5a/e3ead1] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0054-7_S4_L001-SPAdes)
-Jun-26 10:22:47.915 [Actor Thread 41] INFO  nextflow.processor.TaskProcessor - [68/f99156] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963562695_1)
-Jun-26 10:22:47.915 [Actor Thread 133] INFO  nextflow.processor.TaskProcessor - [5d/7d72ac] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0057-0_S2_L001-SPAdes)
-Jun-26 10:22:47.915 [Actor Thread 95] INFO  nextflow.processor.TaskProcessor - [d8/129292] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0071-1_S5_L001-SPAdes)
-Jun-26 10:22:47.915 [Actor Thread 119] INFO  nextflow.processor.TaskProcessor - [d1/8addb9] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0089-3_S1_L001-SPAdes)
-Jun-26 10:22:47.915 [Actor Thread 92] INFO  nextflow.processor.TaskProcessor - [46/dde29a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0111-5_S2_L001-SPAdes)
-Jun-26 10:22:47.916 [Actor Thread 77] INFO  nextflow.processor.TaskProcessor - [9a/d0dade] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_64W_S75_GCF_014712815_1_Laos)
-Jun-26 10:22:47.916 [Actor Thread 138] INFO  nextflow.processor.TaskProcessor - [60/d4e146] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0135-4_S5_L001-SPAdes)
-Jun-26 10:22:47.917 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [d0/583e04] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008813)
-Jun-26 10:22:47.917 [Actor Thread 42] INFO  nextflow.processor.TaskProcessor - [a5/48860c] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963560915_1)
-Jun-26 10:22:47.917 [Actor Thread 107] INFO  nextflow.processor.TaskProcessor - [08/a409c6] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_577ci_GCF_001980815_1_Thailand)
-Jun-26 10:22:47.919 [Actor Thread 111] INFO  nextflow.processor.TaskProcessor - [e1/739e76] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0148-7_S8_L001-SPAdes)
-Jun-26 10:22:47.923 [Actor Thread 139] INFO  nextflow.processor.TaskProcessor - [4c/2e9833] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0030-7_S10_L001-SPAdes)
-Jun-26 10:22:47.924 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [9c/b42170] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963562655_1)
-Jun-26 10:22:47.927 [Actor Thread 48] INFO  nextflow.processor.TaskProcessor - [43/9b7b18] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008838)
-Jun-26 10:22:47.927 [Actor Thread 135] INFO  nextflow.processor.TaskProcessor - [da/77eaf8] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571365_1)
-Jun-26 10:22:47.930 [Actor Thread 52] INFO  nextflow.processor.TaskProcessor - [49/dda22b] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012331)
-Jun-26 10:22:47.933 [Actor Thread 19] INFO  nextflow.processor.TaskProcessor - [ca/d87946] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0189-1_S4-SPAdes)
-Jun-26 10:22:47.936 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [76/568a32] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0067-9_S1_L001-SPAdes)
-Jun-26 10:22:47.939 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [cd/7ea4aa] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0083-6_S6_L001-SPAdes)
-Jun-26 10:22:47.940 [Actor Thread 108] INFO  nextflow.processor.TaskProcessor - [9a/b5751e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565015_1)
-Jun-26 10:22:47.941 [Actor Thread 72] INFO  nextflow.processor.TaskProcessor - [c8/c38754] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0173-5_S8-SPAdes)
-Jun-26 10:22:47.943 [Actor Thread 103] INFO  nextflow.processor.TaskProcessor - [2d/0f37de] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0045-5_S5_L001-SPAdes)
-Jun-26 10:22:47.943 [Actor Thread 131] INFO  nextflow.processor.TaskProcessor - [42/205e66] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565125_1)
-Jun-26 10:22:47.946 [Actor Thread 91] INFO  nextflow.processor.TaskProcessor - [39/0778dc] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0193-3_S8-SPAdes)
-Jun-26 10:22:47.947 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [a2/6919a6] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_BDD_GCF_000756905_1_Australia_Townsville_Queensland)
-Jun-26 10:22:47.953 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [c2/65d12a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0037-2_S7_L001-SPAdes)
-Jun-26 10:22:47.953 [Actor Thread 98] INFO  nextflow.processor.TaskProcessor - [0f/c74899] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0001-8_S1_L001-SPAdes)
-Jun-26 10:22:47.954 [Actor Thread 63] INFO  nextflow.processor.TaskProcessor - [5a/30ade7] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963573025_1)
-Jun-26 10:22:47.955 [Actor Thread 117] INFO  nextflow.processor.TaskProcessor - [44/47a80f] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_43S_S63_GCF_014713085_1_Laos)
-Jun-26 10:22:47.955 [Actor Thread 46] INFO  nextflow.processor.TaskProcessor - [02/926afb] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0009_S3_L001-SPAdes)
-Jun-26 10:22:47.958 [Actor Thread 130] INFO  nextflow.processor.TaskProcessor - [31/3cf3b0] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008824)
-Jun-26 10:22:47.961 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [41/a4ad6e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0001_S6_L001-SPAdes)
-Jun-26 10:22:47.962 [Actor Thread 116] INFO  nextflow.processor.TaskProcessor - [cc/bb3b66] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008784)
-Jun-26 10:22:47.962 [Actor Thread 113] INFO  nextflow.processor.TaskProcessor - [3f/32f675] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008828)
-Jun-26 10:22:47.963 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [82/0e6182] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013363)
-Jun-26 10:22:47.965 [Actor Thread 100] INFO  nextflow.processor.TaskProcessor - [7d/bdb11a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0019_S5-SPAdes)
-Jun-26 10:22:47.965 [Actor Thread 136] INFO  nextflow.processor.TaskProcessor - [9b/13b63b] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0012_S6_L001-SPAdes)
-Jun-26 10:22:47.969 [Actor Thread 101] INFO  nextflow.processor.TaskProcessor - [50/92dbd9] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0013-3_S4_L001-SPAdes)
-Jun-26 10:22:47.982 [Actor Thread 75] INFO  nextflow.processor.TaskProcessor - [ef/1c1ff9] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0192-5_S7-SPAdes)
-Jun-26 10:22:47.983 [Actor Thread 141] INFO  nextflow.processor.TaskProcessor - [f3/99dd1a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963560735_1)
-Jun-26 10:22:47.987 [Actor Thread 86] INFO  nextflow.processor.TaskProcessor - [0d/e65f8c] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_4811_GCF_003268075_1_Viet_Nam)
-Jun-26 10:22:47.988 [Actor Thread 68] INFO  nextflow.processor.TaskProcessor - [28/333550] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012324)
-Jun-26 10:22:47.989 [Actor Thread 74] INFO  nextflow.processor.TaskProcessor - [aa/a3bc02] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0123-0_S3_L001-SPAdes)
-Jun-26 10:22:47.991 [Actor Thread 80] INFO  nextflow.processor.TaskProcessor - [3b/98e801] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571845_1)
-Jun-26 10:22:47.993 [Actor Thread 28] INFO  nextflow.processor.TaskProcessor - [9d/919578] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_576_GCF_000182195_1_Thailand)
-Jun-26 10:22:47.993 [Actor Thread 137] INFO  nextflow.processor.TaskProcessor - [cd/b7ea02] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963570975_1)
-Jun-26 10:22:47.994 [Actor Thread 66] INFO  nextflow.processor.TaskProcessor - [56/68b988] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0106-5_S6_L001-SPAdes)
-Jun-26 10:22:47.994 [Actor Thread 118] INFO  nextflow.processor.TaskProcessor - [10/f93748] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0063-8_S8_L001-SPAdes)
-Jun-26 10:22:47.994 [Actor Thread 140] INFO  nextflow.processor.TaskProcessor - [f9/3652b0] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0199-0_S4-SPAdes)
-Jun-26 10:22:47.996 [Actor Thread 128] INFO  nextflow.processor.TaskProcessor - [94/d3329d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0042-2_S2_L001-SPAdes)
-Jun-26 10:22:47.996 [Actor Thread 104] INFO  nextflow.processor.TaskProcessor - [a4/43efc1] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0064-6_S9_L001-SPAdes)
-Jun-26 10:22:47.996 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [25/9043b8] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008781)
-Jun-26 10:22:48.002 [Actor Thread 121] INFO  nextflow.processor.TaskProcessor - [89/9e1077] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0094-3_S6_L001-SPAdes)
-Jun-26 10:22:48.007 [Actor Thread 50] INFO  nextflow.processor.TaskProcessor - [aa/4302d3] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963572615_1)
-Jun-26 10:22:48.007 [Actor Thread 38] INFO  nextflow.processor.TaskProcessor - [11/8fad51] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0147-9_S7_L001-SPAdes)
-Jun-26 10:22:48.007 [Actor Thread 69] INFO  nextflow.processor.TaskProcessor - [16/4b7619] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0103-2_S3_L001-SPAdes)
-Jun-26 10:22:48.009 [Actor Thread 49] INFO  nextflow.processor.TaskProcessor - [e4/742535] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0201-4_S6-SPAdes)
-Jun-26 10:22:48.012 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [2a/5055e1] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0085-1_S8_L001-SPAdes)
-Jun-26 10:22:48.012 [Actor Thread 115] INFO  nextflow.processor.TaskProcessor - [16/2d9077] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0017_S11_L001-SPAdes)
-Jun-26 10:22:48.014 [Actor Thread 127] INFO  nextflow.processor.TaskProcessor - [77/64c847] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0115-6_S6_L001-SPAdes)
-Jun-26 10:22:48.015 [Actor Thread 108] INFO  nextflow.processor.TaskProcessor - [52/9f40de] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0133-9_S3_L001-SPAdes)
-Jun-26 10:22:48.017 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [95/e1d78b] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0049-7_S9_L001-SPAdes)
-Jun-26 10:22:48.031 [Actor Thread 65] INFO  nextflow.processor.TaskProcessor - [6c/675411] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0180-0_S5-SPAdes)
-Jun-26 10:22:48.031 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [38/7d1702] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0005-9_S5_L001-SPAdes)
-Jun-26 10:22:48.033 [Actor Thread 71] INFO  nextflow.processor.TaskProcessor - [05/09b382] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012359)
-Jun-26 10:22:48.035 [Actor Thread 88] INFO  nextflow.processor.TaskProcessor - [ef/a91cfa] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012306)
-Jun-26 10:22:48.036 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [94/910860] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563715_1)
-Jun-26 10:22:48.038 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [2b/4af69b] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_900597175_2)
-Jun-26 10:22:48.038 [Actor Thread 123] INFO  nextflow.processor.TaskProcessor - [1b/269dd5] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0070-3_S4_L001-SPAdes)
-Jun-26 10:22:48.039 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [5a/d3c223] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0061-2_S6_L001-SPAdes)
-Jun-26 10:22:48.039 [Actor Thread 102] INFO  nextflow.processor.TaskProcessor - [d5/ba7b91] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_4822_GCF_009826725_1_Viet_Nam)
-Jun-26 10:22:48.039 [Actor Thread 43] INFO  nextflow.processor.TaskProcessor - [d6/0d0ff8] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013346)
-Jun-26 10:22:48.041 [Actor Thread 55] INFO  nextflow.processor.TaskProcessor - [1e/c80f6d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566695_1)
-Jun-26 10:22:48.044 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [40/7f97ca] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0035-6_S5_L001-SPAdes)
-Jun-26 10:22:48.045 [Actor Thread 81] INFO  nextflow.processor.TaskProcessor - [17/bff531] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0084-4_S7_L001-SPAdes)
-Jun-26 10:22:48.050 [Actor Thread 84] INFO  nextflow.processor.TaskProcessor - [eb/0cd0d4] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_53W_S72_GCF_014712895_1_Laos)
-Jun-26 10:22:48.056 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [20/577f11] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0099-2_S11_L001-SPAdes)
-Jun-26 10:22:48.059 [Actor Thread 79] INFO  nextflow.processor.TaskProcessor - [15/90801a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_284_GCF_025847905_1_Viet_Nam)
-Jun-26 10:22:48.061 [Actor Thread 94] INFO  nextflow.processor.TaskProcessor - [f9/93c3cf] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0176-8_S1-SPAdes)
-Jun-26 10:22:48.063 [Actor Thread 87] INFO  nextflow.processor.TaskProcessor - [8a/52b7b4] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0183-4_S8-SPAdes)
-Jun-26 10:22:48.064 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [b6/b882ae] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963570025_1)
-Jun-26 10:22:48.064 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [48/d51c9e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0078-6_S1_L001-SPAdes)
-Jun-26 10:22:48.065 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [77/bbea0a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561245_1)
-Jun-26 10:22:48.067 [Actor Thread 35] INFO  nextflow.processor.TaskProcessor - [4b/feab58] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963570085_1)
-Jun-26 10:22:48.070 [Actor Thread 45] INFO  nextflow.processor.TaskProcessor - [1f/3c3524] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0181-8_S6-SPAdes)
-Jun-26 10:22:48.072 [Actor Thread 109] INFO  nextflow.processor.TaskProcessor - [3e/ed00f5] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963568885_1)
-Jun-26 10:22:48.077 [Actor Thread 93] INFO  nextflow.processor.TaskProcessor - [28/182f21] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0028-1_S8_L001-SPAdes)
-Jun-26 10:22:48.079 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [0e/c34264] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963570575_1)
-Jun-26 10:22:48.079 [Actor Thread 132] INFO  nextflow.processor.TaskProcessor - [3f/00cce2] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561915_1)
-Jun-26 10:22:48.080 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [bc/bb8292] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0170-1_S5-SPAdes)
-Jun-26 10:22:48.082 [Actor Thread 90] INFO  nextflow.processor.TaskProcessor - [e4/531ab2] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012363)
-Jun-26 10:22:48.083 [Actor Thread 76] INFO  nextflow.processor.TaskProcessor - [d0/bcb313] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0008-3_S8_L001-SPAdes)
-Jun-26 10:22:48.084 [Actor Thread 53] INFO  nextflow.processor.TaskProcessor - [9d/013d52] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0168-5_S3-SPAdes)
-Jun-26 10:22:48.085 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [bf/966cd8] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963573225_1)
-Jun-26 10:22:48.087 [Actor Thread 33] INFO  nextflow.processor.TaskProcessor - [2c/a3e263] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_ABCPW_107_GCF_000773235_1_Australia)
-Jun-26 10:22:48.091 [Actor Thread 110] INFO  nextflow.processor.TaskProcessor - [80/4ceaf9] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008817)
-Jun-26 10:22:48.092 [Actor Thread 129] INFO  nextflow.processor.TaskProcessor - [11/6fde88] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0010-9_S10_L001-SPAdes)
-Jun-26 10:22:48.094 [Actor Thread 34] INFO  nextflow.processor.TaskProcessor - [b4/6b8cd9] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963564785_1)
-Jun-26 10:22:48.099 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [89/fff404] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0120-6_S11_L001-SPAdes)
-Jun-26 10:22:48.101 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [ac/054e5c] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0161-0_S11_L001-SPAdes)
-Jun-26 10:22:48.103 [Actor Thread 96] INFO  nextflow.processor.TaskProcessor - [c9/385e4c] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963562325_1)
-Jun-26 10:22:48.109 [Actor Thread 83] INFO  nextflow.processor.TaskProcessor - [b2/721ad2] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0097-6_S9_L001-SPAdes)
-Jun-26 10:22:48.109 [Actor Thread 89] INFO  nextflow.processor.TaskProcessor - [0b/2e6832] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_58W_S73_GCF_014712875_1_Laos)
-Jun-26 10:22:48.111 [Actor Thread 126] INFO  nextflow.processor.TaskProcessor - [7a/55fbe5] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008785)
-Jun-26 10:22:48.113 [Actor Thread 55] INFO  nextflow.processor.TaskProcessor - [f9/3a65d9] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963564375_1)
-Jun-26 10:22:48.113 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [cb/c73de8] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012316)
-Jun-26 10:22:48.114 [Actor Thread 81] INFO  nextflow.processor.TaskProcessor - [73/ee1b34] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563155_1)
-Jun-26 10:22:48.116 [Actor Thread 102] INFO  nextflow.processor.TaskProcessor - [ed/dc2bcc] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0141-2_S1_L001-SPAdes)
-Jun-26 10:22:48.116 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [49/366812] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0011-7_S2_L001-SPAdes)
-Jun-26 10:22:48.117 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [a1/7fad16] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0102-4_S2_L001-SPAdes)
-Jun-26 10:22:48.122 [Actor Thread 71] INFO  nextflow.processor.TaskProcessor - [ba/9ba186] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0178-4_S3-SPAdes)
-Jun-26 10:22:48.123 [Actor Thread 123] INFO  nextflow.processor.TaskProcessor - [c7/df019a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963569645_1)
-Jun-26 10:22:48.125 [Actor Thread 88] INFO  nextflow.processor.TaskProcessor - [e7/28e400] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0186-7_S1-SPAdes)
-Jun-26 10:22:48.125 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [93/606dfe] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013364)
-Jun-26 10:22:48.125 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [e8/ee6a64] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0081-0_S4_L001-SPAdes)
-Jun-26 10:22:48.127 [Actor Thread 65] INFO  nextflow.processor.TaskProcessor - [2e/a3d706] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0004-2_S4_L001-SPAdes)
-Jun-26 10:22:48.132 [Actor Thread 127] INFO  nextflow.processor.TaskProcessor - [18/885098] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013343)
-Jun-26 10:22:48.132 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [d8/0e35ad] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012332)
-Jun-26 10:22:48.133 [Actor Thread 108] INFO  nextflow.processor.TaskProcessor - [cd/7525b0] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963565085_1)
-Jun-26 10:22:48.139 [Actor Thread 115] INFO  nextflow.processor.TaskProcessor - [e1/258bfb] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0202-2_S7-SPAdes)
-Jun-26 10:22:48.141 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [3f/991124] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0059-6_S4_L001-SPAdes)
-Jun-26 10:22:48.143 [Actor Thread 49] INFO  nextflow.processor.TaskProcessor - [c6/42efae] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963573135_1)
-Jun-26 10:22:48.144 [Actor Thread 121] INFO  nextflow.processor.TaskProcessor - [07/99e5c5] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0053-9_S3_L001-SPAdes)
-Jun-26 10:22:48.147 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [ae/7fa002] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008790)
-Jun-26 10:22:48.149 [Actor Thread 50] INFO  nextflow.processor.TaskProcessor - [1b/f31c4d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0149-5_S9_L001-SPAdes)
-Jun-26 10:22:48.151 [Actor Thread 38] INFO  nextflow.processor.TaskProcessor - [f7/158040] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963567935_1)
-Jun-26 10:22:48.152 [Actor Thread 69] INFO  nextflow.processor.TaskProcessor - [08/206b11] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0196-6_S1-SPAdes)
-Jun-26 10:22:48.159 [Actor Thread 137] INFO  nextflow.processor.TaskProcessor - [ef/9ca775] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0019-0_S10_L001-SPAdes)
-Jun-26 10:22:48.159 [Actor Thread 80] INFO  nextflow.processor.TaskProcessor - [1a/a90e63] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012365)
-Jun-26 10:22:48.163 [Actor Thread 28] INFO  nextflow.processor.TaskProcessor - [fc/d1de08] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0011_S5_L001-SPAdes)
-Jun-26 10:22:48.166 [Actor Thread 66] INFO  nextflow.processor.TaskProcessor - [d1/f1910b] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0151-1_S1_L001-SPAdes)
-Jun-26 10:22:48.168 [Actor Thread 140] INFO  nextflow.processor.TaskProcessor - [13/eeb8ef] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0130-5_S10_L001-SPAdes)
-Jun-26 10:22:48.170 [Actor Thread 118] INFO  nextflow.processor.TaskProcessor - [55/5c0ba0] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_134_GCF_009830095_1_Thailand)
-Jun-26 10:22:48.172 [Actor Thread 128] INFO  nextflow.processor.TaskProcessor - [c2/603d35] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0156-0_S6_L001-SPAdes)
-Jun-26 10:22:48.175 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [5d/19e288] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013352)
-Jun-26 10:22:48.177 [Actor Thread 63] INFO  nextflow.processor.TaskProcessor - [88/815d38] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0017-4_S8_L001-SPAdes)
-Jun-26 10:22:48.184 [Actor Thread 46] INFO  nextflow.processor.TaskProcessor - [5b/a57886] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012362)
-Jun-26 10:22:48.184 [Actor Thread 117] INFO  nextflow.processor.TaskProcessor - [39/8c9f01] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012307)
-Jun-26 10:22:48.187 [Actor Thread 130] INFO  nextflow.processor.TaskProcessor - [8c/642fa3] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0068-7_S2_L001-SPAdes)
-Jun-26 10:22:48.188 [Actor Thread 113] INFO  nextflow.processor.TaskProcessor - [1f/89568f] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0154-5_S4_L001-SPAdes)
-Jun-26 10:22:48.188 [Actor Thread 116] INFO  nextflow.processor.TaskProcessor - [9b/05d5fa] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0029-9_S9_L001-SPAdes)
-Jun-26 10:22:48.189 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [f2/fea2f7] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0166-9_S1-SPAdes)
-Jun-26 10:22:48.192 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [57/7cd9ac] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0126-3_S6_L001-SPAdes)
-Jun-26 10:22:48.201 [Actor Thread 101] INFO  nextflow.processor.TaskProcessor - [ef/54cf04] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571745_1)
-Jun-26 10:22:48.201 [Actor Thread 100] INFO  nextflow.processor.TaskProcessor - [05/d78ef8] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0065-3_S10_L001-SPAdes)
-Jun-26 10:22:48.202 [Actor Thread 136] INFO  nextflow.processor.TaskProcessor - [24/f39903] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0092-7_S4_L001-SPAdes)
-Jun-26 10:22:48.207 [Actor Thread 141] INFO  nextflow.processor.TaskProcessor - [e1/be219e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963569365_1)
-Jun-26 10:22:48.207 [Actor Thread 86] INFO  nextflow.processor.TaskProcessor - [ae/6e3a5c] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_40S_S61_GCF_014713055_1_Laos)
-Jun-26 10:22:48.207 [Actor Thread 75] INFO  nextflow.processor.TaskProcessor - [26/be8b95] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008833)
-Jun-26 10:22:48.210 [Actor Thread 68] INFO  nextflow.processor.TaskProcessor - [f6/33dbed] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_43W_S62_GCF_014713065_1_Laos)
-Jun-26 10:22:48.215 [Actor Thread 74] INFO  nextflow.processor.TaskProcessor - [dd/df55a6] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0020-8_S11_L001-SPAdes)
-Jun-26 10:22:48.218 [Actor Thread 82] INFO  nextflow.processor.TaskProcessor - [c3/738c93] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0134-7_S4_L001-SPAdes)
-Jun-26 10:22:48.220 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [cc/9aac87] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0040-6_S10_L001-SPAdes)
-Jun-26 10:22:48.223 [Actor Thread 41] INFO  nextflow.processor.TaskProcessor - [d0/bd305b] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0159-4_S9_L001-SPAdes)
-Jun-26 10:22:48.223 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [fc/ee1902] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0009-1_S9_L001-SPAdes)
-Jun-26 10:22:48.230 [Actor Thread 95] INFO  nextflow.processor.TaskProcessor - [5f/155542] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0022-4_S2_L001-SPAdes)
-Jun-26 10:22:48.230 [Actor Thread 133] INFO  nextflow.processor.TaskProcessor - [5a/6cfb92] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012358)
-Jun-26 10:22:48.233 [Actor Thread 119] INFO  nextflow.processor.TaskProcessor - [c9/ea4802] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0117-2_S8_L001-SPAdes)
-Jun-26 10:22:48.233 [Actor Thread 77] INFO  nextflow.processor.TaskProcessor - [fe/3a4f7e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0132-1_S2_L001-SPAdes)
-Jun-26 10:22:48.234 [Actor Thread 104] INFO  nextflow.processor.TaskProcessor - [4e/17beb5] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563635_1)
-Jun-26 10:22:48.239 [Actor Thread 138] INFO  nextflow.processor.TaskProcessor - [38/683894] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0002-6_S2_L001-SPAdes)
-Jun-26 10:22:48.242 [Actor Thread 42] INFO  nextflow.processor.TaskProcessor - [6d/fa2241] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_316a_GCF_001980725_1_Thailand)
-Jun-26 10:22:48.242 [Actor Thread 57] INFO  nextflow.processor.TaskProcessor - [05/de3c03] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0022_S8-SPAdes)
-Jun-26 10:22:48.244 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [74/3012cd] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012356)
-Jun-26 10:22:48.248 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [06/73ba76] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963564325_1)
-Jun-26 10:22:48.248 [Actor Thread 99] INFO  nextflow.processor.TaskProcessor - [fb/22ae59] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0056-2_S1_L001-SPAdes)
-Jun-26 10:22:48.249 [Actor Thread 122] INFO  nextflow.processor.TaskProcessor - [4a/d26e54] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008809)
-Jun-26 10:22:48.253 [Actor Thread 48] INFO  nextflow.processor.TaskProcessor - [8f/406096] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012340)
-Jun-26 10:22:48.259 [Actor Thread 135] INFO  nextflow.processor.TaskProcessor - [61/e252f1] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561765_1)
-Jun-26 10:22:48.259 [Actor Thread 52] INFO  nextflow.processor.TaskProcessor - [5d/c64960] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013360)
-Jun-26 10:22:48.264 [Actor Thread 107] INFO  nextflow.processor.TaskProcessor - [a9/c4ac41] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_60W_S74_GCF_014712825_1_Laos)
-Jun-26 10:22:48.264 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [5b/ff4b01] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0171-9-R_S12-SPAdes)
-Jun-26 10:22:48.265 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [77/8d771a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012312)
-Jun-26 10:22:48.267 [Actor Thread 131] INFO  nextflow.processor.TaskProcessor - [6d/3c6aae] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566175_1)
-Jun-26 10:22:48.272 [Actor Thread 19] INFO  nextflow.processor.TaskProcessor - [63/17842a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_45S_S65_GCF_014713015_1_Laos)
-Jun-26 10:22:48.273 [Actor Thread 103] INFO  nextflow.processor.TaskProcessor - [ff/7acdb6] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0018-2_S9_L001-SPAdes)
-Jun-26 10:22:48.275 [Actor Thread 43] INFO  nextflow.processor.TaskProcessor - [94/c61bb1] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0095-0_S7_L001-SPAdes)
-Jun-26 10:22:48.280 [Actor Thread 72] INFO  nextflow.processor.TaskProcessor - [38/374326] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0026-5_S6_L001-SPAdes)
-Jun-26 10:22:48.280 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [c8/b78a3b] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0032-3_S2_L001-SPAdes)
-Jun-26 10:22:48.281 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [9a/d1bb76] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008792)
-Jun-26 10:22:48.281 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [ec/835a94] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963563475_1)
-Jun-26 10:22:48.287 [Actor Thread 65] INFO  nextflow.processor.TaskProcessor - [57/58946d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0152-9_S2_L001-SPAdes)
-Jun-26 10:22:48.291 [Actor Thread 127] INFO  nextflow.processor.TaskProcessor - [9c/56adeb] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0188-3_S3-SPAdes)
-Jun-26 10:22:48.294 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [94/6a2f0b] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0190-9_S5-SPAdes)
-Jun-26 10:22:48.302 [Actor Thread 108] INFO  nextflow.processor.TaskProcessor - [ab/dc5423] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_ABCPW_1_GCF_000774965_1_Australia)
-Jun-26 10:22:48.302 [Actor Thread 115] INFO  nextflow.processor.TaskProcessor - [36/7f2f8c] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561855_1)
-Jun-26 10:22:48.303 [Actor Thread 121] INFO  nextflow.processor.TaskProcessor - [ed/4ceb23] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012338)
-Jun-26 10:22:48.304 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [df/0c1edb] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0108-1_S8_L001-SPAdes)
-Jun-26 10:22:48.304 [Actor Thread 49] INFO  nextflow.processor.TaskProcessor - [52/100784] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0018_S12_L001-SPAdes)
-Jun-26 10:22:48.312 [Actor Thread 91] INFO  nextflow.processor.TaskProcessor - [7a/28fe7d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013355)
-Jun-26 10:22:48.312 [Actor Thread 69] INFO  nextflow.processor.TaskProcessor - [81/51fb2d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0128-9_S8_L001-SPAdes)
-Jun-26 10:22:48.312 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [43/d4e723] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0172-7_S7-SPAdes)
-Jun-26 10:22:48.313 [Actor Thread 50] INFO  nextflow.processor.TaskProcessor - [d4/d9bf6d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0052-1_S2_L001-SPAdes)
-Jun-26 10:22:48.315 [Actor Thread 137] INFO  nextflow.processor.TaskProcessor - [61/5735e9] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0027-3_S7_L001-SPAdes)
-Jun-26 10:22:48.325 [Actor Thread 80] INFO  nextflow.processor.TaskProcessor - [de/7e2f61] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561975_1)
-Jun-26 10:22:48.325 [Actor Thread 28] INFO  nextflow.processor.TaskProcessor - [9b/06bc21] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0003-4_S3_L001-SPAdes)
-Jun-26 10:22:48.327 [Actor Thread 140] INFO  nextflow.processor.TaskProcessor - [5c/3d7544] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963560675_1)
-Jun-26 10:22:48.328 [Actor Thread 66] INFO  nextflow.processor.TaskProcessor - [78/132503] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0167-7_S2-SPAdes)
-Jun-26 10:22:48.339 [Actor Thread 128] INFO  nextflow.processor.TaskProcessor - [9e/963237] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012313)
-Jun-26 10:22:48.343 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [7e/22f7fc] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0079-4_S2_L001-SPAdes)
-Jun-26 10:22:48.347 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [fc/294e77] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0157-8_S7_L001-SPAdes)
-Jun-26 10:22:48.347 [Actor Thread 63] INFO  nextflow.processor.TaskProcessor - [05/1eac53] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0169-3_S4-SPAdes)
-Jun-26 10:22:48.348 [Actor Thread 46] INFO  nextflow.processor.TaskProcessor - [3a/3af263] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561895_1)
-Jun-26 10:22:48.354 [Actor Thread 117] INFO  nextflow.processor.TaskProcessor - [22/b372fc] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963568055_1)
-Jun-26 10:22:48.356 [Actor Thread 116] INFO  nextflow.processor.TaskProcessor - [0f/3276c6] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963562795_1)
-Jun-26 10:22:48.356 [Actor Thread 113] INFO  nextflow.processor.TaskProcessor - [8d/855cad] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013353)
-Jun-26 10:22:48.358 [Actor Thread 130] INFO  nextflow.processor.TaskProcessor - [25/b4f1df] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0038-0_S8_L001-SPAdes)
-Jun-26 10:22:48.364 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [12/870079] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_50W_S69_GCF_014712935_1_Laos)
-Jun-26 10:22:48.367 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [46/20e2cb] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0197-4_S2-SPAdes)
-Jun-26 10:22:48.367 [Actor Thread 118] INFO  nextflow.processor.TaskProcessor - [73/4e28d6] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0003_S8_L001-SPAdes)
-Jun-26 10:22:48.372 [Actor Thread 100] INFO  nextflow.processor.TaskProcessor - [0a/2f3696] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561835_1)
-Jun-26 10:22:48.374 [Actor Thread 101] INFO  nextflow.processor.TaskProcessor - [e2/c87796] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012327)
-Jun-26 10:22:48.377 [Actor Thread 111] INFO  nextflow.processor.TaskProcessor - [a5/a0aaeb] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008798)
-Jun-26 10:22:48.379 [Actor Thread 51] INFO  nextflow.processor.TaskProcessor - [52/85c378] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_52W_S71_GCF_014712835_1_Laos)
-Jun-26 10:22:48.379 [Actor Thread 125] INFO  nextflow.processor.TaskProcessor - [f2/2c9976] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012320)
-Jun-26 10:22:48.381 [Actor Thread 139] INFO  nextflow.processor.TaskProcessor - [97/8f28ec] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0140-4_S10_L001-SPAdes)
-Jun-26 10:22:48.384 [Actor Thread 105] INFO  nextflow.processor.TaskProcessor - [3d/2ce4ba] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0138-8_S8_L001-SPAdes)
-Jun-26 10:22:48.390 [Actor Thread 98] INFO  nextflow.processor.TaskProcessor - [5f/f0e0ab] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0165-1_S4-SPAdes)
-Jun-26 10:22:48.391 [Actor Thread 70] INFO  nextflow.processor.TaskProcessor - [63/bd8d90] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0142-0_S2_L001-SPAdes)
-Jun-26 10:22:48.392 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [56/ad9c36] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0136-2_S6_L001-SPAdes)
-Jun-26 10:22:48.393 [Actor Thread 114] INFO  nextflow.processor.TaskProcessor - [38/4e0430] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012376)
-Jun-26 10:22:48.393 [Actor Thread 120] INFO  nextflow.processor.TaskProcessor - [ca/553cf3] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013342)
-Jun-26 10:22:48.397 [Actor Thread 60] INFO  nextflow.processor.TaskProcessor - [f2/8837cf] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_47W_S67_GCF_014712955_1_Laos)
-Jun-26 10:22:48.401 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [e8/28a4a6] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0153-7_S3_L001-SPAdes)
-Jun-26 10:22:48.403 [Actor Thread 67] INFO  nextflow.processor.TaskProcessor - [a3/fa9fdc] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008844)
-Jun-26 10:22:48.408 [Actor Thread 39] INFO  nextflow.processor.TaskProcessor - [56/15fc4a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0185-9_S10-SPAdes)
-Jun-26 10:22:48.408 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [ad/ebb8a4] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0082-8_S5_L001-SPAdes)
-Jun-26 10:22:48.410 [Actor Thread 73] INFO  nextflow.processor.TaskProcessor - [47/846dd2] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0024-0_S4_L001-SPAdes)
-Jun-26 10:22:48.417 [Actor Thread 124] INFO  nextflow.processor.TaskProcessor - [aa/2d51c3] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_49W_S68_GCF_014712965_1_Laos)
-Jun-26 10:22:48.417 [Actor Thread 85] INFO  nextflow.processor.TaskProcessor - [8f/47c306] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_619s006_GCF_001212705_2_Malaysia)
-Jun-26 10:22:48.418 [Actor Thread 78] INFO  nextflow.processor.TaskProcessor - [77/cf1bac] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0096-8_S8_L001-SPAdes)
-Jun-26 10:22:48.420 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [29/e8e00a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0016_S10_L001-SPAdes)
-Jun-26 10:22:48.420 [Actor Thread 97] INFO  nextflow.processor.TaskProcessor - [47/657369] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_91W_S76_GCF_014712775_1_Laos)
-Jun-26 10:22:48.421 [Actor Thread 54] INFO  nextflow.processor.TaskProcessor - [3e/c8a532] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008821)
-Jun-26 10:22:48.426 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [d5/e5899d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566675_1)
-Jun-26 10:22:48.426 [Actor Thread 112] INFO  nextflow.processor.TaskProcessor - [17/d4b31f] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_2002721684_GCF_002110925_1_USA_Texas)
-Jun-26 10:22:48.430 [Actor Thread 30] INFO  nextflow.processor.TaskProcessor - [76/17da1a] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0160-2_S10_L001-SPAdes)
-Jun-26 10:22:48.432 [Actor Thread 120] INFO  nextflow.processor.TaskProcessor - [69/b06405] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008835)
-Jun-26 10:22:48.433 [Actor Thread 116] INFO  nextflow.processor.TaskProcessor - [32/822e70] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0060-4_S5_L001-SPAdes)
-Jun-26 10:22:48.436 [Actor Thread 106] INFO  nextflow.processor.TaskProcessor - [a8/55cc4e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_900596305_2)
-Jun-26 10:22:48.439 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [c1/aa75b8] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0100-8_S1_L001-SPAdes)
-Jun-26 10:22:48.448 [Actor Thread 101] INFO  nextflow.processor.TaskProcessor - [0b/9b297d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0005_S10_L001-SPAdes)
-Jun-26 10:22:48.448 [Actor Thread 113] INFO  nextflow.processor.TaskProcessor - [fa/4dbedd] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_4802_GCF_003268115_1_Viet_Nam)
-Jun-26 10:22:48.449 [Actor Thread 92] INFO  nextflow.processor.TaskProcessor - [44/a556c0] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571055_1)
-Jun-26 10:22:48.449 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [d3/252c84] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963569705_1)
-Jun-26 10:22:48.456 [Actor Thread 111] INFO  nextflow.processor.TaskProcessor - [68/6ba231] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0006_S11_L001-SPAdes)
-Jun-26 10:22:48.458 [Actor Thread 125] INFO  nextflow.processor.TaskProcessor - [ac/89cc58] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_1701_GCF_003268105_1_Viet_Nam)
-Jun-26 10:22:48.460 [Actor Thread 139] INFO  nextflow.processor.TaskProcessor - [0e/a8d5cc] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0066-1_S11_L001-SPAdes)
-Jun-26 10:22:48.461 [Actor Thread 118] INFO  nextflow.processor.TaskProcessor - [da/04ae08] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561925_1)
-Jun-26 10:22:48.466 [Actor Thread 108] INFO  nextflow.processor.TaskProcessor - [ad/21ca2e] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0025_S11-SPAdes)
-Jun-26 10:22:48.469 [Actor Thread 121] INFO  nextflow.processor.TaskProcessor - [c3/f842b7] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0198-2_S3-SPAdes)
-Jun-26 10:22:48.470 [Actor Thread 115] INFO  nextflow.processor.TaskProcessor - [97/1d9a6f] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0027_S9-SPAdes)
-Jun-26 10:22:48.476 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [14/85b4f2] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0194-1_S9-SPAdes)
-Jun-26 10:22:48.477 [Actor Thread 49] INFO  nextflow.processor.TaskProcessor - [43/9e1a3d] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0028_S10-SPAdes)
-Jun-26 10:22:48.479 [Actor Thread 91] INFO  nextflow.processor.TaskProcessor - [bf/86b700] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0171-9_S6-SPAdes)
-Jun-26 10:22:48.479 [Actor Thread 69] INFO  nextflow.processor.TaskProcessor - [df/1591c7] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0023_S9-SPAdes)
-Jun-26 10:22:48.490 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [2a/bf1665] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0029_S11-SPAdes)
-Jun-26 10:22:48.494 [Actor Thread 137] INFO  nextflow.processor.TaskProcessor - [27/effb05] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0008_S2_L001-SPAdes)
-Jun-26 10:22:48.495 [Actor Thread 50] INFO  nextflow.processor.TaskProcessor - [93/e2a2c1] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0020_S6-SPAdes)
-Jun-26 10:22:48.498 [Actor Thread 130] INFO  nextflow.processor.TaskProcessor - [e6/941ba3] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0008_S12_L001-SPAdes)
-Jun-26 10:22:48.544 [Actor Thread 100] INFO  nextflow.processor.TaskProcessor - [fd/d0ea58] Cached process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0088-5_S11_L001-SPAdes)
-Jun-26 10:22:48.588 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.591 [Task submitter] INFO  nextflow.Session - [00/49ac12] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571475_1)
-Jun-26 10:22:48.619 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.620 [Task submitter] INFO  nextflow.Session - [7b/5433d2] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_46W_S66_GCF_014712945_1_Laos)
-Jun-26 10:22:48.639 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.640 [Task submitter] INFO  nextflow.Session - [99/d7acda] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0007-5_S7_L001-SPAdes)
-Jun-26 10:22:48.656 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.657 [Task submitter] INFO  nextflow.Session - [d1/4b631c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0002_S7_L001-SPAdes)
-Jun-26 10:22:48.673 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.674 [Task submitter] INFO  nextflow.Session - [2d/331353] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0002_S11_L001-SPAdes)
-Jun-26 10:22:48.689 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.690 [Task submitter] INFO  nextflow.Session - [9f/394c29] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0162-8_S1-SPAdes)
-Jun-26 10:22:48.716 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.716 [Task submitter] INFO  nextflow.Session - [34/6a0641] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571905_1)
-Jun-26 10:22:48.731 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.732 [Task submitter] INFO  nextflow.Session - [52/02eb7a] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008825)
-Jun-26 10:22:48.742 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.743 [Task submitter] INFO  nextflow.Session - [f1/85ee7f] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566085_1)
-Jun-26 10:22:48.749 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.749 [Task submitter] INFO  nextflow.Session - [db/fb858c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_619s004_GCF_001212405_2_Malaysia)
-Jun-26 10:22:48.753 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.753 [Task submitter] INFO  nextflow.Session - [2e/7a27be] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012309)
-Jun-26 10:22:48.761 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.761 [Task submitter] INFO  nextflow.Session - [25/4e2e61] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_316c_GCF_001980755_1_Thailand)
-Jun-26 10:22:48.768 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.768 [Task submitter] INFO  nextflow.Session - [09/db6236] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0007_S1_L001-SPAdes)
-Jun-26 10:22:48.775 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.775 [Task submitter] INFO  nextflow.Session - [e6/16413f] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0014_S8_L001-SPAdes)
-Jun-26 10:22:48.781 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.781 [Task submitter] INFO  nextflow.Session - [83/1957b7] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963560945_1)
-Jun-26 10:22:48.786 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.787 [Task submitter] INFO  nextflow.Session - [4e/def530] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0074-5_S8_L001-SPAdes)
-Jun-26 10:22:48.791 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.791 [Task submitter] INFO  nextflow.Session - [e7/c2b9af] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0143-8_S3_L001-SPAdes)
-Jun-26 10:22:48.795 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.795 [Task submitter] INFO  nextflow.Session - [e0/f982c9] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963562235_1)
-Jun-26 10:22:48.798 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.799 [Task submitter] INFO  nextflow.Session - [05/61a197] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0107-3_S7_L001-SPAdes)
-Jun-26 10:22:48.802 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.802 [Task submitter] INFO  nextflow.Session - [97/1f292c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (SRR12527885_contigs)
-Jun-26 10:22:48.806 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.806 [Task submitter] INFO  nextflow.Session - [43/b21718] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0025-7_S5_L001-SPAdes)
-Jun-26 10:22:48.810 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.811 [Task submitter] INFO  nextflow.Session - [c3/da2e6d] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0098-4_S10_L001-SPAdes)
-Jun-26 10:22:48.815 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.815 [Task submitter] INFO  nextflow.Session - [6f/382825] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963569795_1)
-Jun-26 10:22:48.819 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.819 [Task submitter] INFO  nextflow.Session - [30/1c0cb4] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_51W_S70_GCF_014712915_1_Laos)
-Jun-26 10:22:48.824 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.824 [Task submitter] INFO  nextflow.Session - [1d/cec745] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963562965_1)
-Jun-26 10:22:48.829 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.829 [Task submitter] INFO  nextflow.Session - [da/d3ae76] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0087-7_S10_L001-SPAdes)
-Jun-26 10:22:48.833 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.834 [Task submitter] INFO  nextflow.Session - [ba/5b733d] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0174-3_S9-SPAdes)
-Jun-26 10:22:48.838 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.838 [Task submitter] INFO  nextflow.Session - [7b/ac1b6d] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0101-6_S1_L001-SPAdes)
-Jun-26 10:22:48.842 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.842 [Task submitter] INFO  nextflow.Session - [b5/68f5d3] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0146-1_S6_L001-SPAdes)
-Jun-26 10:22:48.848 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.849 [Task submitter] INFO  nextflow.Session - [cc/25b029] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0043-0_S3_L001-SPAdes)
-Jun-26 10:22:48.854 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.855 [Task submitter] INFO  nextflow.Session - [d4/159a3e] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008797)
-Jun-26 10:22:48.861 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.862 [Task submitter] INFO  nextflow.Session - [44/8874dd] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0016-6_S7_L001-SPAdes)
-Jun-26 10:22:48.867 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.868 [Task submitter] INFO  nextflow.Session - [68/1138d0] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963571975_1)
-Jun-26 10:22:48.872 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.872 [Task submitter] INFO  nextflow.Session - [89/ea9025] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566625_1)
-Jun-26 10:22:48.878 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.878 [Task submitter] INFO  nextflow.Session - [f2/3f582f] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566765_1)
-Jun-26 10:22:48.882 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.882 [Task submitter] INFO  nextflow.Session - [f1/a94c4a] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_2010007509_GCF_002111145_1_USA_Arizona_ex_Costa_Rica)
-Jun-26 10:22:48.885 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.886 [Task submitter] INFO  nextflow.Session - [c3/27602e] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0121-4_S1_L001-SPAdes)
-Jun-26 10:22:48.890 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.890 [Task submitter] INFO  nextflow.Session - [9b/faa5e9] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0119-8_S10_L001-SPAdes)
-Jun-26 10:22:48.893 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.894 [Task submitter] INFO  nextflow.Session - [f0/a1fbed] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0021-6_S1_L001-SPAdes)
-Jun-26 10:22:48.898 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.898 [Task submitter] INFO  nextflow.Session - [37/abb91b] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0012-5_S3_L001-SPAdes)
-Jun-26 10:22:48.901 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.902 [Task submitter] INFO  nextflow.Session - [eb/2b3173] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0055-4_S5_L001-SPAdes)
-Jun-26 10:22:48.905 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.905 [Task submitter] INFO  nextflow.Session - [bc/74ecbf] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963573175_1)
-Jun-26 10:22:48.909 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.910 [Task submitter] INFO  nextflow.Session - [49/09a411] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0116-4_S7_L001-SPAdes)
-Jun-26 10:22:48.914 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.914 [Task submitter] INFO  nextflow.Session - [7f/c171c3] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0191-7_S6-SPAdes)
-Jun-26 10:22:48.918 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.919 [Task submitter] INFO  nextflow.Session - [6e/685312] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008836)
-Jun-26 10:22:48.923 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.924 [Task submitter] INFO  nextflow.Session - [4e/1bec99] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS013358)
-Jun-26 10:22:48.928 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.928 [Task submitter] INFO  nextflow.Session - [57/507136] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008830)
-Jun-26 10:22:48.932 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.932 [Task submitter] INFO  nextflow.Session - [43/f33f13] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_354e_GCF_000259795_1_Thailand)
-Jun-26 10:22:48.936 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.936 [Task submitter] INFO  nextflow.Session - [65/61ee6f] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0015_S9_L001-SPAdes)
-Jun-26 10:22:48.940 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.941 [Task submitter] INFO  nextflow.Session - [29/43b59c] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963566635_1)
-Jun-26 10:22:48.945 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.945 [Task submitter] INFO  nextflow.Session - [73/deabe2] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_4702_GCF_009827035_1_Viet_Nam)
-Jun-26 10:22:48.950 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.950 [Task submitter] INFO  nextflow.Session - [1f/fc2fd5] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_134K_GCF_009830075_1_Thailand)
-Jun-26 10:22:48.954 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.954 [Task submitter] INFO  nextflow.Session - [bf/e440f7] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0150-3_S10_L001-SPAdes)
-Jun-26 10:22:48.958 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.958 [Task submitter] INFO  nextflow.Session - [27/106149] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_7801_GCF_025848015_1_Viet_Nam)
-Jun-26 10:22:48.961 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.961 [Task submitter] INFO  nextflow.Session - [2a/a84d4d] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0024_S10-SPAdes)
-Jun-26 10:22:48.965 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.966 [Task submitter] INFO  nextflow.Session - [9e/591ebb] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_354a_GCF_000259815_1_Thailand)
-Jun-26 10:22:48.970 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.970 [Task submitter] INFO  nextflow.Session - [8c/4bbfc4] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0118-0_S9_L001-SPAdes)
-Jun-26 10:22:48.975 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.975 [Task submitter] INFO  nextflow.Session - [a8/6b4c83] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0090-1_S2_L001-SPAdes)
-Jun-26 10:22:48.979 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.979 [Task submitter] INFO  nextflow.Session - [35/812d84] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (Burkholderia_pseudomallei_2011756296_GCF_002110985_1_USA_Puerto_Rico)
-Jun-26 10:22:48.984 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.984 [Task submitter] INFO  nextflow.Session - [61/7abe9d] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963564975_1)
-Jun-26 10:22:48.988 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.988 [Task submitter] INFO  nextflow.Session - [db/2c7d6a] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IE-0026_S8-SPAdes)
-Jun-26 10:22:48.991 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.992 [Task submitter] INFO  nextflow.Session - [9d/41cb86] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (GCA_963561735_1)
-Jun-26 10:22:48.995 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:48.995 [Task submitter] INFO  nextflow.Session - [89/d1a992] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0114-9_S5_L001-SPAdes)
-Jun-26 10:22:49.000 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:49.000 [Task submitter] INFO  nextflow.Session - [3c/66b0dd] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (SRR12527871_contigs)
-Jun-26 10:22:49.004 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:49.004 [Task submitter] INFO  nextflow.Session - [84/eb0b3e] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (IP-0086-9_S9_L001-SPAdes)
-Jun-26 10:22:49.007 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:49.008 [Task submitter] INFO  nextflow.Session - [fd/ffaa45] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS008795)
-Jun-26 10:22:49.012 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Jun-26 10:22:49.012 [Task submitter] INFO  nextflow.Session - [a4/8b1d06] Submitted process > ASSEMBLY_SNPS:INFILE_HANDLING_UNIX (ERS012369)
-Jun-26 10:22:56.914 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
-Jun-26 10:22:56.938 [SIGINT handler] DEBUG nextflow.Session - The following nodes are still active:
-[process] ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP
-  status=ACTIVE
-  port 0: (queue) OPEN  ; channel: -
-  port 1: (value) OPEN  ; channel: -
-  port 2: (cntrl) -     ; channel: $
+Jun-27 13:42:33.690 [main] ERROR nextflow.cli.Launcher - Module compilation error
+- file : /home/cdcadmin/wf-assembly-snps/./workflows/assembly_snps.nf
+- cause: Unexpected input: 'ASSEMBLY_SNPS {\n\n    // SETUP: Define empty channels to concatenate certain outputs\n    ch_versions             = Channel.empty()\n    ch_qc_filecheck         = Channel.empty()\n    ch_output_summary_files = Channel.empty()\n\n    // DEBUG: Log key parameters\n    log.info "=== WORKFLOW PARAMETERS ==="\n    log.info "Input: ${params.input}"\n    log.info "Output directory: ${params.outdir}"\n    log.info "ParSNP outputs: ${params.parsnp_outputs}"\n    log.info "SNP package: ${params.snp_package}"\n    log.info "Recombination: ${params.recombination}"\n    log.info "=========================="\n\n    // Branch workflow based on whether we're using existing ParSNP outputs\n    if (params.parsnp_outputs) {\n        // Resume from existing ParSNP outputs\n        ASSEMBLY_SNPS_RESUME()\n    } else {\n        // Run full workflow\n        ASSEMBLY_SNPS_FULL()\n    }\n}\n\n\n}' @ line 147, column 1.
+   }
+   ^
 
-[process] ASSEMBLY_SNPS:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS
-  status=ACTIVE
-  port 0: (queue) OPEN  ; channel: -
-  port 1: (cntrl) -     ; channel: $
+1 error
 
-[process] ASSEMBLY_SNPS:CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS
-  status=ACTIVE
-  port 0: (queue) OPEN  ; channel: -
-  port 1: (cntrl) -     ; channel: $
+nextflow.exception.ScriptCompilationException: Module compilation error
+- file : /home/cdcadmin/wf-assembly-snps/./workflows/assembly_snps.nf
+- cause: Unexpected input: 'ASSEMBLY_SNPS {\n\n    // SETUP: Define empty channels to concatenate certain outputs\n    ch_versions             = Channel.empty()\n    ch_qc_filecheck         = Channel.empty()\n    ch_output_summary_files = Channel.empty()\n\n    // DEBUG: Log key parameters\n    log.info "=== WORKFLOW PARAMETERS ==="\n    log.info "Input: ${params.input}"\n    log.info "Output directory: ${params.outdir}"\n    log.info "ParSNP outputs: ${params.parsnp_outputs}"\n    log.info "SNP package: ${params.snp_package}"\n    log.info "Recombination: ${params.recombination}"\n    log.info "=========================="\n\n    // Branch workflow based on whether we're using existing ParSNP outputs\n    if (params.parsnp_outputs) {\n        // Resume from existing ParSNP outputs\n        ASSEMBLY_SNPS_RESUME()\n    } else {\n        // Run full workflow\n        ASSEMBLY_SNPS_FULL()\n    }\n}\n\n\n}' @ line 147, column 1.
+   }
+   ^
 
-[process] ASSEMBLY_SNPS:CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS
-  status=ACTIVE
-  port 0: (queue) OPEN  ; channel: -
-  port 1: (cntrl) -     ; channel: $
+1 error
 
-[process] ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS
-  status=ACTIVE
-  port 0: (queue) OPEN  ; channel: -
-  port 1: (queue) OPEN  ; channel: -
-  port 2: (cntrl) -     ; channel: $
+	at nextflow.script.ScriptParser.parse0(ScriptParser.groovy:196)
+	at nextflow.script.ScriptParser.parse(ScriptParser.groovy:206)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:221)
+	at nextflow.script.IncludeDef.memoizedMethodPriv$loadModule0PathMapSession(IncludeDef.groovy:140)
+	at nextflow.script.IncludeDef.access$0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef$__clinit__closure2.doCall(IncludeDef.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:279)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.Closure.call(Closure.java:433)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.lambda$call$0(Memoize.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:113)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.call(Memoize.java:136)
+	at nextflow.script.IncludeDef.loadModule0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef.load0(IncludeDef.groovy:112)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_d07a09c54728bf6d.runScript(Script_d07a09c54728bf6d:28)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:159)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:209)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:236)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:243)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:138)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:372)
+	at nextflow.cli.Launcher.run(Launcher.groovy:503)
+	at nextflow.cli.Launcher.main(Launcher.groovy:657)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+Script_82119c9097de3324: 147: Unexpected input: 'ASSEMBLY_SNPS {\n\n    // SETUP: Define empty channels to concatenate certain outputs\n    ch_versions             = Channel.empty()\n    ch_qc_filecheck         = Channel.empty()\n    ch_output_summary_files = Channel.empty()\n\n    // DEBUG: Log key parameters\n    log.info "=== WORKFLOW PARAMETERS ==="\n    log.info "Input: ${params.input}"\n    log.info "Output directory: ${params.outdir}"\n    log.info "ParSNP outputs: ${params.parsnp_outputs}"\n    log.info "SNP package: ${params.snp_package}"\n    log.info "Recombination: ${params.recombination}"\n    log.info "=========================="\n\n    // Branch workflow based on whether we're using existing ParSNP outputs\n    if (params.parsnp_outputs) {\n        // Resume from existing ParSNP outputs\n        ASSEMBLY_SNPS_RESUME()\n    } else {\n        // Run full workflow\n        ASSEMBLY_SNPS_FULL()\n    }\n}\n\n\n}' @ line 147, column 1.
+   }
+   ^
 
-[process] ASSEMBLY_SNPS:MASK_RECOMBINANT_POSITIONS_BIOPYTHON
-  status=ACTIVE
-  port 0: (queue) OPEN  ; channel: -
-  port 1: (value) OPEN  ; channel: -
-  port 2: (cntrl) -     ; channel: $
+1 error
 
-[process] ASSEMBLY_SNPS:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS
-  status=ACTIVE
-  port 0: (queue) OPEN  ; channel: -
-  port 1: (cntrl) -     ; channel: $
-
-[process] ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP
-  status=ACTIVE
-  port 0: (queue) OPEN  ; channel: -
-  port 1: (cntrl) -     ; channel: $
-
-Jun-26 10:22:56.941 [main] DEBUG nextflow.Session - Session await > all processes finished
-Jun-26 10:22:56.941 [main] DEBUG nextflow.Session - Session await > all barriers passed
-Jun-26 10:22:56.942 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
-Jun-26 10:22:56.947 [main] INFO  nextflow.Nextflow - -[0;35m[bacterial-genomics/wf-assembly-snps][0;31m Pipeline completed with errors[0m-
-Jun-26 10:22:56.950 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (67)
-Jun-26 10:22:56.994 [Actor Thread 118] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 397; slices: 1; internal sort time: 0.015 s; external sort time: 0.034 s; total time: 0.049 s
-Jun-26 10:22:56.995 [Actor Thread 118] DEBUG nextflow.file.FileCollector - >> temp file exists? false
-Jun-26 10:22:56.996 [Actor Thread 118] DEBUG nextflow.file.FileCollector - Missed collect-file cache -- cause: java.nio.file.NoSuchFileException: /home/cdcadmin/wf-assembly-snps/work/collect-file/0ac917fd8a8a5fadc244cccc274ccba5
-Jun-26 10:22:57.027 [Actor Thread 118] DEBUG nextflow.file.FileCollector - Saved collect-files list to: /home/cdcadmin/wf-assembly-snps/work/collect-file/0ac917fd8a8a5fadc244cccc274ccba5
-Jun-26 10:22:57.033 [Actor Thread 118] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-5144585407255090379
-Jun-26 10:22:57.115 [Actor Thread 13] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 397; slices: 1; internal sort time: 0.154 s; external sort time: 0.016 s; total time: 0.17 s
-Jun-26 10:22:57.115 [Actor Thread 13] DEBUG nextflow.file.FileCollector - >> temp file exists? true
-Jun-26 10:22:57.116 [Actor Thread 13] DEBUG nextflow.file.FileCollector - Retrieved cached collect-files from: /home/cdcadmin/wf-assembly-snps/work/collect-file/933c778dedf4e6a53a65850c139b0124
-Jun-26 10:22:57.117 [Actor Thread 13] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-5964286916446141517
-Jun-26 10:22:57.123 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=397; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=67; succeedDuration=0ms; failedDuration=0ms; cachedDuration=26.6s;loadCpus=0; loadMemory=0; peakRunning=67; peakCpus=67; peakMemory=402 GB; ]
-Jun-26 10:22:57.123 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
-Jun-26 10:22:57.125 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
-Jun-26 10:22:57.320 [SIGINT handler] INFO  nextflow.Session - Adieu
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:292)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:148)
+	at org.apache.groovy.parser.antlr4.AstBuilder.collectSyntaxError(AstBuilder.java:4753)
+	at org.apache.groovy.parser.antlr4.AstBuilder.access$100(AstBuilder.java:169)
+	at org.apache.groovy.parser.antlr4.AstBuilder$3.syntaxError(AstBuilder.java:4764)
+	at groovyjarjarantlr4.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:44)
+	at groovyjarjarantlr4.v4.runtime.Parser.notifyErrorListeners(Parser.java:543)
+	at groovyjarjarantlr4.v4.runtime.DefaultErrorStrategy.notifyErrorListeners(DefaultErrorStrategy.java:154)
+	at org.apache.groovy.parser.antlr4.internal.DescriptiveErrorStrategy.reportNoViableAlternative(DescriptiveErrorStrategy.java:92)
+	at groovyjarjarantlr4.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:139)
+	at org.apache.groovy.parser.antlr4.GroovyParser.commandExpression(GroovyParser.java:9738)
+	at org.apache.groovy.parser.antlr4.GroovyParser.statementExpression(GroovyParser.java:8235)
+	at org.apache.groovy.parser.antlr4.GroovyParser.statement(GroovyParser.java:7080)
+	at org.apache.groovy.parser.antlr4.GroovyParser.scriptStatement(GroovyParser.java:517)
+	at org.apache.groovy.parser.antlr4.GroovyParser.scriptStatements(GroovyParser.java:427)
+	at org.apache.groovy.parser.antlr4.GroovyParser.compilationUnit(GroovyParser.java:363)
+	at org.apache.groovy.parser.antlr4.AstBuilder.buildCST(AstBuilder.java:243)
+	at org.apache.groovy.parser.antlr4.AstBuilder.buildCST(AstBuilder.java:221)
+	at org.apache.groovy.parser.antlr4.AstBuilder.buildAST(AstBuilder.java:262)
+	at org.apache.groovy.parser.antlr4.Antlr4ParserPlugin.buildAST(Antlr4ParserPlugin.java:58)
+	at org.codehaus.groovy.control.SourceUnit.buildAST(SourceUnit.java:256)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:663)
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:373)
+	at groovy.lang.GroovyClassLoader.lambda$parseClass$2(GroovyClassLoader.java:316)
+	at org.codehaus.groovy.runtime.memoize.StampedCommonCache.compute(StampedCommonCache.java:163)
+	at org.codehaus.groovy.runtime.memoize.StampedCommonCache.getAndPut(StampedCommonCache.java:154)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:314)
+	at groovy.lang.GroovyShell.parseClass(GroovyShell.java:572)
+	at groovy.lang.GroovyShell.parse(GroovyShell.java:585)
+	at groovy.lang.GroovyShell.parse(GroovyShell.java:639)
+	at groovy.lang.GroovyShell.parse(GroovyShell.java:643)
+	at nextflow.script.ScriptParser.parse0(ScriptParser.groovy:175)
+	... 32 common frames omitted

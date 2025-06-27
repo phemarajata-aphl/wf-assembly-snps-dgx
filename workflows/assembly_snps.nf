@@ -9,13 +9,22 @@ def summary_params = NfcoreSchema.paramsSummaryMap(workflow, params)
 // Validate input parameters
 WorkflowSNPS.initialise(params, log)
 
-// Check input path parameters to see if they exist
-def checkPathParamList = [ params.input ]
-for (param in checkPathParamList) { if (param) { file(param, checkIfExists: true) } }
-
-// Check mandatory parameters
-if (params.input) { ch_input = file(params.input) } else { exit 1, 'Input samplesheet or directory not specified!' }
-if (params.ref) { ch_ref_input = file(params.ref) } else { ch_ref_input = [] }
+// Check mandatory parameters - only validate input if not using existing ParSNP outputs
+if (params.parsnp_outputs) {
+    // Using existing ParSNP outputs - validate parsnp_outputs directory
+    ch_parsnp_outputs = file(params.parsnp_outputs)
+    if (!ch_parsnp_outputs.exists()) { exit 1, 'ParSNP outputs directory does not exist!' }
+    ch_input = []
+    ch_ref_input = []
+} else {
+    // Normal mode - validate input parameters
+    def checkPathParamList = [ params.input ]
+    for (param in checkPathParamList) { if (param) { file(param, checkIfExists: true) } }
+    
+    if (params.input) { ch_input = file(params.input) } else { exit 1, 'Input samplesheet or directory not specified!' }
+    if (params.ref) { ch_ref_input = file(params.ref) } else { ch_ref_input = [] }
+    ch_parsnp_outputs = []
+}
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -115,6 +124,184 @@ workflow ASSEMBLY_SNPS {
     ch_qc_filecheck         = Channel.empty()
     ch_output_summary_files = Channel.empty()
 
+    // DEBUG: Log key parameters
+    log.info "=== WORKFLOW PARAMETERS ==="
+    log.info "Input: ${params.input}"
+    log.info "Output directory: ${params.outdir}"
+    log.info "ParSNP outputs: ${params.parsnp_outputs}"
+    log.info "SNP package: ${params.snp_package}"
+    log.info "Recombination: ${params.recombination}"
+    log.info "=========================="
+
+    // Branch workflow based on whether we're using existing ParSNP outputs
+    if (params.parsnp_outputs) {
+        // Resume from existing ParSNP outputs
+        ASSEMBLY_SNPS_RESUME()
+    } else {
+        // Run full workflow
+        ASSEMBLY_SNPS_FULL()
+    }
+}
+
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    RESUME WORKFLOW FROM EXISTING PARSNP OUTPUTS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+workflow ASSEMBLY_SNPS_RESUME {
+
+    // SETUP: Define empty channels to concatenate certain outputs
+    ch_versions             = Channel.empty()
+    ch_qc_filecheck         = Channel.empty()
+    ch_output_summary_files = Channel.empty()
+
+    log.info "Skipping input preprocessing - using existing ParSNP outputs"
+    log.info "Using existing ParSNP outputs from: ${params.parsnp_outputs}"
+
+    /*
+    ================================================================================
+                            Use existing ParSNP outputs
+    ================================================================================
+    */
+
+    // Create channel from existing ParSNP output files
+    ch_alignment_files = Channel.fromPath("${params.parsnp_outputs}/*")
+                            .collect()
+                            .map{
+                                def meta = [:]
+                                meta['snp_package'] = ch_snp_package
+                                [ meta, it ]
+                            }
+
+    // Convert Parsnp Gingr output file to FastA format for recombination
+    CONVERT_GINGR_TO_FASTA_HARVESTTOOLS (
+        ch_alignment_files
+    )
+    ch_versions = ch_versions.mix(CONVERT_GINGR_TO_FASTA_HARVESTTOOLS.out.versions)
+    ch_qc_filecheck = ch_qc_filecheck.concat(CONVERT_GINGR_TO_FASTA_HARVESTTOOLS.out.qc_filecheck)
+
+    ch_core_alignment_fasta = qcfilecheck(
+                                "CONVERT_GINGR_TO_FASTA_HARVESTTOOLS",
+                                CONVERT_GINGR_TO_FASTA_HARVESTTOOLS.out.qc_filecheck,
+                                CONVERT_GINGR_TO_FASTA_HARVESTTOOLS.out.core_alignment
+                            )
+
+    // Add existing distance matrix to summary files
+    ch_existing_distance_matrix = Channel.fromPath("${params.parsnp_outputs}/*.SNP_Distances_Matrix.tsv")
+    ch_output_summary_files = ch_output_summary_files.mix(ch_existing_distance_matrix)
+
+    /*
+    ================================================================================
+                            Identify and mask recombinant positions
+    ================================================================================
+    */
+
+    // SUBWORKFLOW: Infer SNPs due to recombination
+    RECOMBINATION (
+        ch_core_alignment_fasta,
+        ch_alignment_files
+    )
+    ch_versions = ch_versions.mix(RECOMBINATION.out.versions)
+
+    // PROCESS: Mask recombinant positions
+    MASK_RECOMBINANT_POSITIONS_BIOPYTHON (
+        RECOMBINATION.out.recombinants,
+        ch_core_alignment_fasta.collect()
+    )
+    ch_versions = ch_versions.mix(MASK_RECOMBINANT_POSITIONS_BIOPYTHON.out.versions)
+
+    // PROCESS: Create SNP distance matrix on masked FastA file
+    CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS (
+        MASK_RECOMBINANT_POSITIONS_BIOPYTHON.out.masked_alignment
+    )
+    ch_versions             = ch_versions.mix(CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS.out.versions)
+    ch_output_summary_files = ch_output_summary_files.mix(CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS.out.distance_matrix.map{ meta, file -> file })
+
+    /*
+    ================================================================================
+                            Build phylogenetic tree
+    ================================================================================
+    */
+
+    // PROCESS: Infer phylogenetic tree based on masked positions
+    BUILD_PHYLOGENETIC_TREE_PARSNP (
+        MASK_RECOMBINANT_POSITIONS_BIOPYTHON.out.masked_alignment
+    )
+    ch_versions     = ch_versions.mix(BUILD_PHYLOGENETIC_TREE_PARSNP.out.versions)
+    ch_qc_filecheck = ch_qc_filecheck.concat(BUILD_PHYLOGENETIC_TREE_PARSNP.out.qc_filecheck)
+
+    ch_final_tree   = qcfilecheck(
+                            "BUILD_PHYLOGENETIC_TREE_PARSNP",
+                            BUILD_PHYLOGENETIC_TREE_PARSNP.out.qc_filecheck,
+                            BUILD_PHYLOGENETIC_TREE_PARSNP.out.tree
+                        )
+
+    /*
+    ================================================================================
+                        Collect QC information
+    ================================================================================
+    */
+
+    // Collect QC file check information
+    ch_qc_filecheck = ch_qc_filecheck
+                        .map{ meta, file -> file }
+                        .collectFile(
+                            name:       "Summary.QC_File_Checks.tsv",
+                            keepHeader: true,
+                            storeDir:   "${params.outdir}/Summaries",
+                            sort:       'index'
+                        )
+
+    ch_output_summary_files = ch_output_summary_files.mix(ch_qc_filecheck.collect())
+
+    /*
+    ================================================================================
+                        Convert TSV outputs to Excel XLSX
+    ================================================================================
+    */
+
+    if (params.create_excel_outputs) {
+        CREATE_EXCEL_RUN_SUMMARY_PYTHON (
+            ch_output_summary_files.collect()
+        )
+        ch_versions = ch_versions.mix(CREATE_EXCEL_RUN_SUMMARY_PYTHON.out.versions)
+
+        CONVERT_TSV_TO_EXCEL_PYTHON (
+            CREATE_EXCEL_RUN_SUMMARY_PYTHON.out.summary
+        )
+        ch_versions = ch_versions.mix(CONVERT_TSV_TO_EXCEL_PYTHON.out.versions)
+    }
+
+    /*
+    ================================================================================
+                        Collect version information
+    ================================================================================
+    */
+
+    // Collect version information
+    ch_versions
+        .unique()
+        .collectFile(
+            name:     "software_versions.yml",
+            storeDir: params.tracedir
+        )
+}
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    FULL WORKFLOW FROM SCRATCH
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+workflow ASSEMBLY_SNPS_FULL {
+
+    // SETUP: Define empty channels to concatenate certain outputs
+    ch_versions             = Channel.empty()
+    ch_qc_filecheck         = Channel.empty()
+    ch_output_summary_files = Channel.empty()
+
     /*
     ================================================================================
                             Preprocess input data
@@ -204,7 +391,7 @@ workflow ASSEMBLY_SNPS {
     */
 
     if ( toLower(params.snp_package) == "parsnp" ) {
-        // PROCESS: Run ParSNP to generate core genome alignment and phylogeny
+        // Run ParSNP normally
         CORE_GENOME_ALIGNMENT_PARSNP (
             ch_input_files,
             ch_reference_files

@@ -21,7 +21,7 @@ process CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS {
     snp-dists \
       -b \
       -k \
-      -j !{task.cpus} \
+      -j 120 \
       "!{masked_alignment}" \
       > "!{meta.snp_package}-!{meta.recombination}.Masked_SNP_Distances_Matrix.tsv"
 
