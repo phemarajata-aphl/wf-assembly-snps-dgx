@@ -45,7 +45,7 @@ process RECOMBINATION_GUBBINS {
           --prefix "!{meta.snp_package}-Gubbins" \
           --threads !{task.cpus} \
           --iterations 3 \
-          --min-snps-for-recombination 10 \
+          --min-snps 10 \
           --filter-percentage 50 \
           --verbose \
           "!{core_alignment_fasta}"
