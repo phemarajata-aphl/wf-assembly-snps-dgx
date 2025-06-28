@@ -197,7 +197,11 @@ Please see the [output documentation](docs/output.md) for a table of all outputs
 A: View file contents in the `<outdir>/pipeline_info` directory.
 
 **Q: Bus error (exit status 135) in Gubbins process?**
-A: This indicates insufficient memory for large datasets. Solutions by system type:
+A: The pipeline now includes **automatic fallback** for bus errors. When Gubbins fails due to memory issues, it automatically switches to a lightweight method that allows the pipeline to continue.
+
+**Automatic Fallback**: The pipeline will detect bus errors and automatically fall back to lightweight recombination detection, which skips intensive recombination analysis but produces phylogenetic trees and distance matrices.
+
+**Manual Solutions** by system type:
 
 For DGX Station A100 (512GB RAM):
 ```bash
@@ -209,9 +213,9 @@ For Google Cloud large instances (1,536GB RAM):
 nextflow run main.nf -profile google_vm_large
 ```
 
-For ultra-large datasets (500+ genomes) or persistent bus errors:
+For ultra-large datasets (300+ genomes) or to force lightweight method:
 ```bash
-nextflow run main.nf -profile ultra_large_dataset --recombination_method lightweight
+nextflow run main.nf -profile google_vm_large --recombination_method lightweight
 ```
 
 For other high-memory systems:
@@ -219,9 +223,14 @@ For other high-memory systems:
 nextflow run main.nf -profile large_dataset --max_memory 600.GB
 ```
 
-Check system resources:
+**Check your dataset size**:
 ```bash
-./bin/check_system_resources.sh
+./bin/check_dataset_size.sh /path/to/your/input
+```
+
+**Check ParSNP outputs compatibility**:
+```bash
+./bin/check_parsnp_outputs.sh /path/to/parsnp_outputs
 ```
 
 See [Memory Optimization Guide](docs/memory-optimization.md) for detailed troubleshooting.
@@ -237,6 +246,23 @@ A: Increase time limits:
 ```bash
 nextflow run main.nf --max_time 168.h
 ```
+
+**Q: ClonalFrameML fails when using --parsnp_outputs (resume mode)?**
+A: This was a known issue that has been fixed. The pipeline now properly handles tree file staging for ClonalFrameML in resume mode. If you still encounter issues:
+
+1. **Check your ParSNP outputs**:
+   ```bash
+   ./bin/check_parsnp_outputs.sh /path/to/parsnp_outputs
+   ```
+
+2. **Ensure Parsnp.tree file is present** in your parsnp_outputs directory
+
+3. **Try running with verbose logging** to see detailed file staging information
+
+4. **Alternative**: Use Gubbins instead of ClonalFrameML:
+   ```bash
+   nextflow run main.nf --parsnp_outputs /path/to/outputs --recombination gubbins
+   ```
 
 For comprehensive troubleshooting of large datasets, see [docs/large-datasets.md](docs/large-datasets.md).
 
