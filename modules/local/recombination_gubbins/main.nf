@@ -155,6 +155,10 @@ process RECOMBINATION_GUBBINS {
         msg "ERROR: No tree file found after processing."
         exit 1
     fi
+    
+    # Ensure output files have correct permissions to avoid rsync/staging issues
+    chmod 644 *.txt *.tree 2>/dev/null || true
+    msg "INFO: Set file permissions for output files."
 
     cat <<-END_VERSIONS > versions.yml
     "!{task.process}":

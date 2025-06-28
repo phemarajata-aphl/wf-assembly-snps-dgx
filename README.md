@@ -95,11 +95,13 @@ For Google Cloud ultra-high-memory instances:
 
 ```bash
 nextflow run main.nf \
-  -profile google_vm_large \
+  -profile google_vm_large_safe \
   --input new-fasta-dir \
   --outdir my-results \
   --snp_package parsnp
 ```
+
+**Note**: Use `google_vm_large_safe` instead of `google_vm_large` to avoid rsync permission issues.
 
 ### Smart Resume from ParSNP Outputs
 
@@ -108,7 +110,7 @@ The pipeline now supports **smart resume** capabilities that can skip time-consu
 **Auto-detect existing alignment (recommended):**
 ```bash
 nextflow run main.nf \
-  -profile google_vm_large \
+  -profile google_vm_large_safe \
   --parsnp_outputs /path/to/parsnp_outputs \
   --outdir /path/to/results \
   --recombination gubbins
@@ -117,7 +119,7 @@ nextflow run main.nf \
 **Force skip GINGR conversion:**
 ```bash
 nextflow run main.nf \
-  -profile google_vm_large \
+  -profile google_vm_large_safe \
   --parsnp_outputs /path/to/parsnp_outputs \
   --outdir /path/to/results \
   --recombination gubbins \
@@ -127,7 +129,7 @@ nextflow run main.nf \
 **Use specific alignment file:**
 ```bash
 nextflow run main.nf \
-  -profile google_vm_large \
+  -profile google_vm_large_safe \
   --parsnp_outputs /path/to/parsnp_outputs \
   --outdir /path/to/results \
   --recombination gubbins \
@@ -353,6 +355,41 @@ A: The pipeline now includes **smart resume** capabilities that automatically de
 - Works for both Gubbins and ClonalFrameML
 - Saves significant time on large datasets
 - Look for "Auto-detected resume point" messages in the log
+
+**Q: rsync permission denied errors (code 23)?**
+A: This is a common issue with Docker containers and file permissions. The error typically looks like:
+```
+rsync: [sender] send_files failed to open "/tmp/nxf.../file.tree": Permission denied (13)
+rsync error: some files/attrs were not transferred (code 23)
+```
+
+**Solutions (in order of preference)**:
+
+1. **Use the safe profile (recommended)**:
+   ```bash
+   nextflow run main.nf -profile google_vm_large_safe [other options]
+   ```
+
+2. **Diagnose and fix permissions**:
+   ```bash
+   ./bin/fix_permission_issues.sh /path/to/work/directory
+   ```
+
+3. **Manual permission fix**:
+   ```bash
+   sudo chown -R $(whoami):$(id -gn) work/
+   chmod -R 755 work/
+   ```
+
+4. **Clean restart**:
+   ```bash
+   rm -rf work/
+   nextflow run main.nf -profile google_vm_large_safe [other options]
+   ```
+
+**Root cause**: The issue occurs when Docker containers create files with different ownership than the host user, and rsync cannot transfer these files due to permission mismatches.
+
+**Prevention**: Always use the `google_vm_large_safe` profile for Google Cloud VMs, which uses copy mode instead of rsync for file staging.
 
 For comprehensive troubleshooting of large datasets, see [docs/large-datasets.md](docs/large-datasets.md).
 
