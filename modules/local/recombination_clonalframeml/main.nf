@@ -97,11 +97,39 @@ process RECOMBINATION_CLONALFRAMEML {
     mv temp_tree.tree "!{meta.snp_package}.tree"
 
     msg "INFO: Running ClonalFrameML with tree: !{meta.snp_package}.tree and alignment: !{core_alignment_fasta}"
-
+    msg "INFO: Allocated resources - CPUs: !{task.cpus}, Memory: !{task.memory}"
+    
+    # Set environment variables to potentially utilize more memory
+    export OMP_NUM_THREADS=!{task.cpus}
+    export MKL_NUM_THREADS=!{task.cpus}
+    export OPENBLAS_NUM_THREADS=!{task.cpus}
+    
+    # Monitor memory usage during execution
+    (
+        while true; do
+            echo "Memory usage: $(free -h | grep '^Mem:' | awk '{print $3 "/" $2}')"
+            echo "CPU usage: $(top -bn1 | grep "Cpu(s)" | awk '{print $2}' | cut -d'%' -f1)"
+            sleep 30
+        done
+    ) &
+    MONITOR_PID=$!
+    
+    # Check ClonalFrameML version and available options
+    msg "INFO: ClonalFrameML version:"
+    ClonalFrameML -version || true
+    
+    # Run ClonalFrameML with optimized parameters for large datasets
+    # Note: ClonalFrameML is inherently single-threaded but we can optimize memory usage
     ClonalFrameML \
       "!{meta.snp_package}.tree" \
       "!{core_alignment_fasta}" \
-      "!{meta.snp_package}-ClonalFrameML"
+      "!{meta.snp_package}-ClonalFrameML" \
+      -verbose
+    
+    # Stop monitoring
+    kill $MONITOR_PID 2>/dev/null || true
+    
+    msg "INFO: ClonalFrameML completed"
 
     # Rename output file
     mv \

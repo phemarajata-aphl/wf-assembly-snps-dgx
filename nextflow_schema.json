@@ -28,6 +28,13 @@
                     "description": "Path to directory containing existing ParSNP output files to resume workflow from Gubbins step. Use this to skip ParSNP re-computation.",
                     "fa_icon": "fas fa-folder-open"
                 },
+                "alignment_file": {
+                    "type": "string",
+                    "format": "file-path",
+                    "description": "Path to existing alignment file for resume (Parsnp.Core_Alignment.fasta). Used with --parsnp_outputs.",
+                    "fa_icon": "fas fa-file",
+                    "hidden": true
+                },
                 "outdir": {
                     "type": "string",
                     "format": "directory-path",
@@ -65,6 +72,18 @@
                     "default": "both",
                     "description": "Tool used to classify SNPs due to recombination.",
                     "enum": ["gubbins", "clonalframeml", "both", "none"]
+                },
+                "skip_gingr_conversion": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Skip CONVERT_GINGR_TO_FASTA_HARVESTTOOLS if alignment already exists. Used with --parsnp_outputs.",
+                    "hidden": true
+                },
+                "resume_from": {
+                    "type": "string",
+                    "description": "Resume from specific step: alignment, recombination, masking, tree. Used with --parsnp_outputs.",
+                    "enum": ["alignment", "recombination", "masking", "tree"],
+                    "hidden": true
                 }
             }
         },

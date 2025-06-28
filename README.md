@@ -101,6 +101,44 @@ nextflow run main.nf \
   --snp_package parsnp
 ```
 
+### Smart Resume from ParSNP Outputs
+
+The pipeline now supports **smart resume** capabilities that can skip time-consuming steps when resuming from existing ParSNP outputs:
+
+**Auto-detect existing alignment (recommended):**
+```bash
+nextflow run main.nf \
+  -profile google_vm_large \
+  --parsnp_outputs /path/to/parsnp_outputs \
+  --outdir /path/to/results \
+  --recombination gubbins
+```
+
+**Force skip GINGR conversion:**
+```bash
+nextflow run main.nf \
+  -profile google_vm_large \
+  --parsnp_outputs /path/to/parsnp_outputs \
+  --outdir /path/to/results \
+  --recombination gubbins \
+  --skip_gingr_conversion
+```
+
+**Use specific alignment file:**
+```bash
+nextflow run main.nf \
+  -profile google_vm_large \
+  --parsnp_outputs /path/to/parsnp_outputs \
+  --outdir /path/to/results \
+  --recombination gubbins \
+  --alignment_file /path/to/existing/Parsnp.Core_Alignment.fasta
+```
+
+**Check resume options:**
+```bash
+./bin/check_resume_options.sh /path/to/parsnp_outputs /path/to/results
+```
+
 **Note**: Large datasets require significant computational resources. See [Memory Optimization Guide](docs/memory-optimization.md) for detailed requirements and troubleshooting.
 
 ## Introduction
@@ -263,6 +301,58 @@ A: This was a known issue that has been fixed. The pipeline now properly handles
    ```bash
    nextflow run main.nf --parsnp_outputs /path/to/outputs --recombination gubbins
    ```
+
+**Q: ClonalFrameML shows low memory usage despite high allocation?**
+A: This is expected behavior. ClonalFrameML is inherently a **single-threaded, memory-efficient application** that doesn't utilize large amounts of memory like Gubbins does. Key points:
+
+- **ClonalFrameML is single-threaded** and cannot use multiple CPUs effectively
+- **Memory usage is typically low** (1-5% of allocated memory) regardless of dataset size
+- **This is normal behavior** and doesn't indicate a problem with the pipeline
+
+**Monitor ClonalFrameML resource usage**:
+```bash
+./bin/monitor_clonalframeml_resources.sh /path/to/work/directory
+```
+
+**Performance characteristics**:
+- **CPU usage**: Typically uses only 1 CPU core (single-threaded)
+- **Memory usage**: Usually 1-10 GB regardless of allocation
+- **Runtime**: Scales with dataset size and complexity, not available resources
+
+**Optimization tips**:
+- ClonalFrameML performance is **algorithm-limited**, not resource-limited
+- Consider using **Gubbins for very large datasets** if faster processing is needed
+- The `ultra_kaboom` label ensures maximum resources are available, but ClonalFrameML may not use them all
+
+**Q: How to avoid repeating CONVERT_GINGR_TO_FASTA_HARVESTTOOLS every time?**
+A: The pipeline now includes **smart resume** capabilities that automatically detect existing alignment files:
+
+1. **Check what resume options are available**:
+   ```bash
+   ./bin/check_resume_options.sh /path/to/parsnp_outputs /path/to/results
+   ```
+
+2. **Use auto-detection (recommended)**:
+   ```bash
+   nextflow run main.nf --parsnp_outputs /path/to/outputs --recombination gubbins
+   ```
+   The pipeline will automatically find and use existing `Parsnp.Core_Alignment.fasta` files.
+
+3. **Force skip GINGR conversion**:
+   ```bash
+   nextflow run main.nf --parsnp_outputs /path/to/outputs --recombination gubbins --skip_gingr_conversion
+   ```
+
+4. **Specify exact alignment file**:
+   ```bash
+   nextflow run main.nf --parsnp_outputs /path/to/outputs --recombination gubbins --alignment_file /path/to/alignment.fasta
+   ```
+
+**Resume behavior**:
+- Pipeline checks for existing alignment files in multiple locations
+- Works for both Gubbins and ClonalFrameML
+- Saves significant time on large datasets
+- Look for "Auto-detected resume point" messages in the log
 
 For comprehensive troubleshooting of large datasets, see [docs/large-datasets.md](docs/large-datasets.md).
 

@@ -177,18 +177,69 @@ workflow ASSEMBLY_SNPS_RESUME {
                                 [ meta, it ]
                             }
 
-    // Convert Parsnp Gingr output file to FastA format for recombination
-    CONVERT_GINGR_TO_FASTA_HARVESTTOOLS (
-        ch_alignment_files
-    )
-    ch_versions = ch_versions.mix(CONVERT_GINGR_TO_FASTA_HARVESTTOOLS.out.versions)
-    ch_qc_filecheck = ch_qc_filecheck.concat(CONVERT_GINGR_TO_FASTA_HARVESTTOOLS.out.qc_filecheck)
+    /*
+    ================================================================================
+                            Smart Resume Logic - Check for existing files
+    ================================================================================
+    */
+    
+    // Define potential locations for existing alignment file
+    def alignment_locations = [
+        params.alignment_file,  // User-specified alignment file
+        "${params.outdir}/${ch_snp_package}/${ch_snp_package}.Core_Alignment.fasta",  // Previous run output
+        "${params.parsnp_outputs}/${ch_snp_package}.Core_Alignment.fasta"  // ParSNP outputs directory
+    ].findAll { it != null }
+    
+    def existing_alignment_file = null
+    def skip_conversion = params.skip_gingr_conversion
+    
+    // Check for existing alignment files
+    for (location in alignment_locations) {
+        def test_file = file(location)
+        if (test_file.exists()) {
+            existing_alignment_file = test_file
+            log.info "Found existing alignment file: ${existing_alignment_file}"
+            skip_conversion = true
+            break
+        }
+    }
+    
+    // Auto-detect resume point if not specified
+    if (params.resume_from == null && existing_alignment_file != null) {
+        log.info "Auto-detected resume point: alignment file exists, skipping GINGR conversion"
+        skip_conversion = true
+    } else if (params.resume_from == "alignment") {
+        skip_conversion = true
+        if (existing_alignment_file == null) {
+            log.error "Resume from alignment requested but no alignment file found"
+            exit 1, "Cannot resume from alignment - no ${ch_snp_package}.Core_Alignment.fasta file found in any expected location"
+        }
+    }
+    
+    if (skip_conversion && existing_alignment_file != null) {
+        log.info "Skipping CONVERT_GINGR_TO_FASTA_HARVESTTOOLS - using existing alignment file: ${existing_alignment_file}"
+        
+        // Create channel from existing alignment file
+        ch_core_alignment_fasta = Channel.of([
+            [snp_package: ch_snp_package], 
+            existing_alignment_file
+        ])
+    } else {
+        log.info "Running CONVERT_GINGR_TO_FASTA_HARVESTTOOLS to generate alignment file"
+        
+        // Convert Parsnp Gingr output file to FastA format for recombination
+        CONVERT_GINGR_TO_FASTA_HARVESTTOOLS (
+            ch_alignment_files
+        )
+        ch_versions = ch_versions.mix(CONVERT_GINGR_TO_FASTA_HARVESTTOOLS.out.versions)
+        ch_qc_filecheck = ch_qc_filecheck.concat(CONVERT_GINGR_TO_FASTA_HARVESTTOOLS.out.qc_filecheck)
 
-    ch_core_alignment_fasta = qcfilecheck(
-                                "CONVERT_GINGR_TO_FASTA_HARVESTTOOLS",
-                                CONVERT_GINGR_TO_FASTA_HARVESTTOOLS.out.qc_filecheck,
-                                CONVERT_GINGR_TO_FASTA_HARVESTTOOLS.out.core_alignment
-                            )
+        ch_core_alignment_fasta = qcfilecheck(
+                                    "CONVERT_GINGR_TO_FASTA_HARVESTTOOLS",
+                                    CONVERT_GINGR_TO_FASTA_HARVESTTOOLS.out.qc_filecheck,
+                                    CONVERT_GINGR_TO_FASTA_HARVESTTOOLS.out.core_alignment
+                                )
+    }
 
     // Add existing distance matrix to summary files
     ch_existing_distance_matrix = Channel.fromPath("${params.parsnp_outputs}/*.SNP_Distances_Matrix.tsv")
