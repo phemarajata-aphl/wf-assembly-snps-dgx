@@ -391,6 +391,59 @@ rsync error: some files/attrs were not transferred (code 23)
 
 **Prevention**: Always use the `google_vm_large_safe` profile for Google Cloud VMs, which uses copy mode instead of rsync for file staging.
 
+**Q: Gubbins falls back to lightweight mode despite having plenty of memory?**
+A: This issue occurs when Gubbins cannot utilize the allocated memory properly. The pipeline now includes **enhanced Gubbins execution** with multiple retry strategies and better memory management.
+
+**Symptoms**:
+- Gubbins uses only 32GB or less despite 1300GB allocation
+- Pipeline completes with "lightweight fallback" message
+- No actual recombination analysis performed
+
+**Diagnostic tools**:
+1. **Check why Gubbins fell back**:
+   ```bash
+   ./bin/diagnose_gubbins_fallback.sh work/
+   ```
+
+2. **Monitor Gubbins memory usage in real-time**:
+   ```bash
+   ./bin/monitor_gubbins_performance.sh work/
+   ```
+
+**Solutions**:
+1. **Enhanced Gubbins module** (already implemented):
+   - Multiple retry attempts with different parameters
+   - Better memory management settings
+   - Optimized for large datasets (300+ genomes)
+   - Longer timeouts (up to 72 hours per attempt)
+
+2. **Check Docker memory allocation**:
+   ```bash
+   docker info | grep -i memory
+   docker stats --no-stream
+   ```
+
+3. **Alternative recombination methods**:
+   ```bash
+   # Use ClonalFrameML instead
+   nextflow run main.nf --recombination clonalframeml [other options]
+   
+   # Force lightweight method if needed
+   nextflow run main.nf --recombination_method lightweight [other options]
+   ```
+
+**What the enhanced Gubbins does**:
+- **Attempt 1**: Optimized settings for large datasets (5 iterations, GTRGAMMA model)
+- **Attempt 2**: Conservative settings with reduced threads
+- **Attempt 3**: Very conservative settings as final attempt
+- **Fallback**: Lightweight mode only if all attempts fail
+
+**Memory optimization features**:
+- Removed restrictive ulimit settings
+- Enhanced malloc settings for better memory utilization
+- Proper Java heap size configuration
+- Container memory monitoring
+
 For comprehensive troubleshooting of large datasets, see [docs/large-datasets.md](docs/large-datasets.md).
 
 ## Contributions and Support
